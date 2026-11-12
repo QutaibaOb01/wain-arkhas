@@ -1,4 +1,46 @@
 {
-  "updated": null,
-  "sources": {}
+  "updated": "2026-11-12T18:31:43.858Z",
+  "sources": {
+    "rates": {
+      "ok": true,
+      "count": 18,
+      "missing": []
+    },
+    "steam": {
+      "ok": true,
+      "names": 40,
+      "regions": {
+        "US": 40,
+        "TR": 40,
+        "AR": 40,
+        "IN": 40,
+        "BR": 40,
+        "PL": 40,
+        "UA": 40,
+        "SA": 40,
+        "AE": 40,
+        "EG": 40,
+        "VN": 27
+      },
+      "problems": []
+    },
+    "xbox": {
+      "xbox-game-pass-ultimate": {
+        "ok": true,
+        "regions": {
+          "US": "Xbox Game Pass Ultimate 1 Month — 22.99 USD",
+          "TR": "Xbox Game Pass Ultimate 1 Month — 529 TRY",
+          "AR": "Xbox Game Pass Ultimate 1 Month — 18999 ARS",
+          "IN": "Xbox Game Pass Ultimate 1 Month — 1089 INR",
+          "BR": "Xbox Game Pass Ultimate 1 Month — 76.9 BRL",
+          "PL": "Xbox Game Pass Ultimate 1 Month — 84.99 PLN",
+          "UA": "المنتج مش متوفر بهالمنطقة",
+          "SA": "Xbox Game Pass Ultimate 1 Month — 60.99 SAR",
+          "AE": "Xbox Game Pass Ultimate 1 Month — 15.99 USD",
+          "EG": "المنتج مش متوفر بهالمنطقة",
+          "VN": "المنتج مش متوفر بهالمنطقة"
+        }
+      }
+    }
+  }
 }
