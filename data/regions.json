@@ -1,0 +1,13 @@
+[
+  { "code": "US", "name": "أمريكا", "en": "United States" },
+  { "code": "TR", "name": "تركيا", "en": "Turkey" },
+  { "code": "AR", "name": "الأرجنتين", "en": "Argentina" },
+  { "code": "IN", "name": "الهند", "en": "India" },
+  { "code": "BR", "name": "البرازيل", "en": "Brazil" },
+  { "code": "PL", "name": "بولندا", "en": "Poland" },
+  { "code": "UA", "name": "أوكرانيا", "en": "Ukraine" },
+  { "code": "SA", "name": "السعودية", "en": "Saudi Arabia" },
+  { "code": "AE", "name": "الإمارات", "en": "United Arab Emirates" },
+  { "code": "EG", "name": "مصر", "en": "Egypt" },
+  { "code": "VN", "name": "فيتنام", "en": "Vietnam" }
+]

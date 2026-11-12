@@ -1,0 +1,613 @@
+{
+  "platforms": {
+    "psn": {
+      "name": "PlayStation",
+      "card": "بطاقة PlayStation Store",
+      "cardEn": "PlayStation Store gift card",
+      "color": "#6B9BFF"
+    },
+    "xbox": {
+      "name": "Xbox",
+      "card": "بطاقة Xbox",
+      "cardEn": "Xbox gift card",
+      "color": "#4ADE80"
+    },
+    "steam": {
+      "name": "Steam",
+      "card": "بطاقة Steam Wallet",
+      "cardEn": "Steam Wallet gift card",
+      "color": "#A5B8D6"
+    }
+  },
+  "categories": [
+    {
+      "id": "playstation",
+      "name": "بلايستيشن",
+      "desc": "اشتراكات PS Plus وألعاب PS5",
+      "icon": "ps"
+    },
+    {
+      "id": "xbox",
+      "name": "إكس بوكس",
+      "desc": "اشتراك Game Pass",
+      "icon": "xbox"
+    },
+    {
+      "id": "pc",
+      "name": "ألعاب PC على ستيم",
+      "desc": "أسعار ستيم بكل المناطق، بتتحدّث يومياً",
+      "icon": "pc"
+    }
+  ],
+  "comingSoon": [
+    "نتفليكس",
+    "سبوتيفاي",
+    "يوتيوب بريميوم",
+    "سناب شات بلس",
+    "ديسكورد نيترو",
+    "شاهد VIP",
+    "شدات ببجي",
+    "جواهر فري فاير",
+    "روبوكس",
+    "V-Bucks فورتنايت",
+    "نقاط فالورانت",
+    "ألعاب بلايستيشن أكثر"
+  ],
+  "popular": [
+    "gta-6-ps5",
+    "ps-plus-essential-1m",
+    "xbox-game-pass-ultimate",
+    "steam-1245620",
+    "steam-1174180",
+    "steam-2358720"
+  ],
+  "products": [
+    {
+      "id": "ps-plus-essential-1m",
+      "name": "PlayStation Plus Essential",
+      "variant": "اشتراك شهر",
+      "category": "playstation",
+      "platform": "psn",
+      "mono": "P+",
+      "source": {
+        "type": "manual"
+      },
+      "keywords": "ps plus psplus essential بلس بلايستيشن اسنشال اساسي",
+      "short": "PS Plus Essential"
+    },
+    {
+      "id": "ps-plus-extra-12m",
+      "name": "PlayStation Plus Extra",
+      "variant": "اشتراك 12 شهر",
+      "category": "playstation",
+      "platform": "psn",
+      "mono": "P+",
+      "source": {
+        "type": "manual"
+      },
+      "keywords": "ps plus psplus extra بلس بلايستيشن اكسترا",
+      "short": "PS Plus Extra"
+    },
+    {
+      "id": "ps-plus-deluxe-12m",
+      "name": "PlayStation Plus Deluxe / Premium",
+      "variant": "اشتراك 12 شهر",
+      "category": "playstation",
+      "platform": "psn",
+      "mono": "P+",
+      "source": {
+        "type": "manual"
+      },
+      "keywords": "ps plus psplus deluxe premium بلس بلايستيشن ديلوكس بريميوم",
+      "short": "PS Plus Deluxe"
+    },
+    {
+      "id": "gta-6-ps5",
+      "name": "Grand Theft Auto VI",
+      "variant": "PS5 · النسخة العادية · طلب مسبق",
+      "category": "playstation",
+      "platform": "psn",
+      "mono": "VI",
+      "source": {
+        "type": "manual"
+      },
+      "keywords": "gta gta6 gta 6 gta vi grand theft auto جي تي اي جاتا قراند",
+      "short": "GTA VI"
+    },
+    {
+      "id": "xbox-game-pass-ultimate",
+      "name": "Xbox Game Pass Ultimate",
+      "variant": "اشتراك شهر",
+      "category": "xbox",
+      "platform": "xbox",
+      "mono": "GP",
+      "source": {
+        "type": "xbox",
+        "bigId": "CFQ7TTC0KHS0",
+        "match": "1 month"
+      },
+      "keywords": "game pass gamepass ultimate xbox جيم باس اكس بوكس التميت",
+      "short": "Game Pass Ultimate"
+    },
+    {
+      "id": "steam-1245620",
+      "name": "Elden Ring",
+      "variant": "PC · Steam",
+      "category": "pc",
+      "platform": "steam",
+      "source": {
+        "type": "steam",
+        "appid": 1245620
+      },
+      "keywords": "elden ring الدن رينج"
+    },
+    {
+      "id": "steam-2622380",
+      "name": "Elden Ring Nightreign",
+      "variant": "PC · Steam",
+      "category": "pc",
+      "platform": "steam",
+      "source": {
+        "type": "steam",
+        "appid": 2622380
+      },
+      "keywords": "elden ring nightreign نايت رين"
+    },
+    {
+      "id": "steam-1091500",
+      "name": "Cyberpunk 2077",
+      "variant": "PC · Steam",
+      "category": "pc",
+      "platform": "steam",
+      "source": {
+        "type": "steam",
+        "appid": 1091500
+      },
+      "keywords": "cyberpunk سايبربانك"
+    },
+    {
+      "id": "steam-1174180",
+      "name": "Red Dead Redemption 2",
+      "variant": "PC · Steam",
+      "category": "pc",
+      "platform": "steam",
+      "source": {
+        "type": "steam",
+        "appid": 1174180
+      },
+      "keywords": "red dead redemption rdr2 ريد ديد"
+    },
+    {
+      "id": "steam-3240220",
+      "name": "Grand Theft Auto V Enhanced",
+      "variant": "PC · Steam",
+      "category": "pc",
+      "platform": "steam",
+      "source": {
+        "type": "steam",
+        "appid": 3240220
+      },
+      "keywords": "gta 5 gta v جي تي اي 5 قراند"
+    },
+    {
+      "id": "steam-1086940",
+      "name": "Baldur's Gate 3",
+      "variant": "PC · Steam",
+      "category": "pc",
+      "platform": "steam",
+      "source": {
+        "type": "steam",
+        "appid": 1086940
+      },
+      "keywords": "baldurs gate بالدرز"
+    },
+    {
+      "id": "steam-990080",
+      "name": "Hogwarts Legacy",
+      "variant": "PC · Steam",
+      "category": "pc",
+      "platform": "steam",
+      "source": {
+        "type": "steam",
+        "appid": 990080
+      },
+      "keywords": "hogwarts هوغوورتس هاري بوتر"
+    },
+    {
+      "id": "steam-292030",
+      "name": "The Witcher 3: Wild Hunt",
+      "variant": "PC · Steam",
+      "category": "pc",
+      "platform": "steam",
+      "source": {
+        "type": "steam",
+        "appid": 292030
+      },
+      "keywords": "witcher ويتشر"
+    },
+    {
+      "id": "steam-1030300",
+      "name": "Hollow Knight: Silksong",
+      "variant": "PC · Steam",
+      "category": "pc",
+      "platform": "steam",
+      "source": {
+        "type": "steam",
+        "appid": 1030300
+      },
+      "keywords": "silksong hollow knight سيلك سونغ هولو نايت"
+    },
+    {
+      "id": "steam-2358720",
+      "name": "Black Myth: Wukong",
+      "variant": "PC · Steam",
+      "category": "pc",
+      "platform": "steam",
+      "source": {
+        "type": "steam",
+        "appid": 2358720
+      },
+      "keywords": "black myth wukong ووكونغ"
+    },
+    {
+      "id": "steam-1593500",
+      "name": "God of War",
+      "variant": "PC · Steam",
+      "category": "pc",
+      "platform": "steam",
+      "source": {
+        "type": "steam",
+        "appid": 1593500
+      },
+      "keywords": "god of war غاد اوف وور"
+    },
+    {
+      "id": "steam-2322010",
+      "name": "God of War Ragnarök",
+      "variant": "PC · Steam",
+      "category": "pc",
+      "platform": "steam",
+      "source": {
+        "type": "steam",
+        "appid": 2322010
+      },
+      "keywords": "god of war ragnarok راغناروك"
+    },
+    {
+      "id": "steam-1817070",
+      "name": "Marvel's Spider-Man Remastered",
+      "variant": "PC · Steam",
+      "category": "pc",
+      "platform": "steam",
+      "source": {
+        "type": "steam",
+        "appid": 1817070
+      },
+      "keywords": "spider man سبايدر مان"
+    },
+    {
+      "id": "steam-2215430",
+      "name": "Ghost of Tsushima",
+      "variant": "PC · Steam",
+      "category": "pc",
+      "platform": "steam",
+      "source": {
+        "type": "steam",
+        "appid": 2215430
+      },
+      "keywords": "ghost of tsushima غوست اوف تسوشيما"
+    },
+    {
+      "id": "steam-2050650",
+      "name": "Resident Evil 4",
+      "variant": "PC · Steam",
+      "category": "pc",
+      "platform": "steam",
+      "source": {
+        "type": "steam",
+        "appid": 2050650
+      },
+      "keywords": "resident evil 4 ريزدنت ايفل"
+    },
+    {
+      "id": "steam-2246340",
+      "name": "Monster Hunter Wilds",
+      "variant": "PC · Steam",
+      "category": "pc",
+      "platform": "steam",
+      "source": {
+        "type": "steam",
+        "appid": 2246340
+      },
+      "keywords": "monster hunter wilds مونستر هنتر"
+    },
+    {
+      "id": "steam-1903340",
+      "name": "Clair Obscur: Expedition 33",
+      "variant": "PC · Steam",
+      "category": "pc",
+      "platform": "steam",
+      "source": {
+        "type": "steam",
+        "appid": 1903340
+      },
+      "keywords": "clair obscur expedition 33 اكسبديشن"
+    },
+    {
+      "id": "steam-1771300",
+      "name": "Kingdom Come: Deliverance II",
+      "variant": "PC · Steam",
+      "category": "pc",
+      "platform": "steam",
+      "source": {
+        "type": "steam",
+        "appid": 1771300
+      },
+      "keywords": "kingdom come deliverance كينغدوم كم"
+    },
+    {
+      "id": "steam-2001120",
+      "name": "Split Fiction",
+      "variant": "PC · Steam",
+      "category": "pc",
+      "platform": "steam",
+      "source": {
+        "type": "steam",
+        "appid": 2001120
+      },
+      "keywords": "split fiction سبليت فيكشن"
+    },
+    {
+      "id": "steam-1426210",
+      "name": "It Takes Two",
+      "variant": "PC · Steam",
+      "category": "pc",
+      "platform": "steam",
+      "source": {
+        "type": "steam",
+        "appid": 1426210
+      },
+      "keywords": "it takes two ات تيكس تو"
+    },
+    {
+      "id": "steam-1551360",
+      "name": "Forza Horizon 5",
+      "variant": "PC · Steam",
+      "category": "pc",
+      "platform": "steam",
+      "source": {
+        "type": "steam",
+        "appid": 1551360
+      },
+      "keywords": "forza horizon فورزا"
+    },
+    {
+      "id": "steam-1623730",
+      "name": "Palworld",
+      "variant": "PC · Steam",
+      "category": "pc",
+      "platform": "steam",
+      "source": {
+        "type": "steam",
+        "appid": 1623730
+      },
+      "keywords": "palworld بال وورلد"
+    },
+    {
+      "id": "steam-413150",
+      "name": "Stardew Valley",
+      "variant": "PC · Steam",
+      "category": "pc",
+      "platform": "steam",
+      "source": {
+        "type": "steam",
+        "appid": 413150
+      },
+      "keywords": "stardew valley ستاردو"
+    },
+    {
+      "id": "steam-105600",
+      "name": "Terraria",
+      "variant": "PC · Steam",
+      "category": "pc",
+      "platform": "steam",
+      "source": {
+        "type": "steam",
+        "appid": 105600
+      },
+      "keywords": "terraria تيراريا"
+    },
+    {
+      "id": "steam-1145350",
+      "name": "Hades II",
+      "variant": "PC · Steam",
+      "category": "pc",
+      "platform": "steam",
+      "source": {
+        "type": "steam",
+        "appid": 1145350
+      },
+      "keywords": "hades هاديس"
+    },
+    {
+      "id": "steam-814380",
+      "name": "Sekiro: Shadows Die Twice",
+      "variant": "PC · Steam",
+      "category": "pc",
+      "platform": "steam",
+      "source": {
+        "type": "steam",
+        "appid": 814380
+      },
+      "keywords": "sekiro سيكيرو"
+    },
+    {
+      "id": "steam-3017860",
+      "name": "DOOM: The Dark Ages",
+      "variant": "PC · Steam",
+      "category": "pc",
+      "platform": "steam",
+      "source": {
+        "type": "steam",
+        "appid": 3017860
+      },
+      "keywords": "doom دووم"
+    },
+    {
+      "id": "steam-2677660",
+      "name": "Indiana Jones and the Great Circle",
+      "variant": "PC · Steam",
+      "category": "pc",
+      "platform": "steam",
+      "source": {
+        "type": "steam",
+        "appid": 2677660
+      },
+      "keywords": "indiana jones انديانا جونز"
+    },
+    {
+      "id": "steam-1888930",
+      "name": "The Last of Us Part I",
+      "variant": "PC · Steam",
+      "category": "pc",
+      "platform": "steam",
+      "source": {
+        "type": "steam",
+        "appid": 1888930
+      },
+      "keywords": "last of us لاست اوف اس"
+    },
+    {
+      "id": "steam-1778820",
+      "name": "TEKKEN 8",
+      "variant": "PC · Steam",
+      "category": "pc",
+      "platform": "steam",
+      "source": {
+        "type": "steam",
+        "appid": 1778820
+      },
+      "keywords": "tekken تيكن"
+    },
+    {
+      "id": "steam-1364780",
+      "name": "Street Fighter 6",
+      "variant": "PC · Steam",
+      "category": "pc",
+      "platform": "steam",
+      "source": {
+        "type": "steam",
+        "appid": 1364780
+      },
+      "keywords": "street fighter ستريت فايتر"
+    },
+    {
+      "id": "steam-1971870",
+      "name": "Mortal Kombat 1",
+      "variant": "PC · Steam",
+      "category": "pc",
+      "platform": "steam",
+      "source": {
+        "type": "steam",
+        "appid": 1971870
+      },
+      "keywords": "mortal kombat مورتال كومبات"
+    },
+    {
+      "id": "steam-227300",
+      "name": "Euro Truck Simulator 2",
+      "variant": "PC · Steam",
+      "category": "pc",
+      "platform": "steam",
+      "source": {
+        "type": "steam",
+        "appid": 227300
+      },
+      "keywords": "euro truck simulator يورو تراك شاحنات"
+    },
+    {
+      "id": "steam-252490",
+      "name": "Rust",
+      "variant": "PC · Steam",
+      "category": "pc",
+      "platform": "steam",
+      "source": {
+        "type": "steam",
+        "appid": 252490
+      },
+      "keywords": "rust راست"
+    },
+    {
+      "id": "steam-892970",
+      "name": "Valheim",
+      "variant": "PC · Steam",
+      "category": "pc",
+      "platform": "steam",
+      "source": {
+        "type": "steam",
+        "appid": 892970
+      },
+      "keywords": "valheim فالهايم"
+    },
+    {
+      "id": "steam-2807960",
+      "name": "Battlefield 6",
+      "variant": "PC · Steam",
+      "category": "pc",
+      "platform": "steam",
+      "source": {
+        "type": "steam",
+        "appid": 2807960
+      },
+      "keywords": "battlefield باتلفيلد"
+    },
+    {
+      "id": "steam-3159330",
+      "name": "Assassin's Creed Shadows",
+      "variant": "PC · Steam",
+      "category": "pc",
+      "platform": "steam",
+      "source": {
+        "type": "steam",
+        "appid": 3159330
+      },
+      "keywords": "assassins creed shadows اساسنز كريد"
+    },
+    {
+      "id": "steam-1966720",
+      "name": "Lethal Company",
+      "variant": "PC · Steam",
+      "category": "pc",
+      "platform": "steam",
+      "source": {
+        "type": "steam",
+        "appid": 1966720
+      },
+      "keywords": "lethal company ليثال كومباني"
+    },
+    {
+      "id": "steam-739630",
+      "name": "Phasmophobia",
+      "variant": "PC · Steam",
+      "category": "pc",
+      "platform": "steam",
+      "source": {
+        "type": "steam",
+        "appid": 739630
+      },
+      "keywords": "phasmophobia فازموفوبيا"
+    },
+    {
+      "id": "steam-582010",
+      "name": "Monster Hunter: World",
+      "variant": "PC · Steam",
+      "category": "pc",
+      "platform": "steam",
+      "source": {
+        "type": "steam",
+        "appid": 582010
+      },
+      "keywords": "monster hunter world مونستر هنتر وورلد"
+    }
+  ]
+}

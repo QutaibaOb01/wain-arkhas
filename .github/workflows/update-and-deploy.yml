@@ -1,0 +1,62 @@
+name: تحديث الأسعار ونشر الموقع
+
+on:
+  push:
+    branches: [main]
+  schedule:
+    # كل يوم الساعة 3:17 بتوقيت UTC
+    - cron: '17 3 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  update-and-deploy:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: سحب الكود
+        uses: actions/checkout@v4
+
+      - name: تجهيز Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: تحديث الأسعار
+        run: node scripts/update-prices.mjs
+
+      - name: حفظ الأسعار الجديدة بالمستودع
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/auto-prices.json data/rates.json data/status.json
+          if git diff --cached --quiet; then
+            echo "ما في تغيير بالأسعار"
+          else
+            git commit -m "تحديث الأسعار تلقائياً"
+            git pull --rebase origin main
+            git push origin HEAD:main
+          fi
+
+      - name: تجهيز GitHub Pages
+        uses: actions/configure-pages@v5
+
+      - name: رفع ملفات الموقع
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: .
+
+      - name: نشر الموقع
+        id: deployment
+        uses: actions/deploy-pages@v4

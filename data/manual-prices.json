@@ -1,0 +1,41 @@
+{
+  "_note": "أسعار مدخلة يدوياً مع مصدر وتاريخ تحقق لكل سعر. عدّلها من هون لما يتغير السعر. converted=true يعني إن المصدر حوّل السعر للدولار بنفسه.",
+  "products": {
+    "ps-plus-essential-1m": {
+      "US": { "amount": 10.99, "currency": "USD", "checked": "2026-11-01", "source": "https://itscheaper.in/playstation-plus/cheapest-country/" },
+      "TR": { "amount": 400, "currency": "TRY", "checked": "2026-11-01", "source": "https://itscheaper.in/playstation-plus/cheapest-country/" },
+      "AR": { "amount": 7.99, "currency": "USD", "checked": "2026-11-01", "source": "https://itscheaper.in/playstation-plus/cheapest-country/" },
+      "IN": { "amount": 649, "currency": "INR", "checked": "2026-11-01", "source": "https://itscheaper.in/playstation-plus/cheapest-country/" },
+      "BR": { "amount": 49.9, "currency": "BRL", "checked": "2026-11-01", "source": "https://itscheaper.in/playstation-plus/cheapest-country/" },
+      "PL": { "amount": 41, "currency": "PLN", "checked": "2026-11-01", "source": "https://itscheaper.in/playstation-plus/cheapest-country/" },
+      "UA": { "amount": 299, "currency": "UAH", "checked": "2026-11-01", "source": "https://itscheaper.in/playstation-plus/cheapest-country/" }
+    },
+    "ps-plus-extra-12m": {
+      "US": { "amount": 134.99, "currency": "USD", "checked": "2026-11-11", "source": "https://pspriceshub.com/en/cheapest-ps-plus-region" },
+      "TR": { "amount": 95.74, "currency": "USD", "converted": true, "checked": "2026-11-11", "source": "https://pspriceshub.com/en/cheapest-ps-plus-region" },
+      "AR": { "amount": 107.99, "currency": "USD", "checked": "2026-11-11", "source": "https://pspriceshub.com/en/cheapest-ps-plus-region" },
+      "IN": { "amount": 8709, "currency": "INR", "checked": "2026-11-11", "source": "https://www.indiatvnews.com/technology/news/sony-hikes-playstation-plus-prices-in-india-ps-plus-essential-extra-deluxe-plans-become-costlier-2026-05-21-1041982" },
+      "BR": { "amount": 106.75, "currency": "USD", "converted": true, "checked": "2026-11-11", "source": "https://pspriceshub.com/en/cheapest-ps-plus-region" },
+      "PL": { "amount": 132.38, "currency": "USD", "converted": true, "checked": "2026-11-11", "source": "https://pspriceshub.com/en/cheapest-ps-plus-region" }
+    },
+    "ps-plus-deluxe-12m": {
+      "US": { "amount": 159.99, "currency": "USD", "checked": "2026-11-11", "source": "https://pspriceshub.com/en/cheapest-ps-plus-region" },
+      "TR": { "amount": 110.66, "currency": "USD", "converted": true, "checked": "2026-11-11", "source": "https://pspriceshub.com/en/cheapest-ps-plus-region" },
+      "AR": { "amount": 124.99, "currency": "USD", "checked": "2026-11-11", "source": "https://pspriceshub.com/en/cheapest-ps-plus-region" },
+      "IN": { "amount": 9879, "currency": "INR", "checked": "2026-11-11", "source": "https://www.indiatvnews.com/technology/news/sony-hikes-playstation-plus-prices-in-india-ps-plus-essential-extra-deluxe-plans-become-costlier-2026-05-21-1041982" },
+      "BR": { "amount": 124.58, "currency": "USD", "converted": true, "checked": "2026-11-11", "source": "https://pspriceshub.com/en/cheapest-ps-plus-region" },
+      "PL": { "amount": 160.38, "currency": "USD", "converted": true, "checked": "2026-11-11", "source": "https://pspriceshub.com/en/cheapest-ps-plus-region" }
+    },
+    "gta-6-ps5": {
+      "US": { "amount": 79.99, "currency": "USD", "checked": "2026-11-08", "source": "https://gtaspots.com/gta-6/price/" },
+      "TR": { "amount": 3999, "currency": "TRY", "checked": "2026-11-08", "source": "https://gtaspots.com/gta-6/price/" },
+      "AR": { "amount": 79.99, "currency": "USD", "checked": "2026-11-08", "source": "https://gtaspots.com/gta-6/price/" },
+      "IN": { "amount": 5999, "currency": "INR", "checked": "2026-11-08", "source": "https://gtaspots.com/gta-6/price/" },
+      "BR": { "amount": 449.9, "currency": "BRL", "checked": "2026-11-08", "source": "https://gtaspots.com/gta-6/price/" },
+      "PL": { "amount": 349, "currency": "PLN", "checked": "2026-11-04", "source": "https://gta6times.com/gta-6/price-worldwide" },
+      "UA": { "amount": 3499, "currency": "UAH", "checked": "2026-11-04", "source": "https://gta6times.com/gta-6/price-worldwide" },
+      "SA": { "amount": 301.56, "currency": "SAR", "checked": "2026-11-03", "source": "https://gta6times.com/gta-6/price-worldwide" },
+      "AE": { "amount": 299.16, "currency": "AED", "checked": "2026-11-03", "source": "https://gta6times.com/gta-6/price-worldwide" }
+    }
+  }
+}
