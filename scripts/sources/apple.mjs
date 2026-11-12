@@ -99,3 +99,43 @@ export async function fetchApple(specs, regions, { fetchImpl, wait = sleep, conc
   if (!Object.values(log.apps).some((n) => n > 0)) log.ok = false;
   return { prices, packages, log };
 }
+
+/* ===== iCloud+ من صفحة دعم آبل (جدول فيه كل الدول) ===== */
+const ICLOUD_COLS = ['50gb', '200gb', '2tb', '6tb', '12tb'];
+const NAME_ALIASES = { 'türkiye': 'TR', turkiye: 'TR', turkey: 'TR', 'viet nam': 'VN', uae: 'AE', uk: 'GB', usa: 'US' };
+
+const cellText = (html) =>
+  decodeEntities(String(html).replace(/<sup[^>]*>[\s\S]*?<\/sup>/gi, '').replace(/<[^>]+>/g, ' '))
+    .replace(/&[a-z0-9#]+;/gi, '')
+    .replace(/\s+/g, ' ')
+    .trim();
+
+export function parseICloudTable(raw, regions) {
+  const byName = {};
+  for (const r of regions) byName[String(r.en).toLowerCase()] = r.code;
+  Object.assign(byName, NAME_ALIASES);
+  const out = {};
+  const rows = String(raw).match(/<tr[^>]*>[\s\S]*?<\/tr>/gi) || [];
+  for (const row of rows) {
+    const cells = (row.match(/<t[dh][^>]*>[\s\S]*?<\/t[dh]>/gi) || []).map(cellText);
+    if (cells.length < 6) continue;
+    const cur = (cells[0].match(/\(([A-Z]{3})\)/) || [])[1];
+    if (!cur) continue;
+    const name = cells[0].replace(/\(.*?\)/g, '').replace(/[\d¹²³⁴⁵⁶⁷⁸⁹*†]/g, '').trim().toLowerCase();
+    const code = byName[name];
+    if (!code) continue;
+    ICLOUD_COLS.forEach((col, i) => {
+      const amount = parseAmount(cells[i + 1]);
+      if (amount > 0) (out[col] = out[col] || {})[code] = { amount, currency: cur, original: 0 };
+    });
+  }
+  return out;
+}
+
+export async function fetchICloud(regions, { fetchImpl, wait = sleep } = {}) {
+  const raw = await request('https://support.apple.com/en-us/108047', { fetchImpl, wait, as: 'text' });
+  const prices = parseICloudTable(raw, regions);
+  const n = Object.values(prices).reduce((a, regs) => a + Object.keys(regs).length, 0);
+  if (!n) throw new Error('ما لقينا جدول أسعار iCloud+');
+  return { prices, log: { ok: true, prices: n } };
+}

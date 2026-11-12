@@ -674,6 +674,41 @@
       }
     },
     {
+      "id": "icloud-plus",
+      "type": "app",
+      "name": "iCloud+",
+      "ar": "آي كلاود بلس",
+      "kw": "icloud plus storage تخزين ايكلاود آي كلاود",
+      "offers": {
+        "apple": {
+          "source": "icloud",
+          "default": "200gb",
+          "packages": [
+            [
+              "50gb",
+              "50GB · شهر"
+            ],
+            [
+              "200gb",
+              "200GB · شهر"
+            ],
+            [
+              "2tb",
+              "2TB · شهر"
+            ],
+            [
+              "6tb",
+              "6TB · شهر"
+            ],
+            [
+              "12tb",
+              "12TB · شهر"
+            ]
+          ]
+        }
+      }
+    },
+    {
       "id": "youtube-premium",
       "type": "app",
       "name": "YouTube Premium",

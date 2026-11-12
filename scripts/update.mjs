@@ -9,7 +9,7 @@ import { fetchRates } from './sources/rates.mjs';
 import { fetchSteamTopSellers, fetchSteamPrices } from './sources/steam.mjs';
 import { fetchXboxPrices, fetchXboxBestSellers, fetchXboxAddons } from './sources/xbox.mjs';
 import { fetchPsBestSellers, fetchPsConceptPrices, fetchPsPlus } from './sources/playstation.mjs';
-import { fetchApple, labelFrom, packageKey } from './sources/apple.mjs';
+import { fetchApple, fetchICloud, labelFrom, packageKey } from './sources/apple.mjs';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 export const STALE_DAYS = 10;
@@ -190,6 +190,7 @@ export async function main(opts = {}) {
   const xboxItems = [];
   const appleSpecs = [];
   let needPsPlus = false;
+  let needICloud = false;
 
   const xboxTask = safe('xbox-services', async () => {
     for (const s of curated) {
@@ -234,11 +235,22 @@ export async function main(opts = {}) {
       appleSpecs.push({ service: s.id, app: off.apple.app, items: off.apple.items });
       if (off.apple.default) defaults[s.id + '|apple'] = off.apple.default;
     }
+    if (off.apple && off.apple.source === 'icloud') {
+      needICloud = true;
+      if (off.apple.default) defaults[s.id + '|apple'] = off.apple.default;
+      hints[s.id + '|apple'] = off.apple.packages.map((p) => p[0]);
+    }
   }
 
   const psPlusTask = needPsPlus ? safe('psplus', async () => {
     const res = await fetchPsPlus(regions, net);
     status.sources.psplus = res.log;
+    return res;
+  }) : Promise.resolve(null);
+
+  const icloudTask = needICloud ? safe('icloud', async () => {
+    const res = await fetchICloud(regions, net);
+    status.sources.icloud = res.log;
     return res;
   }) : Promise.resolve(null);
 
@@ -315,8 +327,8 @@ export async function main(opts = {}) {
     return { list: ok, names, ...res };
   });
 
-  const [rates, xb, psPlus, apple, psGames, xbGames, steam] = await Promise.all([
-    ratesTask, xboxTask, psPlusTask, appleTask, psGamesTask, xbGamesTask, steamTask
+  const [rates, xb, psPlus, apple, psGames, xbGames, steam, icloud] = await Promise.all([
+    ratesTask, xboxTask, psPlusTask, appleTask, psGamesTask, xbGamesTask, steamTask, icloudTask
   ]);
 
   // ===== تجميع الخدمات المحددة =====
@@ -327,7 +339,11 @@ export async function main(opts = {}) {
       const svc = svcOf(s.id, base);
       for (const [id, label] of off.psn.packages) fill(pkgOf(svc, 'psn', { id, label, ref: 'psplus' }), psPlus.prices[id]);
     }
-    if (off.apple && apple) {
+    if (off.apple && off.apple.source === 'icloud' && icloud) {
+      const svc = svcOf(s.id, base);
+      for (const [id, label] of off.apple.packages) fill(pkgOf(svc, 'apple', { id, label, ref: 'icloud' }), icloud.prices[id]);
+    }
+    if (off.apple && off.apple.source === 'apple' && apple) {
       const pk = apple.packages[s.id] || {};
       const pr = apple.prices[s.id] || {};
       const keys = Object.keys(pr);

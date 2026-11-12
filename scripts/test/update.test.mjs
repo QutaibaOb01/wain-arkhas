@@ -203,6 +203,10 @@ test('تشغيل كامل: كل المصادر بتنجمع بملف واحد', 
     [/apps\.apple\.com\/vn\/app\/id447188370/, () => '<div class="text-pair a"><span>Snapchat+ (Monthly Plan)</span> <span>29.000đ</span></div><div class="text-pair a"><span>Snapchat+ Monthly Plan</span> <span>49.000đ</span></div>'],
     [/apps\.apple\.com\/tr\/app\/id1330123889/, () => '<div class="text-pair a"><span>60 Unknown Cash</span> <span>₺45,99</span></div><div class="text-pair a"><span>ig.yiyuan1</span> <span>₺11,99</span></div>'],
     [/apps\.apple\.com\/us\/app\/id1330123889/, () => '<div class="text-pair a"><span>60 Unknown Cash</span> <span>$0.99</span></div>'],
+    [/support\.apple\.com\/en-us\/108047/, () => '<table><tr><th>Country (Currency)</th><th>50 GB</th><th>200 GB</th><th>2 TB</th><th>6 TB</th><th>12 TB</th></tr>' +
+      '<tr><td><p>Türkiye<sup>3</sup> (TRY)</p></td><td>49.99 TL</td><td>169.99 TL</td><td>549.99 TL</td><td>1699.99 TL</td><td>3399.99 TL</td></tr>' +
+      '<tr><td>Vietnam&sup3; (VND)</td><td>₫25000</td><td>₫89000</td><td>₫299000</td><td>₫899000</td><td>₫1799000</td></tr>' +
+      '<tr><td>Atlantis (ATL)</td><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td></tr></table>'],
     [/apps\.apple\.com/, () => ({ status: 404, body: '' })]
   ]);
   const { status, list } = await main({ fetchImpl, wait: async () => {}, now: new Date('2026-11-12T03:17:00Z'), root: dir, limits: { ps: 5, xbox: 5 }, quiet: true });
@@ -247,6 +251,14 @@ test('تشغيل كامل: كل المصادر بتنجمع بملف واحد', 
   assert.equal(byId['pubg-uc'].offers.apple.def, 'uc-60');
   assert.deepEqual(uc.prices.TR, [45.99, 'TRY', 0, '2026-11-12']);
   assert.deepEqual(uc.prices.US, [0.99, 'USD', 0, '2026-11-12']);
+
+  // iCloud+ من جدول آبل الرسمي
+  const ic = byId['icloud-plus'].offers.apple;
+  assert.equal(ic.def, '200gb');
+  assert.deepEqual(ic.packages.map((p) => p.id), ['50gb', '200gb', '2tb', '6tb', '12tb']);
+  assert.deepEqual(ic.packages[1].prices.TR, [169.99, 'TRY', 0, '2026-11-12']);
+  assert.deepEqual(ic.packages[0].prices.VN, [25000, 'VND', 0, '2026-11-12']);
+  assert.equal(Object.keys(ic.packages[0].prices).length, 2);
 
   // ستيم: الأكثر مبيعاً + القائمة الثابتة
   const er = byId['elden-ring'];

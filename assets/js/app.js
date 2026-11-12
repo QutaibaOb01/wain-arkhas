@@ -220,6 +220,7 @@
     }
     if (pl === 'xbox') return `https://www.xbox.com/en-US/games/store/x/${encodeURIComponent(ref)}`;
     if (pl === 'steam') return `https://store.steampowered.com/app/${encodeURIComponent(ref)}/?cc=${r.steam || 'us'}`;
+    if (pl === 'apple' && ref === 'icloud') return 'https://support.apple.com/en-us/108047';
     if (pl === 'apple') return `https://apps.apple.com/${r.apple || 'us'}/app/id${encodeURIComponent(ref)}`;
     return '#/';
   }
@@ -235,7 +236,7 @@
   const MONO = {
     'ps-plus': 'P+', 'game-pass': 'GP', 'ea-play': 'EA', 'pubg-uc': 'UC', 'fortnite-vbucks': 'VB', 'roblox-robux': 'RBX', 'free-fire': 'FF',
     'codm-cp': 'CP', 'mlbb-diamonds': 'ML', 'genshin-crystals': 'GI', 'clash-of-clans': 'CC', 'brawl-stars': 'BS', 'tiktok-coins': 'TT',
-    'snapchat-plus': 'S+', 'youtube-premium': 'YT', netflix: 'NF', 'disney-plus': 'D+', 'discord-nitro': 'DN', 'telegram-premium': 'TG', chatgpt: 'AI'
+    'snapchat-plus': 'S+', 'icloud-plus': 'iC', 'youtube-premium': 'YT', netflix: 'NF', 'disney-plus': 'D+', 'discord-nitro': 'DN', 'telegram-premium': 'TG', chatgpt: 'AI'
   };
   function mono(s) {
     if (MONO[s.id]) return MONO[s.id];
