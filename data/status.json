@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-12T18:31:43.858Z",
+  "updated": "2026-11-12T18:36:56.118Z",
   "sources": {
     "rates": {
       "ok": true,
@@ -8,7 +8,7 @@
     },
     "steam": {
       "ok": true,
-      "names": 40,
+      "names": 0,
       "regions": {
         "US": 40,
         "TR": 40,

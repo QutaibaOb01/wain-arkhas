@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-12T18:31:43.858Z",
+  "updated": "2026-11-12T18:36:56.118Z",
   "products": {
     "steam-1245620": {
       "US": {
@@ -7,7 +7,7 @@
         "currency": "USD",
         "original": 59.99,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/1245620/"
       },
       "TR": {
@@ -15,7 +15,7 @@
         "currency": "USD",
         "original": 39.99,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/1245620/"
       },
       "AR": {
@@ -23,7 +23,7 @@
         "currency": "USD",
         "original": 47.99,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/1245620/"
       },
       "IN": {
@@ -31,7 +31,7 @@
         "currency": "INR",
         "original": 3599,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/1245620/"
       },
       "BR": {
@@ -39,7 +39,7 @@
         "currency": "BRL",
         "original": 274.5,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/1245620/"
       },
       "PL": {
@@ -47,7 +47,7 @@
         "currency": "PLN",
         "original": 249,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/1245620/"
       },
       "UA": {
@@ -55,7 +55,7 @@
         "currency": "UAH",
         "original": 1799,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/1245620/"
       },
       "SA": {
@@ -63,7 +63,7 @@
         "currency": "SAR",
         "original": 249,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/1245620/"
       },
       "AE": {
@@ -71,7 +71,7 @@
         "currency": "AED",
         "original": 249,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/1245620/"
       },
       "EG": {
@@ -79,7 +79,7 @@
         "currency": "USD",
         "original": 39.99,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/1245620/"
       },
       "VN": {
@@ -87,7 +87,7 @@
         "currency": "VND",
         "original": 990000,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/1245620/"
       }
     },
@@ -97,7 +97,7 @@
         "currency": "USD",
         "original": 39.99,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/2622380/"
       },
       "TR": {
@@ -105,7 +105,7 @@
         "currency": "USD",
         "original": 25.99,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/2622380/"
       },
       "AR": {
@@ -113,7 +113,7 @@
         "currency": "USD",
         "original": 31.99,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/2622380/"
       },
       "IN": {
@@ -121,7 +121,7 @@
         "currency": "INR",
         "original": 2499,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/2622380/"
       },
       "BR": {
@@ -129,7 +129,7 @@
         "currency": "BRL",
         "original": 197.9,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/2622380/"
       },
       "PL": {
@@ -137,7 +137,7 @@
         "currency": "PLN",
         "original": 169,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/2622380/"
       },
       "UA": {
@@ -145,7 +145,7 @@
         "currency": "UAH",
         "original": 1199,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/2622380/"
       },
       "SA": {
@@ -153,7 +153,7 @@
         "currency": "SAR",
         "original": 130.75,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/2622380/"
       },
       "AE": {
@@ -161,7 +161,7 @@
         "currency": "AED",
         "original": 127.75,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/2622380/"
       },
       "EG": {
@@ -169,7 +169,7 @@
         "currency": "USD",
         "original": 25.99,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/2622380/"
       },
       "VN": {
@@ -177,7 +177,7 @@
         "currency": "VND",
         "original": 690000,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/2622380/"
       }
     },
@@ -187,7 +187,7 @@
         "currency": "USD",
         "original": 59.99,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/1091500/"
       },
       "TR": {
@@ -195,7 +195,7 @@
         "currency": "USD",
         "original": 44.99,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/1091500/"
       },
       "AR": {
@@ -203,7 +203,7 @@
         "currency": "USD",
         "original": 44.99,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/1091500/"
       },
       "IN": {
@@ -211,7 +211,7 @@
         "currency": "INR",
         "original": 2999,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/1091500/"
       },
       "BR": {
@@ -219,7 +219,7 @@
         "currency": "BRL",
         "original": 199.9,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/1091500/"
       },
       "PL": {
@@ -227,7 +227,7 @@
         "currency": "PLN",
         "original": 199,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/1091500/"
       },
       "UA": {
@@ -235,7 +235,7 @@
         "currency": "UAH",
         "original": 1399,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/1091500/"
       },
       "SA": {
@@ -243,7 +243,7 @@
         "currency": "SAR",
         "original": 229,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/1091500/"
       },
       "AE": {
@@ -251,7 +251,7 @@
         "currency": "AED",
         "original": 229,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/1091500/"
       },
       "EG": {
@@ -259,7 +259,7 @@
         "currency": "USD",
         "original": 44.99,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/1091500/"
       },
       "VN": {
@@ -267,7 +267,7 @@
         "currency": "VND",
         "original": 990000,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/1091500/"
       }
     },
@@ -277,7 +277,7 @@
         "currency": "USD",
         "original": 59.99,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/1174180/"
       },
       "TR": {
@@ -285,7 +285,7 @@
         "currency": "USD",
         "original": 59.99,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/1174180/"
       },
       "AR": {
@@ -293,7 +293,7 @@
         "currency": "USD",
         "original": 59.99,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/1174180/"
       },
       "IN": {
@@ -301,7 +301,7 @@
         "currency": "INR",
         "original": 4999,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/1174180/"
       },
       "BR": {
@@ -309,7 +309,7 @@
         "currency": "BRL",
         "original": 299.9,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/1174180/"
       },
       "PL": {
@@ -317,7 +317,7 @@
         "currency": "PLN",
         "original": 249.9,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/1174180/"
       },
       "UA": {
@@ -325,7 +325,7 @@
         "currency": "UAH",
         "original": 2599,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/1174180/"
       },
       "SA": {
@@ -333,7 +333,7 @@
         "currency": "SAR",
         "original": 229,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/1174180/"
       },
       "AE": {
@@ -341,7 +341,7 @@
         "currency": "AED",
         "original": 229,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/1174180/"
       },
       "EG": {
@@ -349,7 +349,7 @@
         "currency": "USD",
         "original": 59.99,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/1174180/"
       }
     },
@@ -359,7 +359,7 @@
         "currency": "USD",
         "original": 29.99,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/3240220/"
       },
       "TR": {
@@ -367,7 +367,7 @@
         "currency": "USD",
         "original": 29.99,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/3240220/"
       },
       "AR": {
@@ -375,7 +375,7 @@
         "currency": "USD",
         "original": 29.99,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/3240220/"
       },
       "IN": {
@@ -383,7 +383,7 @@
         "currency": "INR",
         "original": 2499,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/3240220/"
       },
       "BR": {
@@ -391,7 +391,7 @@
         "currency": "BRL",
         "original": 149.9,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/3240220/"
       },
       "PL": {
@@ -399,7 +399,7 @@
         "currency": "PLN",
         "original": 129,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/3240220/"
       },
       "UA": {
@@ -407,7 +407,7 @@
         "currency": "UAH",
         "original": 1349,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/3240220/"
       },
       "SA": {
@@ -415,7 +415,7 @@
         "currency": "SAR",
         "original": 113,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/3240220/"
       },
       "AE": {
@@ -423,7 +423,7 @@
         "currency": "AED",
         "original": 113,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/3240220/"
       },
       "EG": {
@@ -431,7 +431,7 @@
         "currency": "USD",
         "original": 29.99,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/3240220/"
       },
       "VN": {
@@ -439,7 +439,7 @@
         "currency": "VND",
         "original": 683000,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/3240220/"
       }
     },
@@ -449,7 +449,7 @@
         "currency": "USD",
         "original": 59.99,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/1086940/"
       },
       "TR": {
@@ -457,7 +457,7 @@
         "currency": "USD",
         "original": 34.99,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/1086940/"
       },
       "AR": {
@@ -465,7 +465,7 @@
         "currency": "USD",
         "original": 34.99,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/1086940/"
       },
       "IN": {
@@ -473,7 +473,7 @@
         "currency": "INR",
         "original": 2999,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/1086940/"
       },
       "BR": {
@@ -481,7 +481,7 @@
         "currency": "BRL",
         "original": 199.99,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/1086940/"
       },
       "PL": {
@@ -489,7 +489,7 @@
         "currency": "PLN",
         "original": 249,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/1086940/"
       },
       "UA": {
@@ -497,7 +497,7 @@
         "currency": "UAH",
         "original": 899,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/1086940/"
       },
       "SA": {
@@ -505,7 +505,7 @@
         "currency": "SAR",
         "original": 229,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/1086940/"
       },
       "AE": {
@@ -513,7 +513,7 @@
         "currency": "AED",
         "original": 229,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/1086940/"
       },
       "EG": {
@@ -521,7 +521,7 @@
         "currency": "USD",
         "original": 34.99,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/1086940/"
       },
       "VN": {
@@ -529,7 +529,7 @@
         "currency": "VND",
         "original": 990000,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/1086940/"
       }
     },
@@ -539,7 +539,7 @@
         "currency": "USD",
         "original": 59.99,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/990080/"
       },
       "TR": {
@@ -547,7 +547,7 @@
         "currency": "USD",
         "original": 59.99,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/990080/"
       },
       "AR": {
@@ -555,7 +555,7 @@
         "currency": "USD",
         "original": 30,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/990080/"
       },
       "IN": {
@@ -563,7 +563,7 @@
         "currency": "INR",
         "original": 3999,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/990080/"
       },
       "BR": {
@@ -571,7 +571,7 @@
         "currency": "BRL",
         "original": 249.99,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/990080/"
       },
       "PL": {
@@ -579,7 +579,7 @@
         "currency": "PLN",
         "original": 269,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/990080/"
       },
       "UA": {
@@ -587,7 +587,7 @@
         "currency": "UAH",
         "original": 1599,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/990080/"
       },
       "SA": {
@@ -595,7 +595,7 @@
         "currency": "SAR",
         "original": 224,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/990080/"
       },
       "AE": {
@@ -603,7 +603,7 @@
         "currency": "AED",
         "original": 220,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/990080/"
       },
       "EG": {
@@ -611,7 +611,7 @@
         "currency": "USD",
         "original": 59.99,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/990080/"
       }
     },
@@ -621,7 +621,7 @@
         "currency": "USD",
         "original": 49.99,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/292030/"
       },
       "TR": {
@@ -629,7 +629,7 @@
         "currency": "USD",
         "original": 34.99,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/292030/"
       },
       "AR": {
@@ -637,7 +637,7 @@
         "currency": "USD",
         "original": 34.99,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/292030/"
       },
       "IN": {
@@ -645,7 +645,7 @@
         "currency": "INR",
         "original": 2899,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/292030/"
       },
       "BR": {
@@ -653,7 +653,7 @@
         "currency": "BRL",
         "original": 159.99,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/292030/"
       },
       "PL": {
@@ -661,7 +661,7 @@
         "currency": "PLN",
         "original": 149.99,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/292030/"
       },
       "UA": {
@@ -669,7 +669,7 @@
         "currency": "UAH",
         "original": 1349,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/292030/"
       },
       "SA": {
@@ -677,7 +677,7 @@
         "currency": "SAR",
         "original": 149,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/292030/"
       },
       "AE": {
@@ -685,7 +685,7 @@
         "currency": "AED",
         "original": 179.99,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/292030/"
       },
       "EG": {
@@ -693,7 +693,7 @@
         "currency": "USD",
         "original": 34.99,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/292030/"
       },
       "VN": {
@@ -701,7 +701,7 @@
         "currency": "VND",
         "original": 800000,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/292030/"
       }
     },
@@ -711,7 +711,7 @@
         "currency": "USD",
         "original": 19.99,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/1030300/"
       },
       "TR": {
@@ -719,7 +719,7 @@
         "currency": "USD",
         "original": 7.99,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/1030300/"
       },
       "AR": {
@@ -727,7 +727,7 @@
         "currency": "USD",
         "original": 6.99,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/1030300/"
       },
       "IN": {
@@ -735,7 +735,7 @@
         "currency": "INR",
         "original": 880,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/1030300/"
       },
       "BR": {
@@ -743,7 +743,7 @@
         "currency": "BRL",
         "original": 59.99,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/1030300/"
       },
       "PL": {
@@ -751,7 +751,7 @@
         "currency": "PLN",
         "original": 74.99,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/1030300/"
       },
       "UA": {
@@ -759,7 +759,7 @@
         "currency": "UAH",
         "original": 415,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/1030300/"
       },
       "SA": {
@@ -767,7 +767,7 @@
         "currency": "SAR",
         "original": 40.95,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/1030300/"
       },
       "AE": {
@@ -775,7 +775,7 @@
         "currency": "AED",
         "original": 53,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/1030300/"
       },
       "EG": {
@@ -783,7 +783,7 @@
         "currency": "USD",
         "original": 7.99,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/1030300/"
       },
       "VN": {
@@ -791,7 +791,7 @@
         "currency": "VND",
         "original": 220000,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/1030300/"
       }
     },
@@ -801,7 +801,7 @@
         "currency": "USD",
         "original": 59.99,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/2358720/"
       },
       "TR": {
@@ -809,7 +809,7 @@
         "currency": "USD",
         "original": 59.99,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/2358720/"
       },
       "AR": {
@@ -817,7 +817,7 @@
         "currency": "USD",
         "original": 59.99,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/2358720/"
       },
       "IN": {
@@ -825,7 +825,7 @@
         "currency": "INR",
         "original": 3599,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/2358720/"
       },
       "BR": {
@@ -833,7 +833,7 @@
         "currency": "BRL",
         "original": 229.99,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/2358720/"
       },
       "PL": {
@@ -841,7 +841,7 @@
         "currency": "PLN",
         "original": 249,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/2358720/"
       },
       "UA": {
@@ -849,7 +849,7 @@
         "currency": "UAH",
         "original": 1699,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/2358720/"
       },
       "SA": {
@@ -857,7 +857,7 @@
         "currency": "SAR",
         "original": 229,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/2358720/"
       },
       "AE": {
@@ -865,7 +865,7 @@
         "currency": "AED",
         "original": 229,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/2358720/"
       },
       "EG": {
@@ -873,7 +873,7 @@
         "currency": "USD",
         "original": 59.99,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/2358720/"
       }
     },
@@ -883,7 +883,7 @@
         "currency": "USD",
         "original": 49.99,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/1593500/"
       },
       "TR": {
@@ -891,7 +891,7 @@
         "currency": "USD",
         "original": 49.99,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/1593500/"
       },
       "AR": {
@@ -899,7 +899,7 @@
         "currency": "USD",
         "original": 49.99,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/1593500/"
       },
       "IN": {
@@ -907,7 +907,7 @@
         "currency": "INR",
         "original": 3299,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/1593500/"
       },
       "BR": {
@@ -915,7 +915,7 @@
         "currency": "BRL",
         "original": 199.9,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/1593500/"
       },
       "PL": {
@@ -923,7 +923,7 @@
         "currency": "PLN",
         "original": 219,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/1593500/"
       },
       "UA": {
@@ -931,7 +931,7 @@
         "currency": "UAH",
         "original": 1199,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/1593500/"
       },
       "SA": {
@@ -939,7 +939,7 @@
         "currency": "SAR",
         "original": 215,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/1593500/"
       },
       "AE": {
@@ -947,7 +947,7 @@
         "currency": "AED",
         "original": 199,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/1593500/"
       },
       "EG": {
@@ -955,7 +955,7 @@
         "currency": "USD",
         "original": 49.99,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/1593500/"
       }
     },
@@ -965,7 +965,7 @@
         "currency": "USD",
         "original": 59.99,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/2322010/"
       },
       "TR": {
@@ -973,7 +973,7 @@
         "currency": "USD",
         "original": 49.99,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/2322010/"
       },
       "AR": {
@@ -981,7 +981,7 @@
         "currency": "USD",
         "original": 49.99,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/2322010/"
       },
       "IN": {
@@ -989,7 +989,7 @@
         "currency": "INR",
         "original": 3999,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/2322010/"
       },
       "BR": {
@@ -997,7 +997,7 @@
         "currency": "BRL",
         "original": 249.9,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/2322010/"
       },
       "PL": {
@@ -1005,7 +1005,7 @@
         "currency": "PLN",
         "original": 259,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/2322010/"
       },
       "UA": {
@@ -1013,7 +1013,7 @@
         "currency": "UAH",
         "original": 1699,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/2322010/"
       },
       "SA": {
@@ -1021,7 +1021,7 @@
         "currency": "SAR",
         "original": 259,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/2322010/"
       },
       "AE": {
@@ -1029,7 +1029,7 @@
         "currency": "AED",
         "original": 239,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/2322010/"
       },
       "EG": {
@@ -1037,7 +1037,7 @@
         "currency": "USD",
         "original": 49.99,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/2322010/"
       }
     },
@@ -1047,7 +1047,7 @@
         "currency": "USD",
         "original": 59.99,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/1817070/"
       },
       "TR": {
@@ -1055,7 +1055,7 @@
         "currency": "USD",
         "original": 59.99,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/1817070/"
       },
       "AR": {
@@ -1063,7 +1063,7 @@
         "currency": "USD",
         "original": 59.99,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/1817070/"
       },
       "IN": {
@@ -1071,7 +1071,7 @@
         "currency": "INR",
         "original": 3999,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/1817070/"
       },
       "BR": {
@@ -1079,7 +1079,7 @@
         "currency": "BRL",
         "original": 249.9,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/1817070/"
       },
       "PL": {
@@ -1087,7 +1087,7 @@
         "currency": "PLN",
         "original": 259,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/1817070/"
       },
       "UA": {
@@ -1095,7 +1095,7 @@
         "currency": "UAH",
         "original": 1399,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/1817070/"
       },
       "SA": {
@@ -1103,7 +1103,7 @@
         "currency": "SAR",
         "original": 259,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/1817070/"
       },
       "AE": {
@@ -1111,7 +1111,7 @@
         "currency": "AED",
         "original": 239,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/1817070/"
       },
       "EG": {
@@ -1119,7 +1119,7 @@
         "currency": "USD",
         "original": 59.99,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/1817070/"
       }
     },
@@ -1129,7 +1129,7 @@
         "currency": "USD",
         "original": 59.99,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/2215430/"
       },
       "TR": {
@@ -1137,7 +1137,7 @@
         "currency": "USD",
         "original": 59.99,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/2215430/"
       },
       "AR": {
@@ -1145,7 +1145,7 @@
         "currency": "USD",
         "original": 49.99,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/2215430/"
       },
       "IN": {
@@ -1153,7 +1153,7 @@
         "currency": "INR",
         "original": 3999,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/2215430/"
       },
       "BR": {
@@ -1161,7 +1161,7 @@
         "currency": "BRL",
         "original": 249.9,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/2215430/"
       },
       "PL": {
@@ -1169,7 +1169,7 @@
         "currency": "PLN",
         "original": 259,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/2215430/"
       },
       "UA": {
@@ -1177,7 +1177,7 @@
         "currency": "UAH",
         "original": 1699,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/2215430/"
       },
       "SA": {
@@ -1185,7 +1185,7 @@
         "currency": "SAR",
         "original": 259,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/2215430/"
       },
       "AE": {
@@ -1193,7 +1193,7 @@
         "currency": "AED",
         "original": 239,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/2215430/"
       },
       "EG": {
@@ -1201,7 +1201,7 @@
         "currency": "USD",
         "original": 59.99,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/2215430/"
       }
     },
@@ -1211,7 +1211,7 @@
         "currency": "USD",
         "original": 39.99,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/2050650/"
       },
       "TR": {
@@ -1219,7 +1219,7 @@
         "currency": "USD",
         "original": 29.99,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/2050650/"
       },
       "AR": {
@@ -1227,7 +1227,7 @@
         "currency": "USD",
         "original": 29,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/2050650/"
       },
       "IN": {
@@ -1235,7 +1235,7 @@
         "currency": "INR",
         "original": 2497,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/2050650/"
       },
       "BR": {
@@ -1243,7 +1243,7 @@
         "currency": "BRL",
         "original": 169,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/2050650/"
       },
       "PL": {
@@ -1251,7 +1251,7 @@
         "currency": "PLN",
         "original": 169,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/2050650/"
       },
       "UA": {
@@ -1259,7 +1259,7 @@
         "currency": "UAH",
         "original": 1200,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/2050650/"
       },
       "SA": {
@@ -1267,7 +1267,7 @@
         "currency": "SAR",
         "original": 131.22,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/2050650/"
       },
       "AE": {
@@ -1275,7 +1275,7 @@
         "currency": "AED",
         "original": 139.92,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/2050650/"
       },
       "EG": {
@@ -1283,7 +1283,7 @@
         "currency": "USD",
         "original": 29.99,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/2050650/"
       },
       "VN": {
@@ -1291,7 +1291,7 @@
         "currency": "VND",
         "original": 850000,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/2050650/"
       }
     },
@@ -1301,7 +1301,7 @@
         "currency": "USD",
         "original": 39.99,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/2246340/"
       },
       "TR": {
@@ -1309,7 +1309,7 @@
         "currency": "USD",
         "original": 29.99,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/2246340/"
       },
       "AR": {
@@ -1317,7 +1317,7 @@
         "currency": "USD",
         "original": 29,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/2246340/"
       },
       "IN": {
@@ -1325,7 +1325,7 @@
         "currency": "INR",
         "original": 2499,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/2246340/"
       },
       "BR": {
@@ -1333,7 +1333,7 @@
         "currency": "BRL",
         "original": 169,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/2246340/"
       },
       "PL": {
@@ -1341,7 +1341,7 @@
         "currency": "PLN",
         "original": 169,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/2246340/"
       },
       "UA": {
@@ -1349,7 +1349,7 @@
         "currency": "UAH",
         "original": 1399,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/2246340/"
       },
       "SA": {
@@ -1357,7 +1357,7 @@
         "currency": "SAR",
         "original": 149,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/2246340/"
       },
       "AE": {
@@ -1365,7 +1365,7 @@
         "currency": "AED",
         "original": 149,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/2246340/"
       },
       "EG": {
@@ -1373,7 +1373,7 @@
         "currency": "USD",
         "original": 29.99,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/2246340/"
       },
       "VN": {
@@ -1381,7 +1381,7 @@
         "currency": "VND",
         "original": 850000,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/2246340/"
       }
     },
@@ -1391,7 +1391,7 @@
         "currency": "USD",
         "original": 49.99,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/1903340/"
       },
       "TR": {
@@ -1399,7 +1399,7 @@
         "currency": "USD",
         "original": 34.99,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/1903340/"
       },
       "AR": {
@@ -1407,7 +1407,7 @@
         "currency": "USD",
         "original": 34.99,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/1903340/"
       },
       "IN": {
@@ -1415,7 +1415,7 @@
         "currency": "INR",
         "original": 2999,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/1903340/"
       },
       "BR": {
@@ -1423,7 +1423,7 @@
         "currency": "BRL",
         "original": 199,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/1903340/"
       },
       "PL": {
@@ -1431,7 +1431,7 @@
         "currency": "PLN",
         "original": 179,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/1903340/"
       },
       "UA": {
@@ -1439,7 +1439,7 @@
         "currency": "UAH",
         "original": 1499,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/1903340/"
       },
       "SA": {
@@ -1447,7 +1447,7 @@
         "currency": "SAR",
         "original": 169,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/1903340/"
       },
       "AE": {
@@ -1455,7 +1455,7 @@
         "currency": "AED",
         "original": 199,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/1903340/"
       },
       "EG": {
@@ -1463,7 +1463,7 @@
         "currency": "USD",
         "original": 34.99,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/1903340/"
       },
       "VN": {
@@ -1471,7 +1471,7 @@
         "currency": "VND",
         "original": 770000,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/1903340/"
       }
     },
@@ -1481,7 +1481,7 @@
         "currency": "USD",
         "original": 59.99,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/1771300/"
       },
       "TR": {
@@ -1489,7 +1489,7 @@
         "currency": "USD",
         "original": 44.99,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/1771300/"
       },
       "AR": {
@@ -1497,7 +1497,7 @@
         "currency": "USD",
         "original": 44.99,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/1771300/"
       },
       "IN": {
@@ -1505,7 +1505,7 @@
         "currency": "INR",
         "original": 3360,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/1771300/"
       },
       "BR": {
@@ -1513,7 +1513,7 @@
         "currency": "BRL",
         "original": 299,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/1771300/"
       },
       "PL": {
@@ -1521,7 +1521,7 @@
         "currency": "PLN",
         "original": 253.52,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/1771300/"
       },
       "UA": {
@@ -1529,7 +1529,7 @@
         "currency": "UAH",
         "original": 1599,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/1771300/"
       },
       "SA": {
@@ -1537,7 +1537,7 @@
         "currency": "SAR",
         "original": 224,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/1771300/"
       },
       "AE": {
@@ -1545,7 +1545,7 @@
         "currency": "AED",
         "original": 204,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/1771300/"
       },
       "EG": {
@@ -1553,7 +1553,7 @@
         "currency": "USD",
         "original": 44.99,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/1771300/"
       },
       "VN": {
@@ -1561,7 +1561,7 @@
         "currency": "VND",
         "original": 999000,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/1771300/"
       }
     },
@@ -1571,7 +1571,7 @@
         "currency": "USD",
         "original": 49.99,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/2001120/"
       },
       "TR": {
@@ -1579,7 +1579,7 @@
         "currency": "USD",
         "original": 49.99,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/2001120/"
       },
       "AR": {
@@ -1587,7 +1587,7 @@
         "currency": "USD",
         "original": 49.99,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/2001120/"
       },
       "IN": {
@@ -1595,7 +1595,7 @@
         "currency": "INR",
         "original": 2499,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/2001120/"
       },
       "BR": {
@@ -1603,7 +1603,7 @@
         "currency": "BRL",
         "original": 199,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/2001120/"
       },
       "PL": {
@@ -1611,7 +1611,7 @@
         "currency": "PLN",
         "original": 219.9,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/2001120/"
       },
       "UA": {
@@ -1619,7 +1619,7 @@
         "currency": "UAH",
         "original": 1299,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/2001120/"
       },
       "SA": {
@@ -1627,7 +1627,7 @@
         "currency": "SAR",
         "original": 189,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/2001120/"
       },
       "AE": {
@@ -1635,7 +1635,7 @@
         "currency": "AED",
         "original": 189,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/2001120/"
       },
       "EG": {
@@ -1643,7 +1643,7 @@
         "currency": "USD",
         "original": 49.99,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/2001120/"
       },
       "VN": {
@@ -1651,7 +1651,7 @@
         "currency": "VND",
         "original": 899000,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/2001120/"
       }
     },
@@ -1661,7 +1661,7 @@
         "currency": "USD",
         "original": 39.99,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/1426210/"
       },
       "TR": {
@@ -1669,7 +1669,7 @@
         "currency": "USD",
         "original": 39.99,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/1426210/"
       },
       "AR": {
@@ -1677,7 +1677,7 @@
         "currency": "USD",
         "original": 39.99,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/1426210/"
       },
       "IN": {
@@ -1685,7 +1685,7 @@
         "currency": "INR",
         "original": 2199,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/1426210/"
       },
       "BR": {
@@ -1693,7 +1693,7 @@
         "currency": "BRL",
         "original": 199,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/1426210/"
       },
       "PL": {
@@ -1701,7 +1701,7 @@
         "currency": "PLN",
         "original": 179.9,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/1426210/"
       },
       "UA": {
@@ -1709,7 +1709,7 @@
         "currency": "UAH",
         "original": 999,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/1426210/"
       },
       "SA": {
@@ -1717,7 +1717,7 @@
         "currency": "SAR",
         "original": 149,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/1426210/"
       },
       "AE": {
@@ -1725,7 +1725,7 @@
         "currency": "AED",
         "original": 149,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/1426210/"
       },
       "EG": {
@@ -1733,7 +1733,7 @@
         "currency": "USD",
         "original": 39.99,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/1426210/"
       },
       "VN": {
@@ -1741,7 +1741,7 @@
         "currency": "VND",
         "original": 790000,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/1426210/"
       }
     },
@@ -1751,7 +1751,7 @@
         "currency": "USD",
         "original": 59.99,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/1551360/"
       },
       "TR": {
@@ -1759,7 +1759,7 @@
         "currency": "USD",
         "original": 32.78,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/1551360/"
       },
       "AR": {
@@ -1767,7 +1767,7 @@
         "currency": "USD",
         "original": 32.78,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/1551360/"
       },
       "IN": {
@@ -1775,7 +1775,7 @@
         "currency": "INR",
         "original": 3499,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/1551360/"
       },
       "BR": {
@@ -1783,7 +1783,7 @@
         "currency": "BRL",
         "original": 249,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/1551360/"
       },
       "PL": {
@@ -1791,7 +1791,7 @@
         "currency": "PLN",
         "original": 249.9,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/1551360/"
       },
       "UA": {
@@ -1799,7 +1799,7 @@
         "currency": "UAH",
         "original": 1199,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/1551360/"
       },
       "SA": {
@@ -1807,7 +1807,7 @@
         "currency": "SAR",
         "original": 249,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/1551360/"
       },
       "AE": {
@@ -1815,7 +1815,7 @@
         "currency": "AED",
         "original": 229,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/1551360/"
       },
       "EG": {
@@ -1823,7 +1823,7 @@
         "currency": "USD",
         "original": 32.78,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/1551360/"
       },
       "VN": {
@@ -1831,7 +1831,7 @@
         "currency": "VND",
         "original": 990000,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/1551360/"
       }
     },
@@ -1841,7 +1841,7 @@
         "currency": "USD",
         "original": 29.99,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/1623730/"
       },
       "TR": {
@@ -1849,7 +1849,7 @@
         "currency": "USD",
         "original": 14.99,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/1623730/"
       },
       "AR": {
@@ -1857,7 +1857,7 @@
         "currency": "USD",
         "original": 14.99,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/1623730/"
       },
       "IN": {
@@ -1865,7 +1865,7 @@
         "currency": "INR",
         "original": 1300,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/1623730/"
       },
       "BR": {
@@ -1873,7 +1873,7 @@
         "currency": "BRL",
         "original": 88.99,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/1623730/"
       },
       "PL": {
@@ -1881,7 +1881,7 @@
         "currency": "PLN",
         "original": 99.99,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/1623730/"
       },
       "UA": {
@@ -1889,7 +1889,7 @@
         "currency": "UAH",
         "original": 600,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/1623730/"
       },
       "SA": {
@@ -1897,7 +1897,7 @@
         "currency": "SAR",
         "original": 61.49,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/1623730/"
       },
       "AE": {
@@ -1905,7 +1905,7 @@
         "currency": "AED",
         "original": 79,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/1623730/"
       },
       "EG": {
@@ -1913,7 +1913,7 @@
         "currency": "USD",
         "original": 14.99,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/1623730/"
       },
       "VN": {
@@ -1921,7 +1921,7 @@
         "currency": "VND",
         "original": 385000,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/1623730/"
       }
     },
@@ -1931,7 +1931,7 @@
         "currency": "USD",
         "original": 14.99,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/413150/"
       },
       "TR": {
@@ -1939,7 +1939,7 @@
         "currency": "USD",
         "original": 5.99,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/413150/"
       },
       "AR": {
@@ -1947,7 +1947,7 @@
         "currency": "USD",
         "original": 4.99,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/413150/"
       },
       "IN": {
@@ -1955,7 +1955,7 @@
         "currency": "INR",
         "original": 479,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/413150/"
       },
       "BR": {
@@ -1963,7 +1963,7 @@
         "currency": "BRL",
         "original": 24.99,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/413150/"
       },
       "PL": {
@@ -1971,7 +1971,7 @@
         "currency": "PLN",
         "original": 53.99,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/413150/"
       },
       "UA": {
@@ -1979,7 +1979,7 @@
         "currency": "UAH",
         "original": 229,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/413150/"
       },
       "SA": {
@@ -1987,7 +1987,7 @@
         "currency": "SAR",
         "original": 47,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/413150/"
       },
       "AE": {
@@ -1995,7 +1995,7 @@
         "currency": "AED",
         "original": 46,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/413150/"
       },
       "EG": {
@@ -2003,7 +2003,7 @@
         "currency": "USD",
         "original": 5.99,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/413150/"
       },
       "VN": {
@@ -2011,7 +2011,7 @@
         "currency": "VND",
         "original": 165000,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/413150/"
       }
     },
@@ -2021,7 +2021,7 @@
         "currency": "USD",
         "original": 9.99,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/105600/"
       },
       "TR": {
@@ -2029,7 +2029,7 @@
         "currency": "USD",
         "original": 5.79,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/105600/"
       },
       "AR": {
@@ -2037,7 +2037,7 @@
         "currency": "USD",
         "original": 5.79,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/105600/"
       },
       "IN": {
@@ -2045,7 +2045,7 @@
         "currency": "INR",
         "original": 480,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/105600/"
       },
       "BR": {
@@ -2053,7 +2053,7 @@
         "currency": "BRL",
         "original": 32.99,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/105600/"
       },
       "PL": {
@@ -2061,7 +2061,7 @@
         "currency": "PLN",
         "original": 45.99,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/105600/"
       },
       "UA": {
@@ -2069,7 +2069,7 @@
         "currency": "UAH",
         "original": 225,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/105600/"
       },
       "SA": {
@@ -2077,7 +2077,7 @@
         "currency": "SAR",
         "original": 22.49,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/105600/"
       },
       "AE": {
@@ -2085,7 +2085,7 @@
         "currency": "AED",
         "original": 29,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/105600/"
       },
       "EG": {
@@ -2093,7 +2093,7 @@
         "currency": "USD",
         "original": 5.79,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/105600/"
       },
       "VN": {
@@ -2101,7 +2101,7 @@
         "currency": "VND",
         "original": 142000,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/105600/"
       }
     },
@@ -2111,7 +2111,7 @@
         "currency": "USD",
         "original": 29.99,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/1145350/"
       },
       "TR": {
@@ -2119,7 +2119,7 @@
         "currency": "USD",
         "original": 14.99,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/1145350/"
       },
       "AR": {
@@ -2127,7 +2127,7 @@
         "currency": "USD",
         "original": 14.99,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/1145350/"
       },
       "IN": {
@@ -2135,7 +2135,7 @@
         "currency": "INR",
         "original": 1300,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/1145350/"
       },
       "BR": {
@@ -2143,7 +2143,7 @@
         "currency": "BRL",
         "original": 88.99,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/1145350/"
       },
       "PL": {
@@ -2151,7 +2151,7 @@
         "currency": "PLN",
         "original": 117,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/1145350/"
       },
       "UA": {
@@ -2159,7 +2159,7 @@
         "currency": "UAH",
         "original": 460,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/1145350/"
       },
       "SA": {
@@ -2167,7 +2167,7 @@
         "currency": "SAR",
         "original": 61.49,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/1145350/"
       },
       "AE": {
@@ -2175,7 +2175,7 @@
         "currency": "AED",
         "original": 79,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/1145350/"
       },
       "EG": {
@@ -2183,7 +2183,7 @@
         "currency": "USD",
         "original": 14.99,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/1145350/"
       },
       "VN": {
@@ -2191,7 +2191,7 @@
         "currency": "VND",
         "original": 385000,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/1145350/"
       }
     },
@@ -2201,7 +2201,7 @@
         "currency": "USD",
         "original": 59.99,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/814380/"
       },
       "TR": {
@@ -2209,7 +2209,7 @@
         "currency": "USD",
         "original": 59.99,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/814380/"
       },
       "AR": {
@@ -2217,7 +2217,7 @@
         "currency": "USD",
         "original": 59.99,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/814380/"
       },
       "IN": {
@@ -2225,7 +2225,7 @@
         "currency": "INR",
         "original": 4997,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/814380/"
       },
       "BR": {
@@ -2233,7 +2233,7 @@
         "currency": "BRL",
         "original": 274,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/814380/"
       },
       "PL": {
@@ -2241,7 +2241,7 @@
         "currency": "PLN",
         "original": 254,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/814380/"
       },
       "UA": {
@@ -2249,7 +2249,7 @@
         "currency": "UAH",
         "original": 2035,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/814380/"
       },
       "SA": {
@@ -2257,7 +2257,7 @@
         "currency": "SAR",
         "original": 229,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/814380/"
       },
       "AE": {
@@ -2265,7 +2265,7 @@
         "currency": "AED",
         "original": 229,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/814380/"
       },
       "EG": {
@@ -2273,7 +2273,7 @@
         "currency": "USD",
         "original": 59.99,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/814380/"
       }
     },
@@ -2283,7 +2283,7 @@
         "currency": "USD",
         "original": 49.99,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/3017860/"
       },
       "TR": {
@@ -2291,7 +2291,7 @@
         "currency": "USD",
         "original": 34.99,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/3017860/"
       },
       "AR": {
@@ -2299,7 +2299,7 @@
         "currency": "USD",
         "original": 34.99,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/3017860/"
       },
       "IN": {
@@ -2307,7 +2307,7 @@
         "currency": "INR",
         "original": 3499,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/3017860/"
       },
       "BR": {
@@ -2315,7 +2315,7 @@
         "currency": "BRL",
         "original": 249.9,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/3017860/"
       },
       "PL": {
@@ -2323,7 +2323,7 @@
         "currency": "PLN",
         "original": 219,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/3017860/"
       },
       "UA": {
@@ -2331,7 +2331,7 @@
         "currency": "UAH",
         "original": 1499,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/3017860/"
       },
       "SA": {
@@ -2339,7 +2339,7 @@
         "currency": "SAR",
         "original": 199,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/3017860/"
       },
       "AE": {
@@ -2347,7 +2347,7 @@
         "currency": "AED",
         "original": 199,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/3017860/"
       },
       "EG": {
@@ -2355,7 +2355,7 @@
         "currency": "USD",
         "original": 34.99,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/3017860/"
       },
       "VN": {
@@ -2363,7 +2363,7 @@
         "currency": "VND",
         "original": 999000,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/3017860/"
       }
     },
@@ -2373,7 +2373,7 @@
         "currency": "USD",
         "original": 69.99,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/2677660/"
       },
       "TR": {
@@ -2381,7 +2381,7 @@
         "currency": "USD",
         "original": 42.99,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/2677660/"
       },
       "AR": {
@@ -2389,7 +2389,7 @@
         "currency": "USD",
         "original": 42.99,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/2677660/"
       },
       "IN": {
@@ -2397,7 +2397,7 @@
         "currency": "INR",
         "original": 4999,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/2677660/"
       },
       "BR": {
@@ -2405,7 +2405,7 @@
         "currency": "BRL",
         "original": 349,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/2677660/"
       },
       "PL": {
@@ -2413,7 +2413,7 @@
         "currency": "PLN",
         "original": 299,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/2677660/"
       },
       "UA": {
@@ -2421,7 +2421,7 @@
         "currency": "UAH",
         "original": 2449,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/2677660/"
       },
       "SA": {
@@ -2429,7 +2429,7 @@
         "currency": "SAR",
         "original": 299,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/2677660/"
       },
       "AE": {
@@ -2437,7 +2437,7 @@
         "currency": "AED",
         "original": 269,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/2677660/"
       },
       "EG": {
@@ -2445,7 +2445,7 @@
         "currency": "USD",
         "original": 42.99,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/2677660/"
       }
     },
@@ -2455,7 +2455,7 @@
         "currency": "USD",
         "original": 59.99,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/1888930/"
       },
       "TR": {
@@ -2463,7 +2463,7 @@
         "currency": "USD",
         "original": 59.99,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/1888930/"
       },
       "AR": {
@@ -2471,7 +2471,7 @@
         "currency": "USD",
         "original": 59.99,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/1888930/"
       },
       "IN": {
@@ -2479,7 +2479,7 @@
         "currency": "INR",
         "original": 3999,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/1888930/"
       },
       "BR": {
@@ -2487,7 +2487,7 @@
         "currency": "BRL",
         "original": 249.9,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/1888930/"
       },
       "PL": {
@@ -2495,7 +2495,7 @@
         "currency": "PLN",
         "original": 259,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/1888930/"
       },
       "UA": {
@@ -2503,7 +2503,7 @@
         "currency": "UAH",
         "original": 1699,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/1888930/"
       },
       "SA": {
@@ -2511,7 +2511,7 @@
         "currency": "SAR",
         "original": 259,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/1888930/"
       },
       "AE": {
@@ -2519,7 +2519,7 @@
         "currency": "AED",
         "original": 239,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/1888930/"
       },
       "EG": {
@@ -2527,7 +2527,7 @@
         "currency": "USD",
         "original": 59.99,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/1888930/"
       }
     },
@@ -2537,7 +2537,7 @@
         "currency": "USD",
         "original": 39.99,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/1778820/"
       },
       "TR": {
@@ -2545,7 +2545,7 @@
         "currency": "USD",
         "original": 26.39,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/1778820/"
       },
       "AR": {
@@ -2553,7 +2553,7 @@
         "currency": "USD",
         "original": 31.99,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/1778820/"
       },
       "IN": {
@@ -2561,7 +2561,7 @@
         "currency": "INR",
         "original": 2499,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/1778820/"
       },
       "BR": {
@@ -2569,7 +2569,7 @@
         "currency": "BRL",
         "original": 176.9,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/1778820/"
       },
       "PL": {
@@ -2577,7 +2577,7 @@
         "currency": "PLN",
         "original": 169,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/1778820/"
       },
       "UA": {
@@ -2585,7 +2585,7 @@
         "currency": "UAH",
         "original": 1199,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/1778820/"
       },
       "SA": {
@@ -2593,7 +2593,7 @@
         "currency": "SAR",
         "original": 131.25,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/1778820/"
       },
       "AE": {
@@ -2601,7 +2601,7 @@
         "currency": "AED",
         "original": 128.4,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/1778820/"
       },
       "EG": {
@@ -2609,7 +2609,7 @@
         "currency": "USD",
         "original": 26.39,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/1778820/"
       },
       "VN": {
@@ -2617,7 +2617,7 @@
         "currency": "VND",
         "original": 790000,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/1778820/"
       }
     },
@@ -2627,7 +2627,7 @@
         "currency": "USD",
         "original": 39.99,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/1364780/"
       },
       "TR": {
@@ -2635,7 +2635,7 @@
         "currency": "USD",
         "original": 29.99,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/1364780/"
       },
       "AR": {
@@ -2643,7 +2643,7 @@
         "currency": "USD",
         "original": 29.99,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/1364780/"
       },
       "IN": {
@@ -2651,7 +2651,7 @@
         "currency": "INR",
         "original": 2499,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/1364780/"
       },
       "BR": {
@@ -2659,7 +2659,7 @@
         "currency": "BRL",
         "original": 179,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/1364780/"
       },
       "PL": {
@@ -2667,7 +2667,7 @@
         "currency": "PLN",
         "original": 169,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/1364780/"
       },
       "UA": {
@@ -2675,7 +2675,7 @@
         "currency": "UAH",
         "original": 1199,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/1364780/"
       },
       "SA": {
@@ -2683,7 +2683,7 @@
         "currency": "SAR",
         "original": 130,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/1364780/"
       },
       "AE": {
@@ -2691,7 +2691,7 @@
         "currency": "AED",
         "original": 128,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/1364780/"
       },
       "EG": {
@@ -2699,7 +2699,7 @@
         "currency": "USD",
         "original": 29.99,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/1364780/"
       },
       "VN": {
@@ -2707,7 +2707,7 @@
         "currency": "VND",
         "original": 794000,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/1364780/"
       }
     },
@@ -2717,7 +2717,7 @@
         "currency": "USD",
         "original": 49.99,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/1971870/"
       },
       "TR": {
@@ -2725,7 +2725,7 @@
         "currency": "USD",
         "original": 49.99,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/1971870/"
       },
       "AR": {
@@ -2733,7 +2733,7 @@
         "currency": "USD",
         "original": 39.99,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/1971870/"
       },
       "IN": {
@@ -2741,7 +2741,7 @@
         "currency": "INR",
         "original": 2799,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/1971870/"
       },
       "BR": {
@@ -2749,7 +2749,7 @@
         "currency": "BRL",
         "original": 199.99,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/1971870/"
       },
       "PL": {
@@ -2757,7 +2757,7 @@
         "currency": "PLN",
         "original": 210,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/1971870/"
       },
       "UA": {
@@ -2765,7 +2765,7 @@
         "currency": "UAH",
         "original": 1299,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/1971870/"
       },
       "SA": {
@@ -2773,7 +2773,7 @@
         "currency": "SAR",
         "original": 190,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/1971870/"
       },
       "AE": {
@@ -2781,7 +2781,7 @@
         "currency": "AED",
         "original": 183.5,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/1971870/"
       },
       "EG": {
@@ -2789,7 +2789,7 @@
         "currency": "USD",
         "original": 49.99,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/1971870/"
       }
     },
@@ -2799,7 +2799,7 @@
         "currency": "USD",
         "original": 19.99,
         "discount": 75,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/227300/"
       },
       "TR": {
@@ -2807,7 +2807,7 @@
         "currency": "USD",
         "original": 10.59,
         "discount": 75,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/227300/"
       },
       "AR": {
@@ -2815,7 +2815,7 @@
         "currency": "USD",
         "original": 10.59,
         "discount": 75,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/227300/"
       },
       "IN": {
@@ -2823,7 +2823,7 @@
         "currency": "INR",
         "original": 970,
         "discount": 75,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/227300/"
       },
       "BR": {
@@ -2831,7 +2831,7 @@
         "currency": "BRL",
         "original": 66.99,
         "discount": 75,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/227300/"
       },
       "PL": {
@@ -2839,7 +2839,7 @@
         "currency": "PLN",
         "original": 79.99,
         "discount": 75,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/227300/"
       },
       "UA": {
@@ -2847,7 +2847,7 @@
         "currency": "UAH",
         "original": 400,
         "discount": 75,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/227300/"
       },
       "SA": {
@@ -2855,7 +2855,7 @@
         "currency": "SAR",
         "original": 64.99,
         "discount": 75,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/227300/"
       },
       "AE": {
@@ -2863,7 +2863,7 @@
         "currency": "AED",
         "original": 63.99,
         "discount": 75,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/227300/"
       },
       "EG": {
@@ -2871,7 +2871,7 @@
         "currency": "USD",
         "original": 10.59,
         "discount": 75,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/227300/"
       },
       "VN": {
@@ -2879,7 +2879,7 @@
         "currency": "VND",
         "original": 297000,
         "discount": 75,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/227300/"
       }
     },
@@ -2889,7 +2889,7 @@
         "currency": "USD",
         "original": 39.99,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/252490/"
       },
       "TR": {
@@ -2897,7 +2897,7 @@
         "currency": "USD",
         "original": 18.99,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/252490/"
       },
       "AR": {
@@ -2905,7 +2905,7 @@
         "currency": "USD",
         "original": 18.99,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/252490/"
       },
       "IN": {
@@ -2913,7 +2913,7 @@
         "currency": "INR",
         "original": 1889,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/252490/"
       },
       "BR": {
@@ -2921,7 +2921,7 @@
         "currency": "BRL",
         "original": 119.99,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/252490/"
       },
       "PL": {
@@ -2929,7 +2929,7 @@
         "currency": "PLN",
         "original": 125.99,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/252490/"
       },
       "UA": {
@@ -2937,7 +2937,7 @@
         "currency": "UAH",
         "original": 890,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/252490/"
       },
       "SA": {
@@ -2945,7 +2945,7 @@
         "currency": "SAR",
         "original": 97.99,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/252490/"
       },
       "AE": {
@@ -2953,7 +2953,7 @@
         "currency": "AED",
         "original": 117.99,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/252490/"
       },
       "EG": {
@@ -2961,7 +2961,7 @@
         "currency": "USD",
         "original": 18.99,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/252490/"
       },
       "VN": {
@@ -2969,7 +2969,7 @@
         "currency": "VND",
         "original": 460500,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/252490/"
       }
     },
@@ -2979,7 +2979,7 @@
         "currency": "USD",
         "original": 29.99,
         "discount": 10,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/892970/"
       },
       "TR": {
@@ -2987,7 +2987,7 @@
         "currency": "USD",
         "original": 14.99,
         "discount": 10,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/892970/"
       },
       "AR": {
@@ -2995,7 +2995,7 @@
         "currency": "USD",
         "original": 14.99,
         "discount": 10,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/892970/"
       },
       "IN": {
@@ -3003,7 +3003,7 @@
         "currency": "INR",
         "original": 1300,
         "discount": 10,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/892970/"
       },
       "BR": {
@@ -3011,7 +3011,7 @@
         "currency": "BRL",
         "original": 89.99,
         "discount": 10,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/892970/"
       },
       "PL": {
@@ -3019,7 +3019,7 @@
         "currency": "PLN",
         "original": 99.99,
         "discount": 10,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/892970/"
       },
       "UA": {
@@ -3027,7 +3027,7 @@
         "currency": "UAH",
         "original": 600,
         "discount": 10,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/892970/"
       },
       "SA": {
@@ -3035,7 +3035,7 @@
         "currency": "SAR",
         "original": 74,
         "discount": 10,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/892970/"
       },
       "AE": {
@@ -3043,7 +3043,7 @@
         "currency": "AED",
         "original": 84.5,
         "discount": 10,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/892970/"
       },
       "EG": {
@@ -3051,7 +3051,7 @@
         "currency": "USD",
         "original": 14.99,
         "discount": 10,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/892970/"
       },
       "VN": {
@@ -3059,7 +3059,7 @@
         "currency": "VND",
         "original": 385000,
         "discount": 10,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/892970/"
       }
     },
@@ -3069,7 +3069,7 @@
         "currency": "USD",
         "original": 69.99,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/2807960/"
       },
       "TR": {
@@ -3077,7 +3077,7 @@
         "currency": "USD",
         "original": 69.99,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/2807960/"
       },
       "AR": {
@@ -3085,7 +3085,7 @@
         "currency": "USD",
         "original": 69.99,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/2807960/"
       },
       "IN": {
@@ -3093,7 +3093,7 @@
         "currency": "INR",
         "original": 3999,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/2807960/"
       },
       "BR": {
@@ -3101,7 +3101,7 @@
         "currency": "BRL",
         "original": 299,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/2807960/"
       },
       "PL": {
@@ -3109,7 +3109,7 @@
         "currency": "PLN",
         "original": 299.9,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/2807960/"
       },
       "UA": {
@@ -3117,7 +3117,7 @@
         "currency": "UAH",
         "original": 1699,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/2807960/"
       },
       "SA": {
@@ -3125,7 +3125,7 @@
         "currency": "SAR",
         "original": 269,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/2807960/"
       },
       "AE": {
@@ -3133,7 +3133,7 @@
         "currency": "AED",
         "original": 269,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/2807960/"
       },
       "EG": {
@@ -3141,7 +3141,7 @@
         "currency": "USD",
         "original": 69.99,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/2807960/"
       }
     },
@@ -3151,7 +3151,7 @@
         "currency": "USD",
         "original": 69.99,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/3159330/"
       },
       "TR": {
@@ -3159,7 +3159,7 @@
         "currency": "USD",
         "original": 55.99,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/3159330/"
       },
       "AR": {
@@ -3167,7 +3167,7 @@
         "currency": "USD",
         "original": 55.99,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/3159330/"
       },
       "IN": {
@@ -3175,7 +3175,7 @@
         "currency": "INR",
         "original": 4899,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/3159330/"
       },
       "BR": {
@@ -3183,7 +3183,7 @@
         "currency": "BRL",
         "original": 349.99,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/3159330/"
       },
       "PL": {
@@ -3191,7 +3191,7 @@
         "currency": "PLN",
         "original": 289.9,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/3159330/"
       },
       "UA": {
@@ -3199,7 +3199,7 @@
         "currency": "UAH",
         "original": 1999,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/3159330/"
       },
       "SA": {
@@ -3207,7 +3207,7 @@
         "currency": "SAR",
         "original": 269,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/3159330/"
       },
       "AE": {
@@ -3215,7 +3215,7 @@
         "currency": "AED",
         "original": 269,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/3159330/"
       },
       "EG": {
@@ -3223,7 +3223,7 @@
         "currency": "USD",
         "original": 55.99,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/3159330/"
       }
     },
@@ -3233,7 +3233,7 @@
         "currency": "USD",
         "original": 9.99,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/1966720/"
       },
       "TR": {
@@ -3241,7 +3241,7 @@
         "currency": "USD",
         "original": 5.79,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/1966720/"
       },
       "AR": {
@@ -3249,7 +3249,7 @@
         "currency": "USD",
         "original": 5.79,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/1966720/"
       },
       "IN": {
@@ -3257,7 +3257,7 @@
         "currency": "INR",
         "original": 480,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/1966720/"
       },
       "BR": {
@@ -3265,7 +3265,7 @@
         "currency": "BRL",
         "original": 32.99,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/1966720/"
       },
       "PL": {
@@ -3273,7 +3273,7 @@
         "currency": "PLN",
         "original": 45.99,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/1966720/"
       },
       "UA": {
@@ -3281,7 +3281,7 @@
         "currency": "UAH",
         "original": 225,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/1966720/"
       },
       "SA": {
@@ -3289,7 +3289,7 @@
         "currency": "SAR",
         "original": 22.49,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/1966720/"
       },
       "AE": {
@@ -3297,7 +3297,7 @@
         "currency": "AED",
         "original": 29,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/1966720/"
       },
       "EG": {
@@ -3305,7 +3305,7 @@
         "currency": "USD",
         "original": 5.79,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/1966720/"
       },
       "VN": {
@@ -3313,7 +3313,7 @@
         "currency": "VND",
         "original": 142000,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/1966720/"
       }
     },
@@ -3323,7 +3323,7 @@
         "currency": "USD",
         "original": 19.99,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/739630/"
       },
       "TR": {
@@ -3331,7 +3331,7 @@
         "currency": "USD",
         "original": 9.49,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/739630/"
       },
       "AR": {
@@ -3339,7 +3339,7 @@
         "currency": "USD",
         "original": 9.49,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/739630/"
       },
       "IN": {
@@ -3347,7 +3347,7 @@
         "currency": "INR",
         "original": 899,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/739630/"
       },
       "BR": {
@@ -3355,7 +3355,7 @@
         "currency": "BRL",
         "original": 59.99,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/739630/"
       },
       "PL": {
@@ -3363,7 +3363,7 @@
         "currency": "PLN",
         "original": 59.99,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/739630/"
       },
       "UA": {
@@ -3371,7 +3371,7 @@
         "currency": "UAH",
         "original": 389,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/739630/"
       },
       "SA": {
@@ -3379,7 +3379,7 @@
         "currency": "SAR",
         "original": 46.99,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/739630/"
       },
       "AE": {
@@ -3387,7 +3387,7 @@
         "currency": "AED",
         "original": 54,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/739630/"
       },
       "EG": {
@@ -3395,7 +3395,7 @@
         "currency": "USD",
         "original": 9.49,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/739630/"
       },
       "VN": {
@@ -3403,7 +3403,7 @@
         "currency": "VND",
         "original": 250000,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/739630/"
       }
     },
@@ -3413,7 +3413,7 @@
         "currency": "USD",
         "original": 29.99,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/582010/"
       },
       "TR": {
@@ -3421,7 +3421,7 @@
         "currency": "USD",
         "original": 22.49,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/582010/"
       },
       "AR": {
@@ -3429,7 +3429,7 @@
         "currency": "USD",
         "original": 23,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/582010/"
       },
       "IN": {
@@ -3437,7 +3437,7 @@
         "currency": "INR",
         "original": 1997,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/582010/"
       },
       "BR": {
@@ -3445,7 +3445,7 @@
         "currency": "BRL",
         "original": 129,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/582010/"
       },
       "PL": {
@@ -3453,7 +3453,7 @@
         "currency": "PLN",
         "original": 129.01,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/582010/"
       },
       "UA": {
@@ -3461,7 +3461,7 @@
         "currency": "UAH",
         "original": 949,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/582010/"
       },
       "SA": {
@@ -3469,7 +3469,7 @@
         "currency": "SAR",
         "original": 101.22,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/582010/"
       },
       "AE": {
@@ -3477,7 +3477,7 @@
         "currency": "AED",
         "original": 107.94,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/582010/"
       },
       "EG": {
@@ -3485,7 +3485,7 @@
         "currency": "USD",
         "original": 22.49,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/582010/"
       },
       "VN": {
@@ -3493,7 +3493,7 @@
         "currency": "VND",
         "original": 620000,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://store.steampowered.com/app/582010/"
       }
     },
@@ -3503,7 +3503,7 @@
         "currency": "USD",
         "original": 22.99,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://www.microsoft.com/store/productId/CFQ7TTC0KHS0",
         "sku": "Xbox Game Pass Ultimate 1 Month"
       },
@@ -3512,7 +3512,7 @@
         "currency": "TRY",
         "original": 529,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://www.microsoft.com/store/productId/CFQ7TTC0KHS0",
         "sku": "Xbox Game Pass Ultimate 1 Month"
       },
@@ -3521,7 +3521,7 @@
         "currency": "ARS",
         "original": 18999,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://www.microsoft.com/store/productId/CFQ7TTC0KHS0",
         "sku": "Xbox Game Pass Ultimate 1 Month"
       },
@@ -3530,7 +3530,7 @@
         "currency": "INR",
         "original": 1089,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://www.microsoft.com/store/productId/CFQ7TTC0KHS0",
         "sku": "Xbox Game Pass Ultimate 1 Month"
       },
@@ -3539,7 +3539,7 @@
         "currency": "BRL",
         "original": 76.9,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://www.microsoft.com/store/productId/CFQ7TTC0KHS0",
         "sku": "Xbox Game Pass Ultimate 1 Month"
       },
@@ -3548,7 +3548,7 @@
         "currency": "PLN",
         "original": 84.99,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://www.microsoft.com/store/productId/CFQ7TTC0KHS0",
         "sku": "Xbox Game Pass Ultimate 1 Month"
       },
@@ -3557,7 +3557,7 @@
         "currency": "SAR",
         "original": 60.99,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://www.microsoft.com/store/productId/CFQ7TTC0KHS0",
         "sku": "Xbox Game Pass Ultimate 1 Month"
       },
@@ -3566,7 +3566,7 @@
         "currency": "USD",
         "original": 15.99,
         "discount": 0,
-        "checked": "2026-11-12T18:31:43.858Z",
+        "checked": "2026-11-12T18:36:56.118Z",
         "source": "https://www.microsoft.com/store/productId/CFQ7TTC0KHS0",
         "sku": "Xbox Game Pass Ultimate 1 Month"
       }
