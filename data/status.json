@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-12T19:28:56.274Z",
+  "updated": "2026-11-12T19:33:35.679Z",
   "sources": {
     "rates": {
       "ok": true,
@@ -139,10 +139,10 @@
         "free-fire": 79,
         "codm-cp": 100,
         "mlbb-diamonds": 120,
-        "genshin-crystals": 114,
+        "genshin-crystals": 120,
         "clash-of-clans": 107,
         "brawl-stars": 81,
-        "tiktok-coins": 154,
+        "tiktok-coins": 159,
         "snapchat-plus": 36,
         "youtube-premium": 65,
         "netflix": 61,
@@ -156,7 +156,7 @@
   },
   "summary": {
     "services": 266,
-    "prices": 6980,
+    "prices": 6986,
     "byType": {
       "sub": 3,
       "currency": 10,
