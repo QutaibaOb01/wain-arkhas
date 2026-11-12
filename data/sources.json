@@ -1,0 +1,332 @@
+{
+  "_note": "إعدادات المصادر. الألعاب (بلايستيشن وإكس بوكس وستيم) بتنضاف لحالها من قوائم الأكثر مبيعاً. هون بنحدد الاشتراكات والشحن والتطبيقات، وألعاب ستيم اللي بدنا ياها دايماً.",
+  "platforms": {
+    "psn": { "name": "PlayStation", "short": "PS", "store": "PlayStation Store", "card": "بطاقة PlayStation Store", "cardEn": "PlayStation Store gift card" },
+    "xbox": { "name": "Xbox", "short": "XB", "store": "Microsoft Store", "card": "بطاقة Xbox", "cardEn": "Xbox gift card" },
+    "steam": { "name": "Steam", "short": "ST", "store": "Steam", "card": "بطاقة Steam Wallet", "cardEn": "Steam Wallet gift card" },
+    "apple": { "name": "App Store", "short": "iOS", "store": "App Store", "card": "بطاقة Apple Gift Card", "cardEn": "Apple gift card" }
+  },
+  "types": {
+    "game": { "name": "ألعاب", "en": "GAMES", "desc": "ألعاب بلايستيشن وإكس بوكس وستيم، الأكثر مبيعاً بتتحدّث كل يوم" },
+    "sub": { "name": "اشتراكات", "en": "SUBSCRIPTIONS", "desc": "PS Plus وGame Pass وEA Play" },
+    "currency": { "name": "شحن الألعاب", "en": "TOP-UPS", "desc": "شدات ببجي، V-Bucks، روبوكس، جواهر وأكثر" },
+    "app": { "name": "تطبيقات", "en": "APPS", "desc": "سناب بلس، يوتيوب بريميوم، نتفليكس، ديسكورد وغيرها عن طريق آبل" }
+  },
+  "aliases": {
+    "grand theft auto": "جاتا جي تي اي قراند gta",
+    "call of duty": "كول اوف ديوتي كود cod",
+    "ea sports fc": "فيفا fifa اف سي",
+    "minecraft": "ماين كرافت ماينكرافت",
+    "fortnite": "فورتنايت فورت نايت فيبوكس",
+    "roblox": "روبلوكس ربلوكس ربليت روبكس",
+    "pubg": "ببجي شدات",
+    "free fire": "فري فاير",
+    "elden ring": "الدن رينج",
+    "red dead": "ريد ديد",
+    "spider man": "سبايدر مان",
+    "god of war": "غاد اوف وور",
+    "assassin": "اساسنز كريد",
+    "resident evil": "ريزدنت ايفل",
+    "forza": "فورزا",
+    "nba 2k": "ان بي ايه",
+    "madden": "مادن",
+    "tekken": "تيكن",
+    "mortal kombat": "مورتال كومبات",
+    "street fighter": "ستريت فايتر",
+    "cyberpunk": "سايبربانك",
+    "battlefield": "باتلفيلد",
+    "hogwarts": "هوجورتس هاري بوتر",
+    "last of us": "ذا لاست اوف اس",
+    "ghost of": "غوست",
+    "rainbow six": "رينبو سكس",
+    "genshin": "جنشن",
+    "clash of clans": "كلاش اوف كلانس كلاش",
+    "brawl stars": "براول ستارز",
+    "mobile legends": "موبايل ليجندز موبايل ليجند",
+    "tiktok": "تيك توك",
+    "snapchat": "سناب شات",
+    "youtube": "يوتيوب",
+    "netflix": "نتفليكس نتفلكس",
+    "discord": "ديسكورد",
+    "telegram": "تيليجرام تلغرام",
+    "chatgpt": "شات جي بي تي",
+    "disney": "ديزني",
+    "game pass": "جيم باس قيم باس",
+    "playstation plus": "بلس بلايستيشن",
+    "monster hunter": "مونستر هنتر",
+    "palworld": "بال وورلد",
+    "helldivers": "هيلدايفرز"
+  },
+  "steam": [
+    [1245620, "ELDEN RING"], [2622380, "ELDEN RING NIGHTREIGN"], [1091500, "Cyberpunk 2077"], [1174180, "Red Dead Redemption 2"],
+    [3240220, "Grand Theft Auto V Enhanced"], [1086940, "Baldur's Gate 3"], [990080, "Hogwarts Legacy"], [292030, "The Witcher 3: Wild Hunt — Remastered"],
+    [1030300, "Hollow Knight: Silksong"], [2358720, "Black Myth: Wukong"], [1593500, "God of War"], [2322010, "God of War Ragnarök"],
+    [1817070, "Marvel’s Spider-Man Remastered"], [2215430, "Ghost of Tsushima DIRECTOR'S CUT"], [2050650, "Resident Evil 4"], [2246340, "Monster Hunter Wilds"],
+    [1903340, "Clair Obscur: Expedition 33"], [1771300, "Kingdom Come: Deliverance II"], [2001120, "Split Fiction"], [1426210, "It Takes Two"],
+    [1551360, "Forza Horizon 5"], [1623730, "Palworld"], [413150, "Stardew Valley"], [105600, "Terraria"],
+    [1145350, "Hades II"], [814380, "Sekiro™: Shadows Die Twice - GOTY Edition"], [3017860, "DOOM: The Dark Ages"], [2677660, "Indiana Jones and the Great Circle"],
+    [1888930, "The Last of Us™ Part I"], [1778820, "TEKKEN 8"], [1364780, "Street Fighter™ 6"], [1971870, "Mortal Kombat 1"],
+    [227300, "Euro Truck Simulator 2"], [252490, "Rust"], [892970, "Valheim"], [2807960, "Battlefield™ 6"],
+    [3159330, "Assassin’s Creed Shadows"], [1966720, "Lethal Company"], [739630, "Phasmophobia"], [582010, "Monster Hunter: World"],
+    [553850, null], [1172620, null], [381210, null], [367520, null], [526870, null], [1326470, null], [1627720, null], [534380, null], [2344520, null]
+  ],
+  "services": [
+    {
+      "id": "ps-plus", "type": "sub", "name": "PlayStation Plus", "ar": "بلايستيشن بلس",
+      "kw": "ps plus psplus essential extra premium deluxe بلس اسنشال اكسترا بريميوم ديلوكس",
+      "offers": {
+        "psn": {
+          "source": "psplus",
+          "packages": [
+            ["essential-1m", "Essential · شهر"], ["essential-3m", "Essential · 3 شهور"], ["essential-12m", "Essential · سنة"],
+            ["extra-1m", "Extra · شهر"], ["extra-3m", "Extra · 3 شهور"], ["extra-12m", "Extra · سنة"],
+            ["premium-1m", "Premium / Deluxe · شهر"], ["premium-3m", "Premium / Deluxe · 3 شهور"], ["premium-12m", "Premium / Deluxe · سنة"]
+          ],
+          "default": "essential-1m"
+        }
+      }
+    },
+    {
+      "id": "game-pass", "type": "sub", "name": "Xbox Game Pass", "ar": "إكس بوكس جيم باس",
+      "kw": "game pass gamepass ultimate pc جيم باس التميت",
+      "offers": {
+        "xbox": {
+          "source": "xbox",
+          "packages": [
+            { "id": "ultimate-1m", "label": "Ultimate · شهر", "bigId": "CFQ7TTC0KHS0", "match": "1 month" },
+            { "id": "pc-1m", "label": "PC Game Pass · شهر", "bigId": "CFQ7TTC0KGQ8", "match": "1 month" }
+          ],
+          "default": "ultimate-1m"
+        }
+      }
+    },
+    {
+      "id": "ea-play", "type": "sub", "name": "EA Play", "ar": "اي ايه بلاي",
+      "kw": "ea play ea access",
+      "offers": {
+        "xbox": {
+          "source": "xbox",
+          "packages": [
+            { "id": "1m", "label": "شهر", "bigId": "CFQ7TTC0K5DH", "match": "1 month" },
+            { "id": "12m", "label": "سنة", "bigId": "CFQ7TTC0K5DH", "match": "12 month" }
+          ],
+          "default": "1m"
+        }
+      }
+    },
+    {
+      "id": "pubg-uc", "type": "currency", "name": "PUBG MOBILE UC", "ar": "شدات ببجي موبايل",
+      "kw": "pubg uc unknown cash ببجي شدات شده يو سي",
+      "offers": {
+        "apple": {
+          "source": "apple", "app": "1330123889",
+          "items": [
+            { "match": "^([\\d,]+)\\s+Unknown Cash$", "label": "{1} UC" },
+            { "match": "^PUBGM Prime\\s*\\(1 month\\)$", "label": "Prime · شهر" },
+            { "match": "^PUBGM PrimePlus\\s*\\(1 month\\)$", "label": "Prime Plus · شهر" }
+          ]
+        }
+      }
+    },
+    {
+      "id": "fortnite-vbucks", "type": "currency", "name": "Fortnite V-Bucks", "ar": "فيبوكس فورتنايت",
+      "kw": "fortnite v-bucks vbucks فيبوكس في باكس فورتنايت",
+      "offers": {
+        "xbox": {
+          "source": "xbox-addons", "parent": "BT5P2X999VH2",
+          "items": [{ "match": "^Fortnite - ([\\d,]+) V-Bucks$", "label": "{1} V-Bucks" }]
+        }
+      }
+    },
+    {
+      "id": "roblox-robux", "type": "currency", "name": "Roblox Robux", "ar": "روبوكس روبلوكس",
+      "kw": "roblox robux روبلوكس روبوكس ربليت ربلوكس",
+      "offers": {
+        "xbox": {
+          "source": "xbox-addons", "parent": "BQ1TN1T79V9K",
+          "items": [{ "match": "^([\\d,]+) Robux for Xbox$", "label": "{1} Robux" }]
+        },
+        "apple": {
+          "source": "apple", "app": "431946152",
+          "items": [
+            { "match": "^([\\d,]+) Robux$", "label": "{1} Robux" },
+            { "match": "^Roblox Premium ([\\d,]+) One Month$", "label": "Premium {1} · شهر" }
+          ]
+        }
+      }
+    },
+    {
+      "id": "free-fire", "type": "currency", "name": "Free Fire Diamonds", "ar": "جواهر فري فاير",
+      "kw": "free fire diamonds جواهر فري فاير",
+      "offers": {
+        "apple": {
+          "source": "apple", "app": "1300146617",
+          "items": [{ "match": "^([\\d,]+)-Diamond Bundle$", "label": "{1} جوهرة" }]
+        }
+      }
+    },
+    {
+      "id": "codm-cp", "type": "currency", "name": "Call of Duty: Mobile CP", "ar": "نقاط كول اوف ديوتي موبايل",
+      "kw": "cod mobile codm cp cod points كود موبايل",
+      "offers": {
+        "apple": {
+          "source": "apple", "app": "1287282214",
+          "items": [{ "match": "^COD Points - (Extra Small|Small|Medium|Large|Hardcore|Epic|Prestige) Pack$", "label": "{1} Pack" }]
+        }
+      }
+    },
+    {
+      "id": "mlbb-diamonds", "type": "currency", "name": "Mobile Legends Diamonds", "ar": "جواهر موبايل ليجندز",
+      "kw": "mlbb mobile legends diamonds جواهر موبايل ليجندز",
+      "offers": {
+        "apple": {
+          "source": "apple", "app": "1160056295",
+          "items": [
+            { "match": "^([\\d,]+) Diamonds$", "label": "{1} جوهرة" },
+            { "match": "^Weekly Diamond Pass$", "label": "Weekly Diamond Pass" }
+          ]
+        }
+      }
+    },
+    {
+      "id": "genshin-crystals", "type": "currency", "name": "Genshin Impact Genesis Crystals", "ar": "كريستالات جنشن امباكت",
+      "kw": "genshin genesis crystals جنشن",
+      "offers": {
+        "apple": {
+          "source": "apple", "app": "1517783697",
+          "items": [
+            { "match": "^([\\d,]+) Genesis Crystals$", "label": "{1} Genesis Crystals" },
+            { "match": "^Blessing of the Welkin Moon$", "label": "Welkin Moon" }
+          ]
+        }
+      }
+    },
+    {
+      "id": "clash-of-clans", "type": "currency", "name": "Clash of Clans Gems", "ar": "جواهر كلاش اوف كلانس",
+      "kw": "clash of clans gems جواهر كلاش",
+      "offers": {
+        "apple": {
+          "source": "apple", "app": "529479190",
+          "items": [
+            { "match": "^(Pocketful|Pile|Bag|Sack|Box|Chest) of Gems$", "label": "{1} of Gems" },
+            { "match": "^Gold Pass$", "label": "Gold Pass" }
+          ]
+        }
+      }
+    },
+    {
+      "id": "brawl-stars", "type": "currency", "name": "Brawl Stars Gems", "ar": "جواهر براول ستارز",
+      "kw": "brawl stars gems جواهر براول",
+      "offers": {
+        "apple": {
+          "source": "apple", "app": "1229016807",
+          "items": [{ "match": "^([\\d,]+) Gems$", "label": "{1} Gems" }]
+        }
+      }
+    },
+    {
+      "id": "tiktok-coins", "type": "currency", "name": "TikTok Coins", "ar": "عملات تيك توك",
+      "kw": "tiktok coins عملات تيك توك",
+      "offers": {
+        "apple": {
+          "source": "apple", "app": "835599320",
+          "items": [{ "match": "^([\\d,]+) Coins$", "label": "{1} Coins" }]
+        }
+      }
+    },
+    {
+      "id": "snapchat-plus", "type": "app", "name": "Snapchat+", "ar": "سناب شات بلس",
+      "kw": "snapchat plus snap+ سناب بلس",
+      "offers": {
+        "apple": {
+          "source": "apple", "app": "447188370",
+          "items": [
+            { "match": "^Snapchat\\+\\s*\\(?Monthly Plan\\)?$", "label": "اشتراك شهر" },
+            { "match": "^Snapchat\\+\\s*\\(?Annual Plan\\)?$", "label": "اشتراك سنة" }
+          ]
+        }
+      }
+    },
+    {
+      "id": "youtube-premium", "type": "app", "name": "YouTube Premium", "ar": "يوتيوب بريميوم",
+      "kw": "youtube premium يوتيوب بريميوم",
+      "offers": {
+        "apple": {
+          "source": "apple", "app": "544007664",
+          "items": [
+            { "match": "^YouTube Premium$", "label": "فردي · شهر" },
+            { "match": "^YouTube Premium Family$", "label": "عائلي · شهر" },
+            { "match": "^Premium Lite$", "label": "Premium Lite · شهر" }
+          ]
+        }
+      }
+    },
+    {
+      "id": "netflix", "type": "app", "name": "Netflix", "ar": "نتفليكس",
+      "kw": "netflix نتفليكس نتفلكس",
+      "offers": {
+        "apple": {
+          "source": "apple", "app": "363590051",
+          "items": [
+            { "match": "^Netflix Standard$", "label": "Standard · شهر" },
+            { "match": "^Netflix Premium$", "label": "Premium · شهر" },
+            { "match": "^Netflix Basic$", "label": "Basic · شهر" }
+          ]
+        }
+      }
+    },
+    {
+      "id": "disney-plus", "type": "app", "name": "Disney+", "ar": "ديزني بلس",
+      "kw": "disney plus ديزني",
+      "offers": {
+        "apple": {
+          "source": "apple", "app": "1446075923",
+          "items": [
+            { "match": "^Disney\\+ Premium$", "label": "Premium · شهر" },
+            { "match": "^Disney\\+ Basic Monthly$", "label": "Basic · شهر" }
+          ]
+        }
+      }
+    },
+    {
+      "id": "discord-nitro", "type": "app", "name": "Discord Nitro", "ar": "ديسكورد نيترو",
+      "kw": "discord nitro ديسكورد نيترو",
+      "offers": {
+        "apple": {
+          "source": "apple", "app": "985746746",
+          "items": [
+            { "match": "^Nitro (Monthly|\\(1 Month\\))$", "label": "Nitro · شهر" },
+            { "match": "^Nitro Basic (Monthly|\\(1 Month\\))$", "label": "Nitro Basic · شهر" }
+          ]
+        }
+      }
+    },
+    {
+      "id": "telegram-premium", "type": "app", "name": "Telegram Premium", "ar": "تيليجرام بريميوم",
+      "kw": "telegram premium stars تيليجرام تلغرام",
+      "offers": {
+        "apple": {
+          "source": "apple", "app": "686449807",
+          "items": [
+            { "match": "^Telegram Premium$", "label": "Premium · شهر" },
+            { "match": "^Telegram Premium Annual$", "label": "Premium · سنة" },
+            { "match": "^([\\d,]+) Telegram Stars$", "label": "{1} Stars" }
+          ]
+        }
+      }
+    },
+    {
+      "id": "chatgpt", "type": "app", "name": "ChatGPT Plus", "ar": "شات جي بي تي بلس",
+      "kw": "chatgpt plus go openai شات جي بي تي",
+      "offers": {
+        "apple": {
+          "source": "apple", "app": "6448311069",
+          "items": [
+            { "match": "^ChatGPT Plus$", "label": "Plus · شهر" },
+            { "match": "^ChatGPT Go$", "label": "Go · شهر" }
+          ]
+        }
+      }
+    }
+  ]
+}

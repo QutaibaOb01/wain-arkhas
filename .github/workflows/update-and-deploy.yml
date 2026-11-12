@@ -20,7 +20,7 @@ concurrency:
 jobs:
   update-and-deploy:
     runs-on: ubuntu-latest
-    timeout-minutes: 20
+    timeout-minutes: 45
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
@@ -31,16 +31,19 @@ jobs:
       - name: تجهيز Node
         uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: 22
 
-      - name: تحديث الأسعار
-        run: node scripts/update-prices.mjs
+      - name: اختبار سكربت التحديث
+        run: node --test scripts/test/update.test.mjs
+
+      - name: تحديث الأسعار من المتاجر
+        run: node scripts/update.mjs
 
       - name: حفظ الأسعار الجديدة بالمستودع
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/auto-prices.json data/rates.json data/status.json
+          git add data/prices.json data/rates.json data/status.json data/cache.json
           if git diff --cached --quiet; then
             echo "ما في تغيير بالأسعار"
           else
