@@ -565,7 +565,7 @@
       steps.push(`<div class="flow-step">
         <div class="flow-label"><span class="n">${++n}</span>الباقة <span class="hint">${off.packages.length} خيارات</span></div>
         <div class="pkg-row" role="group" aria-label="الباقة">
-          ${off.packages.map((p) => { const r = rowsOf(p)[0]; return `<a class="pkg" href="${svcHref(s, pl, p.id)}" aria-pressed="${p.id === pkg.id}"><span class="pl">${bdi(p.label)}</span>${r ? `<span class="pp">من ${money(r.usd)}</span>` : ''}</a>`; }).join('')}
+          ${off.packages.map((p) => { const r = rowsOf(p)[0]; return `<a class="pkg" href="${svcHref(s, pl, p.id)}" aria-current="${p.id === pkg.id}"><span class="pl">${bdi(p.label)}</span>${r ? `<span class="pp">من ${money(r.usd)}</span>` : ''}</a>`; }).join('')}
         </div>
       </div>`);
     }

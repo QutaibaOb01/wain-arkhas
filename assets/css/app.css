@@ -428,7 +428,7 @@ button.chip[aria-pressed='true'] { background: var(--volt); border-color: var(--
   background: var(--panel-2); border: 1.5px solid var(--steel); color: var(--text-2); text-align: start; clip-path: var(--cut-8);
 }
 .pkg:hover { border-color: var(--steel-2); color: var(--text); }
-.pkg[aria-pressed='true'] { border-color: var(--volt); background: var(--volt-deep); color: var(--text); }
+.pkg[aria-current='true'] { border-color: var(--volt); background: var(--volt-deep); color: var(--text); }
 .pkg .pl { font-weight: 700; font-size: 14px; }
 .pkg .pp { font-family: var(--font-num); font-weight: 700; font-size: 13px; color: var(--volt); }
 
