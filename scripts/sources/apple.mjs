@@ -19,6 +19,7 @@ const fmtInt = (n) => n.toLocaleString('en-US');
 /** بيطبّق القالب "{1} UC" على المجموعات الملتقطة، وبيوحّد الأرقام (1,000 = 1000) */
 export function labelFrom(template, groups) {
   let num = null;
+  let word = null;
   const label = template.replace(/\{(\d)\}/g, (_, i) => {
     const g = groups[Number(i)] || '';
     if (/^[\d.,\s]+$/.test(g)) {
@@ -26,16 +27,25 @@ export function labelFrom(template, groups) {
       if (num == null) num = n;
       return fmtInt(n);
     }
+    if (word == null) word = g.trim();
     return g.trim();
   });
-  return { label, num };
+  return { label, num, word };
+}
+
+/** معرّف ثابت للباقة: معرّف البند بالإعدادات + الرقم أو الكلمة الملتقطة (uc-60، cp-medium) */
+export function packageKey(item, idx, parts) {
+  const base = item.id || 'i' + idx;
+  if (parts.num != null) return base + '-' + parts.num;
+  if (parts.word) return base + '-' + slug(parts.word);
+  return base;
 }
 
 /**
  * specs: [{ service, app, items: [{ match, label }] }]
  * بيرجع prices[service][pkgKey][REGION] و packages[service][pkgKey] = { label, num }
  */
-export async function fetchApple(specs, regions, { fetchImpl, wait = sleep, concurrency = 4, gap = 250 } = {}) {
+export async function fetchApple(specs, regions, { fetchImpl, wait = sleep, concurrency = 2, gap = 500 } = {}) {
   const apps = [...new Set(specs.map((s) => s.app))];
   const tasks = [];
   for (const app of apps) for (const r of regions) if (r.apple) tasks.push([app, r]);
@@ -62,7 +72,7 @@ export async function fetchApple(specs, regions, { fetchImpl, wait = sleep, conc
     for (const r of regions) {
       const list = pages.get(spec.app + '|' + r.code);
       if (!list) continue;
-      for (const item of spec.items) {
+      for (const [idx, item] of spec.items.entries()) {
         const re = new RegExp(item.match, 'i');
         for (const iap of list) {
           const m = iap.name.match(re);
@@ -71,9 +81,9 @@ export async function fetchApple(specs, regions, { fetchImpl, wait = sleep, conc
           if (!(amount > 0)) continue;
           const clear = detectCurrency(iap.price);
           if (clear && r.appleCurrency && clear !== r.appleCurrency) continue;
-          const { label, num } = labelFrom(item.label, m);
-          const key = slug(label);
-          pk[key] = pk[key] || { label, num };
+          const parts = labelFrom(item.label, m);
+          const key = packageKey(item, idx, parts);
+          pk[key] = pk[key] || { label: parts.label, num: parts.num };
           const regs = (svc[key] = svc[key] || {});
           // نفس الباقة بأكثر من سعر (خطط قديمة أو سنوية بنفس الاسم): بناخذ الأقل
           if (!regs[r.code] || amount < regs[r.code].amount) {

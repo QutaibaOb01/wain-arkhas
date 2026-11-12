@@ -4,15 +4,17 @@
 import { readFile, writeFile } from 'node:fs/promises';
 import { fileURLToPath, pathToFileURL } from 'node:url';
 import path from 'node:path';
-import { sleep, todayISO, titleKey, baseTitle, slug, request } from './lib/util.mjs';
+import { sleep, todayISO, titleKey, baseTitle, stripPlatforms, slug, request } from './lib/util.mjs';
 import { fetchRates } from './sources/rates.mjs';
 import { fetchSteamTopSellers, fetchSteamPrices } from './sources/steam.mjs';
 import { fetchXboxPrices, fetchXboxBestSellers, fetchXboxAddons } from './sources/xbox.mjs';
 import { fetchPsBestSellers, fetchPsConceptPrices, fetchPsPlus } from './sources/playstation.mjs';
-import { fetchApple, labelFrom } from './sources/apple.mjs';
+import { fetchApple, labelFrom, packageKey } from './sources/apple.mjs';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 export const STALE_DAYS = 10;
+// لما يتغيّر شكل ملف الأسعار (مثلاً معرّفات الباقات) بنرفع الرقم، والسكربت بيتجاهل الملف القديم
+export const FORMAT = 2;
 const TYPE_ORDER = { sub: 0, currency: 1, app: 2, game: 3 };
 
 async function readJSON(root, p, fallback) {
@@ -30,10 +32,10 @@ const tuple = (p, date) => [round(p.amount), p.currency, p.original > p.amount ?
 
 /** «Grand Theft Auto VI: Ultimate Edition» → «Ultimate Edition» */
 export function editionLabel(full, base) {
-  const f = String(full || '').replace(/[™®©]/g, '').trim();
+  const f = String(full || '').replace(/[™®©]/g, '').replace(/[’‘`]/g, "'").replace(/\s+/g, ' ').trim();
   const b = String(base || '').trim();
   let rest = f.toLowerCase().startsWith(b.toLowerCase()) ? f.slice(b.length) : '';
-  rest = rest.replace(/^[\s:–—-]+/, '').replace(/^\((.*)\)$/, '$1').trim();
+  rest = stripPlatforms(rest.replace(/^[\s:–—-]+/, '')).replace(/^\((.*)\)$/, '$1').replace(/^[\s:–—-]+|[\s:–—-]+$/g, '').trim();
   return rest || 'النسخة العادية';
 }
 
@@ -137,7 +139,8 @@ export async function main(opts = {}) {
   const today = todayISO(now);
   const regions = await readJSON(root, 'data/regions.json');
   const cfg = await readJSON(root, 'data/sources.json');
-  const prev = await readJSON(root, 'data/prices.json', { services: [] });
+  const prevFile = await readJSON(root, 'data/prices.json', { services: [] });
+  const prev = prevFile.format === FORMAT ? prevFile : { services: [], updated: prevFile.updated };
   const cache = await readJSON(root, 'data/cache.json', { steamNames: {} });
   const prevRates = await readJSON(root, 'data/rates.json', { rates: {} });
   const status = { updated: now.toISOString(), sources: {} };
@@ -197,15 +200,16 @@ export async function main(opts = {}) {
         if (off.default) defaults[s.id + '|xbox'] = off.default;
         hints[s.id + '|xbox'] = off.packages.map((p) => p.id);
       } else if (off.source === 'xbox-addons') {
+        if (off.default) defaults[s.id + '|xbox'] = off.default;
         try {
           const addons = await fetchXboxAddons(off.parent, net);
           for (const a of addons) {
-            for (const it of off.items) {
+            for (const [idx, it] of off.items.entries()) {
               const m = String(a.title || '').match(new RegExp(it.match, 'i'));
               if (!m) continue;
-              const { label, num } = labelFrom(it.label, m);
-              const id = slug(label);
-              xboxItems.push({ key: s.id + '|' + id, bigId: a.productId, match: null, svc: s, pkg: { id, label, num, ref: a.productId } });
+              const parts = labelFrom(it.label, m);
+              const id = packageKey(it, idx, parts);
+              xboxItems.push({ key: s.id + '|' + id, bigId: a.productId, match: null, svc: s, pkg: { id, label: parts.label, num: parts.num ?? undefined, ref: a.productId } });
             }
           }
         } catch (e) {
@@ -226,7 +230,10 @@ export async function main(opts = {}) {
       if (off.psn.default) defaults[s.id + '|psn'] = off.psn.default;
       hints[s.id + '|psn'] = off.psn.packages.map((p) => p[0]);
     }
-    if (off.apple && off.apple.source === 'apple') appleSpecs.push({ service: s.id, app: off.apple.app, items: off.apple.items });
+    if (off.apple && off.apple.source === 'apple') {
+      appleSpecs.push({ service: s.id, app: off.apple.app, items: off.apple.items });
+      if (off.apple.default) defaults[s.id + '|apple'] = off.apple.default;
+    }
   }
 
   const psPlusTask = needPsPlus ? safe('psplus', async () => {
@@ -401,6 +408,7 @@ export async function main(opts = {}) {
   const list = finalize(merged, rates || prevRates.rates, defaults, hints);
   const gotAny = fresh.length > 0;
   await writeJSON(root, 'data/prices.json', {
+    format: FORMAT,
     updated: gotAny ? now.toISOString() : prev.updated || null,
     platforms: cfg.platforms,
     types: cfg.types,

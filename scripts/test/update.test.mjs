@@ -6,7 +6,7 @@ import { tmpdir } from 'node:os';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { parseAmount, detectCurrency, baseTitle, titleKey, decodeEntities } from '../lib/util.mjs';
-import { parseAppleIaps, labelFrom } from '../sources/apple.mjs';
+import { parseAppleIaps, labelFrom, packageKey } from '../sources/apple.mjs';
 import { parsePsPlusPage, pickPsPrice, scaledValue, headerLocale } from '../sources/playstation.mjs';
 import { pickXboxPrice } from '../sources/xbox.mjs';
 import { main, mergeServices, editionLabel } from '../update.mjs';
@@ -46,6 +46,25 @@ test('baseTitle/titleKey: نفس اللعبة بين المنصات', () => {
   assert.notEqual(titleKey('Minecraft'), titleKey('Minecraft Legends'));
   assert.equal(editionLabel('Grand Theft Auto VI: Ultimate Edition', 'Grand Theft Auto VI'), 'Ultimate Edition');
   assert.equal(editionLabel('Cyberpunk 2077', 'Cyberpunk 2077'), 'النسخة العادية');
+  const cases = {
+    'Grand Theft Auto V (Xbox One & Xbox Series X|S)': 'Grand Theft Auto V',
+    'FINAL FANTASY XIV Online - Starter Edition': 'FINAL FANTASY XIV Online',
+    'Rust Console Edition': 'Rust',
+    'The Elder Scrolls V: Skyrim Special Edition - PS5 & PS4': 'The Elder Scrolls V: Skyrim',
+    'Call of Duty®: Black Ops III - Zombies Chronicles Edition': 'Call of Duty: Black Ops III',
+    'Sea of Thieves: 2026 Edition': 'Sea of Thieves',
+    'Dying Light 2 Stay Human: Reloaded Edition': 'Dying Light 2 Stay Human',
+    'Sekiro™: Shadows Die Twice - GOTY Edition': 'Sekiro: Shadows Die Twice',
+    "Ghost of Tsushima DIRECTOR'S CUT": 'Ghost of Tsushima',
+    'Grand Theft Auto VI Ultimate Edition': 'Grand Theft Auto VI',
+    'Minecraft: Bedrock Edition': 'Minecraft',
+    'Marvel’s Spider-Man Remastered': "Marvel's Spider-Man Remastered",
+    'Clair Obscur: Expedition 33': 'Clair Obscur: Expedition 33',
+    'Call of Duty®: Modern Warfare® 4 for PS5': 'Call of Duty: Modern Warfare 4'
+  };
+  for (const [a, b] of Object.entries(cases)) assert.equal(baseTitle(a), b, a);
+  assert.equal(editionLabel('EA SPORTS FC™ 27 Standard Edition PS4 & PS5', 'EA SPORTS FC 27'), 'Standard Edition');
+  assert.equal(editionLabel('Grand Theft Auto V (PlayStation®5)', 'Grand Theft Auto V'), 'النسخة العادية');
 });
 
 test('App Store: قراءة قائمة المشتريات وتوحيد الأرقام', () => {
@@ -59,7 +78,10 @@ test('App Store: قراءة قائمة المشتريات وتوحيد الأر�
     { name: '1,000 Diamonds', price: '₺1.119,99' }
   ]);
   const m = '1,000 Diamonds'.match(/^([\d,]+) Diamonds$/);
-  assert.deepEqual(labelFrom('{1} جوهرة', m), { label: '1,000 جوهرة', num: 1000 });
+  assert.deepEqual(labelFrom('{1} جوهرة', m), { label: '1,000 جوهرة', num: 1000, word: null });
+  assert.equal(packageKey({ id: 'diamonds' }, 0, { num: 1000 }), 'diamonds-1000');
+  assert.equal(packageKey({ id: 'cp' }, 0, labelFrom('{1} Pack', 'COD Points - Extra Small Pack'.match(/- (Extra Small|Medium) Pack$/))), 'cp-extra-small');
+  assert.equal(packageKey({}, 2, { num: null, word: null }), 'i2');
   assert.equal(decodeEntities('A &amp; B &#39;x&#39;'), "A & B 'x'");
 });
 
@@ -210,6 +232,7 @@ test('تشغيل كامل: كل المصادر بتنجمع بملف واحد', 
   const vb = byId['fortnite-vbucks'].offers.xbox.packages;
   assert.equal(vb.length, 1);
   assert.equal(vb[0].label, '800 V-Bucks');
+  assert.equal(vb[0].id, 'vbucks-800');
   assert.equal(vb[0].num, 800);
   assert.deepEqual(vb[0].prices.US, [8.99, 'USD', 0, '2026-11-12']);
 
@@ -217,8 +240,11 @@ test('تشغيل كامل: كل المصادر بتنجمع بملف واحد', 
   assert.deepEqual(byId['game-pass'].offers.xbox.packages.find((p) => p.id === 'ultimate-1m').prices.TR, [529, 'TRY', 0, '2026-11-12']);
 
   // آبل: أرخص سعر لنفس الباقة، والشدات بالليرة والدولار
-  assert.deepEqual(byId['snapchat-plus'].offers.apple.packages[0].prices.VN, [29000, 'VND', 0, '2026-11-12']);
-  const uc = byId['pubg-uc'].offers.apple.packages.find((p) => p.id === '60-uc');
+  const snap = byId['snapchat-plus'].offers.apple;
+  assert.equal(snap.def, 'monthly');
+  assert.deepEqual(snap.packages.find((p) => p.id === 'monthly').prices.VN, [29000, 'VND', 0, '2026-11-12']);
+  const uc = byId['pubg-uc'].offers.apple.packages.find((p) => p.id === 'uc-60');
+  assert.equal(byId['pubg-uc'].offers.apple.def, 'uc-60');
   assert.deepEqual(uc.prices.TR, [45.99, 'TRY', 0, '2026-11-12']);
   assert.deepEqual(uc.prices.US, [0.99, 'USD', 0, '2026-11-12']);
 
@@ -235,10 +261,18 @@ test('تشغيل كامل: كل المصادر بتنجمع بملف واحد', 
   const cache = JSON.parse(await readFile(path.join(dir, 'data', 'cache.json'), 'utf8'));
   assert.equal(cache.steamNames['553850'], 'Game 553850');
 
+  assert.equal(saved.format, 2);
+
   // تشغيل تاني والمصادر كلها واقعة: الأسعار بتضل
   const down = mockFetch([[/./, () => ({ status: 503, body: '' })]]);
   const again = await main({ fetchImpl: down, wait: async () => {}, now: new Date('2026-11-13T03:17:00Z'), root: dir, quiet: true });
   assert.equal(again.list.length, list.length);
   const saved2 = JSON.parse(await readFile(path.join(dir, 'data', 'prices.json'), 'utf8'));
   assert.equal(saved2.updated, saved.updated);
+
+  // ملف بصيغة قديمة (معرّفات باقات قديمة) ما بينخلط مع الجديد
+  const old = { updated: '2026-11-12T00:00:00Z', services: [{ id: 'pubg-uc', type: 'currency', name: 'PUBG MOBILE UC', offers: { apple: { packages: [{ id: '60-uc', label: '60 UC', prices: { US: [0.99, 'USD', 0, '2026-11-12'] } }] } } }] };
+  await writeFile(path.join(dir, 'data', 'prices.json'), JSON.stringify(old));
+  const third = await main({ fetchImpl: down, wait: async () => {}, now: new Date('2026-11-13T03:17:00Z'), root: dir, quiet: true });
+  assert.equal(third.list.length, 0);
 });

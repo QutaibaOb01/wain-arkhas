@@ -42,7 +42,8 @@ export async function request(url, opts = {}) {
     } catch (e) {
       lastErr = e;
       if (e.fatal || i === tries) break;
-      await wait(1500 * i);
+      // 429 = المتجر طالب نخفف الطلبات: بنستنى أكثر
+      await wait((/HTTP 429/.test(String(e.message)) ? 6000 : 1500) * i);
     } finally {
       if (timer) clearTimeout(timer);
     }
@@ -165,9 +166,23 @@ export function matchBrace(raw, start) {
   return -1;
 }
 
-const EDITION_WORDS =
-  '(standard|deluxe|digital deluxe|ultimate|gold|premium|vault|cross-gen|definitive|complete|enhanced|game of the year|goty|director\'?s cut|special|collector\'?s|launch|legendary|champions|anniversary|day one|super deluxe|digital|ultimate digital)';
-const EDITION_RE = new RegExp('\\s*[-–—:]?\\s*\\(?' + EDITION_WORDS + '\\s+(edition|bundle)\\)?\\s*$', 'i');
+// أسماء المنصات اللي بتنلزق بآخر اسم اللعبة: "(PlayStation5)"، "PS4 & PS5"، "for Xbox Series X|S"، "(Windows)"
+const PLATFORM = '(?:ps4|ps5|playstation\\s*[45]|xbox one|xbox series x\\|s|xbox series x|xbox|windows|pc)';
+const PLATFORM_TAIL = new RegExp(
+  '\\s*[-–—:]?\\s*\\(?\\s*(?:for\\s+)?' + PLATFORM + '(?:\\s*(?:&|and|/|,)\\s*' + PLATFORM + ')*\\s*\\)?\\s*$', 'i'
+);
+// نسخ معروفة بدون فاصل: "Forza Horizon 6 Standard Edition"، "Rust Console Edition"
+const EDITION_KNOWN = /\s+\(?(?:standard|deluxe|digital deluxe|ultimate|gold|premium|vault|cross-gen|definitive|complete|enhanced|game of the year|goty|special|collector's|launch|legendary|champions|anniversary|day one|super deluxe|digital|console|starter|reloaded|remastered)\s+(?:edition|bundle)\)?\s*$/i;
+// بعد فاصل (- أو : أو قوس) لحد 3 كلمات: ": 2026 Edition"، "- Zombies Chronicles Edition"
+const EDITION_SEP = /\s*(?:[-–—:]|\()\s*(?:[\w'.+]+\s+){0,3}(?:edition|bundle)\)?\s*$/i;
+const CUT_TAIL = /\s*[-–—:]?\s*\(?director'?s cut\)?\s*$/i;
+const EDITION_TAIL = { [Symbol.replace]: (s) => { const k = s.replace(EDITION_KNOWN, ''); return k !== s ? k : s.replace(EDITION_SEP, ''); } };
+
+export function stripPlatforms(s) {
+  let out = String(s || '');
+  for (let k = 0; k < 3; k++) out = out.replace(PLATFORM_TAIL, '');
+  return out.replace(/\s*[-–—:&]\s*$/, '').trim();
+}
 
 /** اسم موحّد للعبة لنقارن نفس اللعبة بين بلايستيشن وإكس بوكس وستيم */
 export function baseTitle(name) {
@@ -176,12 +191,13 @@ export function baseTitle(name) {
     .replace(/[’‘`]/g, "'")
     .replace(/\s+/g, ' ')
     .trim();
-  s = s.replace(/\s*\((windows|pc|ps4|ps5|ps4 & ps5|ps4 and ps5|playstation ?[45]|playstation ?4 (?:&|and) playstation ?5|xbox series x\|s|xbox one|xbox)\)\s*$/i, '');
-  s = s.replace(/\s*(for|-)\s*(xbox series x\|s|xbox one|ps5|ps4)\s*$/i, '');
-  s = s.replace(/\s+(ps4\s*(?:&|and)\s*ps5|ps5|ps4)\s*$/i, '');
-  for (let k = 0; k < 2; k++) s = s.replace(EDITION_RE, '');
-  s = s.replace(/\s*[-–—:]\s*$/, '').trim();
-  return s;
+  const orig = s;
+  for (let k = 0; k < 2; k++) {
+    s = stripPlatforms(s);
+    s = s.replace(EDITION_TAIL, '').replace(CUT_TAIL, '');
+    s = s.replace(/\s*[-–—:]\s*$/, '').trim();
+  }
+  return s || orig;
 }
 
 export function titleKey(name) {

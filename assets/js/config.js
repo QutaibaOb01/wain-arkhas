@@ -1,9 +1,8 @@
-// إعدادات الموقع: غيّرها حسب حاجتك
+// إعدادات الموقع
 window.WA_CONFIG = {
-  // رابط مستودع GitHub، بنستخدمه لزر «بلّغ عن سعر غلط» ورابط الكود
+  // رابط المستودع (لروابط «بلّغنا عن سعر غلط» و«الكود على GitHub»)
   repoUrl: 'https://github.com/QutaibaOb01/wain-arkhas',
-  // العملة الافتراضية للعرض (بيقدر الزائر يغيّرها)
-  defaultCurrency: 'USD',
-  // منطقة الحساب الافتراضية للزائر
-  defaultRegion: 'SA'
+  // العملة والمنطقة الافتراضية. null = نحددها من لغة المتصفح (مثلاً ar-JO → دينار أردني)
+  defaultCurrency: null,
+  defaultRegion: null
 };

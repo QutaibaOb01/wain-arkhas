@@ -135,7 +135,7 @@ export async function fetchXboxBestSellers({ count = 150, fetchImpl, wait = slee
     const j = await request('https://emerald.xboxservices.com/xboxcomfd/browse?locale=en-US', {
       method: 'POST',
       headers: { 'content-type': 'application/json', 'x-ms-api-version': '1.1', 'ms-cv': 'wainarkhas00000' + guard + '.1' },
-      body: JSON.stringify({ Filters: filters, ReturnFilters: false, ChannelKeyToBeUsedInResponse: key, EncodedContinuationToken: token, ChannelId: '' }),
+      body: JSON.stringify({ Filters: filters, ReturnFilters: false, ChannelKeyToBeUsedInResponse: key, EncodedCT: token, ChannelId: '' }),
       fetchImpl,
       wait
     });

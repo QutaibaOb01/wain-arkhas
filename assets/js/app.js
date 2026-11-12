@@ -1,759 +1,808 @@
-/* وين أرخص؟ — منطق الموقع (بدون مكتبات وبدون بناء) */
-(function () {
+/* وين أرخص؟ — اختار الخدمة، والموقع بيختارلك المنصة والمنطقة الأرخص */
+(() => {
   'use strict';
 
-  var CFG = window.WA_CONFIG || {};
-  var main = document.getElementById('main');
-  var curSelect = document.getElementById('currency-select');
+  const CFG = window.WA_CONFIG || {};
+  const main = document.getElementById('main');
+  const curSelect = document.getElementById('currency-select');
+  const PLATFORM_ORDER = ['psn', 'xbox', 'steam', 'apple'];
+  const TYPE_ORDER = ['game', 'sub', 'currency', 'app'];
+  const PAGE = 48;
 
-  var CURRENCIES = [
-    { code: 'USD', label: 'دولار أمريكي', inLabel: 'بالدولار الأمريكي', sym: '$', prefix: true },
-    { code: 'JOD', label: 'دينار أردني', inLabel: 'بالدينار الأردني', sym: 'د.أ' },
-    { code: 'SAR', label: 'ريال سعودي', inLabel: 'بالريال السعودي', sym: 'ر.س' },
-    { code: 'AED', label: 'درهم إماراتي', inLabel: 'بالدرهم الإماراتي', sym: 'د.إ' },
-    { code: 'KWD', label: 'دينار كويتي', inLabel: 'بالدينار الكويتي', sym: 'د.ك', dec: 3 },
-    { code: 'QAR', label: 'ريال قطري', inLabel: 'بالريال القطري', sym: 'ر.ق' },
-    { code: 'BHD', label: 'دينار بحريني', inLabel: 'بالدينار البحريني', sym: 'د.ب', dec: 3 },
-    { code: 'OMR', label: 'ريال عماني', inLabel: 'بالريال العماني', sym: 'ر.ع', dec: 3 },
-    { code: 'EGP', label: 'جنيه مصري', inLabel: 'بالجنيه المصري', sym: 'ج.م', dec: 0 },
-    { code: 'IQD', label: 'دينار عراقي', inLabel: 'بالدينار العراقي', sym: 'د.ع', dec: 0 },
-    { code: 'MAD', label: 'درهم مغربي', inLabel: 'بالدرهم المغربي', sym: 'د.م' }
-  ];
-
-  var ICON = {
-    search: 'M11 4a7 7 0 1 1 0 14a7 7 0 1 1 0-14z M20 20l-4.3-4.3',
-    globe: 'M12 3a9 9 0 1 1 0 18a9 9 0 1 1 0-18z M3 12h18 M12 3c2.8 3.2 2.8 14.8 0 18 M12 3c-2.8 3.2-2.8 14.8 0 18',
-    clock: 'M12 3a9 9 0 1 1 0 18a9 9 0 1 1 0-18z M12 7.5V12l3 2',
-    shield: 'M12 3l8 3v6c0 4.6-3.3 8-8 9c-4.7-1-8-4.4-8-9V6z M8.8 12.2l2.2 2.2l4.2-4.4',
-    lock: 'M6 11h12v10H6z M8.5 11V7.5a3.5 3.5 0 0 1 7 0V11',
-    check: 'M20 6L9 17l-5-5',
-    alert: 'M12 3.5l9.5 16.5h-19z M12 10v4.5 M12 17.2v.3',
-    external: 'M14 4h6v6 M20 4l-9 9 M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5',
-    card: 'M3 6.5h18v11H3z M3 10.5h18 M7 14.5h4',
-    flag: 'M5 21V4 M5 4h11l-2 4l2 4H5',
-    sparkle: 'M12 3v4 M12 17v4 M3 12h4 M17 12h4 M6 6l2.5 2.5 M15.5 15.5L18 18 M6 18l2.5-2.5 M15.5 8.5L18 6',
-    ps: 'M5 4.5h14a.5.5 0 0 1 .5.5v14a.5.5 0 0 1-.5.5H5a.5.5 0 0 1-.5-.5V5a.5.5 0 0 1 .5-.5z M12 8v8 M8 12h8',
-    xbox: 'M7.5 6h9a5 5 0 0 1 4.9 4.1l.9 5.2a2.6 2.6 0 0 1-4.6 2.1L15.5 15h-7l-2.2 2.4a2.6 2.6 0 0 1-4.6-2.1l.9-5.2A5 5 0 0 1 7.5 6z M8 9.5v3 M6.5 11h3 M15.5 10.5h.01 M17.5 12.5h.01',
-    pc: 'M3.5 5h17v11h-17z M8.5 20h7 M12 16v4'
+  /* ===== تخزين بسيط (ممكن يكون مقفول بالمتصفح) ===== */
+  const store = {
+    get(k, d) { try { const v = localStorage.getItem('wa:' + k); return v == null ? d : v; } catch (e) { return d; } },
+    set(k, v) { try { localStorage.setItem('wa:' + k, v); } catch (e) { /* تجاهل */ } }
   };
 
-  function icon(name, size, cls) {
-    var d = ICON[name] || name;
-    return '<svg class="' + (cls || '') + '" viewBox="0 0 24 24" width="' + (size || 18) + '" height="' + (size || 18) +
-      '" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="' + d + '"/></svg>';
-  }
-
-  var store = {
-    get: function (k, d) { try { var v = localStorage.getItem(k); return v === null ? d : v; } catch (e) { return d; } },
-    set: function (k, v) { try { localStorage.setItem(k, v); } catch (e) { /* التخزين مش متاح */ } }
+  /* ===== أيقونات ===== */
+  const ICONS = {
+    search: '<circle cx="11" cy="11" r="7"/><path d="m20 20-4.2-4.2"/>',
+    arrow: '<path d="M19 12H5M11 6l-6 6 6 6"/>',
+    ext: '<path d="M14 5h5v5M19 5l-8 8M18 14v5H5V6h5"/>',
+    lock: '<rect x="5" y="11" width="14" height="9"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/>',
+    alert: '<path d="M12 4 2.5 20h19z"/><path d="M12 10v4.5M12 17.5h.01"/>',
+    check: '<path d="m5 12.5 4.5 4.5L19 7.5"/>',
+    card: '<rect x="3" y="6" width="18" height="13"/><path d="M3 10.5h18M7 15h4"/>',
+    info: '<circle cx="12" cy="12" r="9"/><path d="M12 11v5.5M12 7.5h.01"/>',
+    flag: '<path d="M5 21V4M5 4h11l-2 4 2 4H5"/>',
+    radar: '<circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><path d="M12 12 18.5 5.5"/>',
+    bolt: '<path d="M13 3 5 13.5h6L10 21l9-11h-6z"/>',
+    android: '<rect x="6" y="9" width="12" height="9"/><path d="M8.5 6.5 7 4.5M15.5 6.5 17 4.5M6 9a6 6 0 0 1 12 0M9.5 12h.01M14.5 12h.01"/>'
   };
+  const icon = (n, cls = '') => `<svg class="ico ${cls}" viewBox="0 0 24 24" aria-hidden="true">${ICONS[n] || ''}</svg>`;
+  const esc = (s) => String(s == null ? '' : s).replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+  // نص بلغة مختلطة (إنجليزي وأرقام) بيحافظ على ترتيبه جوّا الصفحة العربية
+  const bdi = (s) => `<bdi>${esc(s)}</bdi>`;
 
-  var state = {
-    currency: store.get('wa-currency', CFG.defaultCurrency || 'USD'),
-    region: store.get('wa-region', CFG.defaultRegion || 'SA'),
-    sort: 'saving',
-    filter: '',
-    selected: {}
+  /* ===== العملات ===== */
+  const ARAB = ['JOD', 'SAR', 'AED', 'KWD', 'QAR', 'BHD', 'OMR', 'EGP', 'IQD', 'LBP', 'SYP', 'MAD', 'DZD', 'TND', 'LYD', 'SDG', 'YER'];
+  const POPULAR = ['USD', 'EUR', 'GBP', 'TRY'];
+  const SYM = {
+    USD: ['$', 1], EUR: ['€', 1], GBP: ['£', 1], TRY: ['₺', 1], INR: ['₹', 1], JPY: ['¥', 1], BRL: ['R$', 1],
+    JOD: ['د.أ', 0], SAR: ['ر.س', 0], AED: ['د.إ', 0], KWD: ['د.ك', 0], QAR: ['ر.ق', 0], BHD: ['د.ب', 0], OMR: ['ر.ع', 0],
+    EGP: ['ج.م', 0], IQD: ['د.ع', 0], LBP: ['ل.ل', 0], SYP: ['ل.س', 0], MAD: ['د.م', 0], DZD: ['د.ج', 0], TND: ['د.ت', 0],
+    LYD: ['د.ل', 0], SDG: ['ج.س', 0], YER: ['ر.ي', 0]
   };
+  const CC_CURRENCY = { JO: 'JOD', SA: 'SAR', AE: 'AED', KW: 'KWD', QA: 'QAR', BH: 'BHD', OM: 'OMR', EG: 'EGP', IQ: 'IQD', LB: 'USD', SY: 'SYP', MA: 'MAD', DZ: 'DZD', TN: 'TND', LY: 'LYD', SD: 'SDG', YE: 'YER', PS: 'ILS', TR: 'TRY', US: 'USD', GB: 'GBP' };
+  let displayNames = null;
+  try { displayNames = new Intl.DisplayNames(['ar'], { type: 'currency' }); } catch (e) { /* متصفح قديم */ }
+  const curName = (code) => { try { return (displayNames && displayNames.of(code)) || code; } catch (e) { return code; } };
+  const decCache = {};
+  const decimalsOf = (code) => {
+    if (decCache[code] == null) {
+      try { decCache[code] = new Intl.NumberFormat('en', { style: 'currency', currency: code }).resolvedOptions().maximumFractionDigits; } catch (e) { decCache[code] = 2; }
+    }
+    return decCache[code];
+  };
+  const fmt = (n, dec) => n.toLocaleString('en-US', { minimumFractionDigits: dec, maximumFractionDigits: dec });
 
-  var DB = null;
-  var firstRender = true;
-  var lastRouteKey = null;
-
-  /* ===== أدوات مساعدة ===== */
-  function esc(s) {
-    return String(s == null ? '' : s).replace(/[&<>"']/g, function (c) {
-      return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c];
-    });
-  }
-  function norm(s) {
-    return String(s || '').toLowerCase()
-      .replace(/[أإآ]/g, 'ا').replace(/ة/g, 'ه').replace(/ى/g, 'ي')
-      .replace(/[ً-ْ]/g, '').replace(/\s+/g, ' ').trim();
-  }
-  function curInfo() {
-    for (var i = 0; i < CURRENCIES.length; i++) if (CURRENCIES[i].code === state.currency) return CURRENCIES[i];
-    return CURRENCIES[0];
-  }
-  function money(usd) {
+  /** مبلغ بالدولار → نص بعملة العرض */
+  function money(usd, code = state.currency) {
     if (usd == null || !isFinite(usd)) return '—';
-    var c = curInfo();
-    var rate = DB.rates[c.code];
-    if (!rate) { c = CURRENCIES[0]; rate = 1; }
-    var v = usd * rate;
-    var dec = c.dec != null ? c.dec : (v >= 1000 ? 0 : 2);
-    var s = v.toLocaleString('en-US', { minimumFractionDigits: dec, maximumFractionDigits: dec });
-    return c.prefix ? c.sym + s : s + ' ' + c.sym;
+    const rate = code === 'USD' ? 1 : DB.rates[code];
+    if (!rate) return money(usd, 'USD');
+    const v = usd * rate;
+    let dec = Math.min(decimalsOf(code), 2);
+    if (v >= 10000) dec = 0;
+    const n = fmt(v, dec);
+    const s = SYM[code];
+    if (s && s[1]) return `<span class="num" dir="ltr">${s[0]}${n}</span>`;
+    if (s) return `<span class="num"><bdi dir="ltr">${n}</bdi> ${s[0]}</span>`;
+    return `<span class="num" dir="ltr">${n} ${code}</span>`;
   }
-  // داخل جملة عربية: الدولار لازم ينعزل عشان يطلع "$63.89" مش "63.89$"
-  function moneyInline(usd) {
-    var s = money(usd);
-    return curInfo().prefix && DB.rates[curInfo().code] ? '<bdi dir="ltr">' + s + '</bdi>' : s;
+  /** السعر بعملة المتجر نفسه */
+  function localPrice(t) {
+    const dec = t[0] >= 10000 ? 0 : Math.min(decimalsOf(t[1]), 2);
+    return `<span dir="ltr">${t[1]} ${fmt(t[0], dec)}</span>`;
   }
-  function pct(n) { return '<bdi dir="ltr">' + n + '%</bdi>'; }
-  function localMoney(amount, currency) {
-    var dec = amount >= 1000 ? 0 : 2;
-    return amount.toLocaleString('en-US', { minimumFractionDigits: dec, maximumFractionDigits: dec }) + ' ' + currency;
-  }
-  var dateFmt = new Intl.DateTimeFormat('ar-u-nu-latn', { day: 'numeric', month: 'long', year: 'numeric' });
-  function fmtDate(iso) {
-    var d = new Date(iso);
-    return isNaN(d.getTime()) ? '' : dateFmt.format(d);
-  }
-  function relTime(iso) {
-    var d = new Date(iso);
-    if (isNaN(d.getTime())) return '';
-    var diff = (Date.now() - d.getTime()) / 1000;
-    if (diff > 7 * 86400 || diff < 0) return fmtDate(iso);
-    var rtf = new Intl.RelativeTimeFormat('ar-u-nu-latn', { numeric: 'auto' });
-    if (diff < 3600) return rtf.format(-Math.max(1, Math.round(diff / 60)), 'minute');
-    if (diff < 86400) return rtf.format(-Math.round(diff / 3600), 'hour');
-    return rtf.format(-Math.round(diff / 86400), 'day');
-  }
-  function hexA(hex, a) {
-    var n = parseInt(String(hex).replace('#', ''), 16);
-    return 'rgba(' + ((n >> 16) & 255) + ', ' + ((n >> 8) & 255) + ', ' + (n & 255) + ', ' + a + ')';
-  }
-  function shortName(p) { return p.short || p.name; }
-  function repoUrl() { return String(CFG.repoUrl || '').replace(/\/+$/, ''); }
+  const pct = (n) => `<bdi dir="ltr">${Math.round(n)}%</bdi>`;
 
-  /* ===== تحميل البيانات ===== */
-  function loadJSON(path) {
-    return fetch(path, { cache: 'no-cache' }).then(function (r) {
-      if (!r.ok) throw new Error(path + ' ' + r.status);
-      return r.json();
+  /* ===== التاريخ ===== */
+  function daysAgo(date) {
+    const d = new Date(date + 'T12:00:00Z');
+    const diff = Math.round((Date.now() - d.getTime()) / 86400000);
+    if (!isFinite(diff) || diff <= 0) return 'اليوم';
+    if (diff === 1) return 'أمس';
+    if (diff === 2) return 'قبل يومين';
+    return diff <= 10 ? `قبل ${diff} أيام` : `قبل ${diff} يوم`;
+  }
+  function timeAgo(iso) {
+    const ms = Date.now() - new Date(iso).getTime();
+    if (!isFinite(ms)) return '';
+    const h = Math.floor(ms / 3600000);
+    if (h < 1) { const m = Math.max(1, Math.floor(ms / 60000)); return m <= 2 ? 'قبل دقيقة' : `قبل ${m} دقيقة`; }
+    if (h < 24) return h === 1 ? 'قبل ساعة' : h === 2 ? 'قبل ساعتين' : `قبل ${h} ساعات`;
+    const d = Math.floor(h / 24);
+    return d === 1 ? 'أمس' : `قبل ${d} أيام`;
+  }
+  const fmtDate = (iso) => { try { return new Date(iso).toLocaleDateString('ar-u-nu-latn', { day: 'numeric', month: 'long', year: 'numeric' }); } catch (e) { return iso; } };
+
+  /* ===== البحث العربي ===== */
+  const norm = (s) => String(s || '').toLowerCase()
+    .replace(/[ً-ٰٟـ]/g, '')
+    .replace(/[أإآٱ]/g, 'ا').replace(/ة/g, 'ه').replace(/ى/g, 'ي').replace(/ؤ/g, 'و').replace(/ئ/g, 'ي')
+    .replace(/[™®©’'`]/g, '').replace(/[^a-z0-9؀-ۿ+]+/g, ' ').trim();
+
+  /* ===== البيانات ===== */
+  let DB = null;
+  const state = {
+    currency: 'USD',
+    region: 'SA',
+    homeTab: 'game',
+    browse: {}
+  };
+
+  async function getJSON(url) {
+    const res = await fetch(url, { cache: 'no-cache' });
+    if (!res.ok) throw new Error(url + ' ' + res.status);
+    return res.json();
+  }
+
+  async function boot() {
+    try {
+      const [prices, regions, rates] = await Promise.all([getJSON('data/prices.json'), getJSON('data/regions.json'), getJSON('data/rates.json')]);
+      DB = build(prices, regions, rates);
+    } catch (e) {
+      main.innerHTML = `<div class="container page"><div class="empty">${icon('alert', 'lg')}<h1>ما قدرنا نجيب الأسعار</h1><p>جرّب تحدّث الصفحة بعد شوي.</p><button class="btn btn-primary" type="button" onclick="location.reload()">حدّث الصفحة</button></div></div>`;
+      return;
+    }
+    setupPrefs();
+    setupCurrency();
+    setupChrome();
+    window.addEventListener('hashchange', () => route());
+    route();
+  }
+
+  function build(prices, regions, rates) {
+    const regionByCode = {};
+    regions.forEach((r) => { regionByCode[r.code] = r; });
+    const services = (prices.services || []).filter((s) => s && s.offers && Object.keys(s.offers).length);
+    const byId = {};
+    services.forEach((s) => {
+      byId[s.id] = s;
+      s._search = norm([s.name, s.ar, s.kw].join(' '));
+      s.platforms = PLATFORM_ORDER.filter((p) => s.offers[p]);
     });
-  }
-
-  function build(regions, catalog, manual, auto, ratesFile, status) {
-    var rates = ratesFile.rates || {};
-    var regionMap = {};
-    regions.forEach(function (r) { regionMap[r.code] = r; });
-    var manualP = (manual && manual.products) || {};
-    var autoP = (auto && auto.products) || {};
-    var names = (auto && auto.names) || {};
-
-    var products = catalog.products.map(function (p) {
-      var name = names[p.id] || p.name;
-      var rows = [];
-      regions.forEach(function (reg) {
-        var a = autoP[p.id] && autoP[p.id][reg.code];
-        var m = manualP[p.id] && manualP[p.id][reg.code];
-        var e = a || m;
-        if (!e || !(e.amount > 0) || !rates[e.currency]) return;
-        var usd = e.amount / rates[e.currency];
-        var origUsd = e.original && e.original > e.amount ? e.original / rates[e.currency] : null;
-        rows.push({ region: reg, entry: e, usd: usd, origUsd: origUsd, auto: !!a });
-      });
-      rows.sort(function (x, y) { return x.usd - y.usd; });
-      var min = rows[0] || null;
-      var max = rows.length ? rows[rows.length - 1] : null;
-      var saving = rows.length > 1 ? Math.round((1 - min.usd / max.usd) * 100) : 0;
-      return Object.assign({}, p, {
-        name: name,
-        rows: rows,
-        min: min,
-        max: max,
-        saving: saving,
-        search: norm([name, p.name, p.short, p.keywords, p.variant].join(' '))
-      });
-    });
-
-    var productMap = {};
-    products.forEach(function (p) { productMap[p.id] = p; });
-
+    const covered = new Set();
+    let count = 0;
+    services.forEach((s) => Object.values(s.offers).forEach((o) => o.packages.forEach((p) => Object.keys(p.prices).forEach((c) => { covered.add(c); count++; }))));
     return {
-      regions: regions,
-      regionMap: regionMap,
-      products: products,
-      productMap: productMap,
-      platforms: catalog.platforms || {},
-      categories: catalog.categories || [],
-      comingSoon: catalog.comingSoon || [],
-      popular: catalog.popular || [],
-      rates: rates,
-      ratesMeta: ratesFile,
-      auto: auto || {},
-      status: status || {}
+      services, byId, regions, regionByCode,
+      rates: (rates && rates.rates) || { USD: 1 },
+      ratesUpdated: rates && rates.updated,
+      platforms: prices.platforms || {},
+      types: prices.types || {},
+      updated: prices.updated,
+      priceCount: count,
+      regionCount: covered.size,
+      memo: {}
     };
   }
 
-  /* ===== مكوّنات ===== */
-  function mono(p) {
-    if (p.mono) return p.mono;
-    var words = String(p.name).replace(/[^A-Za-z0-9 ]/g, ' ').trim().split(/\s+/).filter(Boolean);
-    if (!words.length) return String(p.name).trim().slice(0, 1);
+  /* ===== الحسابات ===== */
+  const usdOf = (t) => (t[1] === 'USD' ? t[0] : DB.rates[t[1]] ? t[0] / DB.rates[t[1]] : null);
+
+  function rowsOf(pkg) {
+    const rows = [];
+    for (const [code, t] of Object.entries(pkg.prices || {})) {
+      const usd = usdOf(t);
+      const region = DB.regionByCode[code];
+      if (usd == null || !region) continue;
+      rows.push({ code, region, t, usd, origUsd: t[2] ? usdOf([t[2], t[1]]) : null, date: t[3] });
+    }
+    return rows.sort((a, b) => a.usd - b.usd);
+  }
+
+  function pkgOf(s, pl, id) {
+    const off = s.offers[pl];
+    if (!off) return null;
+    return off.packages.find((p) => p.id === id) || off.packages.find((p) => p.id === off.def) || off.packages[0];
+  }
+
+  /** ملخص منصة/باقة: الأرخص والأغلى والفرق */
+  function summary(s, pl, pkgId) {
+    const key = s.id + '|' + pl + '|' + (pkgId || '');
+    if (DB.memo[key]) return DB.memo[key];
+    const pkg = pkgOf(s, pl, pkgId);
+    if (!pkg) return null;
+    const rows = rowsOf(pkg);
+    if (!rows.length) return null;
+    const best = rows[0];
+    const worst = rows[rows.length - 1];
+    const res = { pl, pkg, rows, best, worst, saving: worst.usd > 0 ? (1 - best.usd / worst.usd) * 100 : 0 };
+    DB.memo[key] = res;
+    return res;
+  }
+
+  /** أرخص منصة للخدمة (حسب الباقة الافتراضية لكل منصة) */
+  function bestOf(s) {
+    const key = s.id + '|best';
+    if (DB.memo[key] !== undefined) return DB.memo[key];
+    let best = null;
+    for (const pl of s.platforms) {
+      const sm = summary(s, pl);
+      if (sm && (!best || sm.best.usd < best.best.usd)) best = sm;
+    }
+    let saving = 0;
+    for (const pl of s.platforms) { const sm = summary(s, pl); if (sm && sm.rows.length >= 3) saving = Math.max(saving, sm.saving); }
+    DB.memo[key] = best ? { ...best, maxSaving: saving } : null;
+    return DB.memo[key];
+  }
+
+  /* ===== روابط ===== */
+  function storeUrl(s, pl, pkg, code) {
+    const r = DB.regionByCode[code] || {};
+    const ref = pkg && pkg.ref;
+    if (pl === 'psn') {
+      if (ref === 'psplus') return `https://www.playstation.com/${r.ps || 'en-us'}/ps-plus/`;
+      return `https://store.playstation.com/${r.ps || 'en-us'}/concept/${encodeURIComponent(ref)}`;
+    }
+    if (pl === 'xbox') return `https://www.xbox.com/en-US/games/store/x/${encodeURIComponent(ref)}`;
+    if (pl === 'steam') return `https://store.steampowered.com/app/${encodeURIComponent(ref)}/?cc=${r.steam || 'us'}`;
+    if (pl === 'apple') return `https://apps.apple.com/${r.apple || 'us'}/app/id${encodeURIComponent(ref)}`;
+    return '#/';
+  }
+  const cardSearchUrl = (pl, code) => {
+    const p = DB.platforms[pl] || {};
+    const r = DB.regionByCode[code] || {};
+    return 'https://www.google.com/search?q=' + encodeURIComponent(`${p.cardEn || ''} ${r.en || code}`);
+  };
+  const reportUrl = (title) => (CFG.repoUrl ? `${CFG.repoUrl}/issues/new?title=${encodeURIComponent(title)}` : '#/about');
+  const svcHref = (s, pl, pkgId) => '#/s/' + encodeURIComponent(s.id) + (pl ? '/' + pl + (pkgId ? '/' + encodeURIComponent(pkgId) : '') : '');
+
+  /* ===== عناصر صغيرة ===== */
+  const MONO = {
+    'ps-plus': 'P+', 'game-pass': 'GP', 'ea-play': 'EA', 'pubg-uc': 'UC', 'fortnite-vbucks': 'VB', 'roblox-robux': 'RBX', 'free-fire': 'FF',
+    'codm-cp': 'CP', 'mlbb-diamonds': 'ML', 'genshin-crystals': 'GI', 'clash-of-clans': 'CC', 'brawl-stars': 'BS', 'tiktok-coins': 'TT',
+    'snapchat-plus': 'S+', 'youtube-premium': 'YT', netflix: 'NF', 'disney-plus': 'D+', 'discord-nitro': 'DN', 'telegram-premium': 'TG', chatgpt: 'AI'
+  };
+  function mono(s) {
+    if (MONO[s.id]) return MONO[s.id];
+    const words = String(s.name).replace(/[^A-Za-z0-9؀-ۿ ]+/g, ' ').split(/\s+/).filter((w) => w && !/^(of|the|and|a|an|de|la)$/i.test(w));
+    if (!words.length) return '?';
     if (words.length === 1) return words[0].slice(0, 2).toUpperCase();
     return (words[0][0] + words[1][0]).toUpperCase();
   }
-  function tile(p, cls) {
-    var pl = DB.platforms[p.platform] || {};
-    var color = pl.color || '#A7B0BF';
-    return '<span class="tile ' + (cls || '') + '" dir="ltr" style="background:' + hexA(color, 0.14) + ';color:' + color + '" aria-hidden="true">' + esc(mono(p)) + '</span>';
-  }
-  function platformBadge(p) {
-    var pl = DB.platforms[p.platform] || { name: p.platform, color: '#A7B0BF' };
-    return '<span class="badge badge-muted"><span class="badge-dot" style="background:' + pl.color + '"></span>' + esc(pl.name) + '</span>';
-  }
-  function isAutoSource(p) { return p.source && (p.source.type === 'steam' || p.source.type === 'xbox'); }
+  const platBadge = (pl) => `<span class="plat p-${pl}" title="${esc((DB.platforms[pl] || {}).name || pl)}">${esc((DB.platforms[pl] || {}).short || pl)}</span>`;
+  const typeName = (t) => (DB.types[t] || {}).name || t;
+  const typeEn = (t) => (DB.types[t] || {}).en || '';
+  const regionName = (code) => (DB.regionByCode[code] || {}).name || code;
+  const codeTag = (code) => `<span class="code">${esc(code)}</span>`;
 
-  function productCard(p) {
-    var bottom;
-    if (p.min) {
-      bottom =
-        '<div class="pcard-where"><span class="pcard-label">الأرخص في</span>' +
-        '<span class="pcard-region"><span class="rpill">' + esc(p.min.region.code) + '</span>' + esc(p.min.region.name) + '</span></div>' +
-        '<div class="pcard-price"><span class="mono">' + money(p.min.usd) + '</span>' +
-        (p.saving > 0 ? '<span class="badge badge-soft">أرخص بـ ' + pct(p.saving) + '</span>' : '') + '</div>';
-    } else {
-      bottom = '<span class="pcard-pending">' + (isAutoSource(p) ? 'الأسعار بتنزل مع أول تحديث تلقائي' : 'الأسعار قريباً') + '</span>';
+  function svcCard(s) {
+    const b = bestOf(s);
+    if (!b) return '';
+    const save = b.maxSaving >= 5 ? `<span class="save">أرخص بـ ${pct(b.maxSaving)}</span>` : '';
+    return `<a class="card svc-card t-${s.type}" href="${svcHref(s)}">
+      <div class="svc-top">
+        <span class="tile">${esc(mono(s))}</span>
+        <div>
+          <h3 class="svc-name">${bdi(s.name)}</h3>
+          <div class="svc-meta"><span class="svc-kind">${esc(typeEn(s.type))}</span>${s.platforms.map(platBadge).join('')}</div>
+        </div>
+      </div>
+      <div class="svc-bottom">
+        <div class="svc-where"><span class="lbl">الأرخص على ${esc((DB.platforms[b.pl] || {}).name || '')}</span><span class="reg">${codeTag(b.best.code)} ${esc(b.best.region.name)}</span></div>
+        <div class="svc-price">${money(b.best.usd)}${save}</div>
+      </div>
+    </a>`;
+  }
+
+  /* ===== البحث (combobox) ===== */
+  let searchSeq = 0;
+  function searchBox(opts = {}) {
+    const id = 'sb' + (++searchSeq);
+    return `<div class="search" data-search="${id}" ${opts.filter ? 'data-filter="1"' : ''}>
+      <label class="sr-only" for="${id}-in">${esc(opts.label || 'ابحث عن لعبة أو اشتراك أو شحن')}</label>
+      <div class="search-box">
+        ${icon('search')}
+        <input id="${id}-in" class="search-input" type="search" autocomplete="off" spellcheck="false"
+          placeholder="${esc(opts.placeholder || 'جرّب: GTA VI، بلس بلايستيشن، شدات ببجي، سناب بلس…')}"
+          value="${esc(opts.value || '')}"
+          ${opts.filter ? '' : `role="combobox" aria-expanded="false" aria-controls="${id}-list" aria-autocomplete="list"`}>
+        ${opts.kbd ? '<span class="kbd" aria-hidden="true">/</span>' : ''}
+      </div>
+      ${opts.filter ? '' : `<ul class="search-list" id="${id}-list" role="listbox" hidden></ul>`}
+    </div>`;
+  }
+
+  function findServices(q, limit) {
+    const nq = norm(q);
+    if (!nq) return [];
+    const tokens = nq.split(' ');
+    const out = [];
+    for (const s of DB.services) {
+      if (!tokens.every((t) => s._search.includes(t))) continue;
+      const n = norm(s.name);
+      const score = (n.startsWith(nq) ? 0 : n.includes(nq) ? 1 : 2) * 10000 + (s.rank || 9999);
+      out.push([score, s]);
     }
-    return '<a class="pcard" href="#/p/' + encodeURIComponent(p.id) + '">' +
-      '<div class="pcard-top">' + tile(p) + '<div class="pcard-titles"><span class="pcard-name">' + esc(p.name) + '</span>' +
-      '<span class="pcard-variant">' + esc(p.variant || '') + '</span></div></div>' +
-      '<div class="pcard-bottom">' + bottom + '</div></a>';
-  }
-
-  function searchBox(id, placeholder) {
-    return '<div class="search" data-search>' +
-      '<label class="visually-hidden" for="' + id + '">ابحث عن لعبة أو اشتراك</label>' +
-      '<span class="search-icon">' + icon('search', 22) + '</span>' +
-      '<input id="' + id + '" class="search-input" type="search" autocomplete="off" spellcheck="false" enterkeyhint="search" ' +
-      'placeholder="' + esc(placeholder) + '" role="combobox" aria-expanded="false" aria-controls="' + id + '-list" aria-autocomplete="list">' +
-      '<ul id="' + id + '-list" class="search-results" role="listbox" aria-label="نتائج البحث" hidden></ul>' +
-      '</div>';
+    out.sort((a, b) => a[0] - b[0]);
+    return out.slice(0, limit || out.length).map((x) => x[1]);
   }
 
   function bindSearch(root) {
-    root.querySelectorAll('[data-search]').forEach(function (box) {
-      var input = box.querySelector('input');
-      var list = box.querySelector('ul');
-      var items = [];
-      var active = -1;
-
-      function close() {
-        list.hidden = true;
-        input.setAttribute('aria-expanded', 'false');
-        input.removeAttribute('aria-activedescendant');
-        active = -1;
-      }
-      function go(p) { location.hash = '#/p/' + encodeURIComponent(p.id); }
-      function setActive(i) {
-        var opts = list.querySelectorAll('.search-option');
-        if (!opts.length) return;
-        active = i;
-        opts.forEach(function (o, k) { o.setAttribute('aria-selected', k === i ? 'true' : 'false'); });
-        if (opts[i]) {
-          input.setAttribute('aria-activedescendant', opts[i].id);
-          opts[i].scrollIntoView({ block: 'nearest' });
-        }
-      }
-      function render() {
-        var q = norm(input.value);
-        if (!q) { close(); return; }
-        items = DB.products.filter(function (p) { return p.search.indexOf(q) !== -1; })
-          .sort(function (a, b) {
-            var as = norm(a.name).indexOf(q) === 0 ? 0 : 1;
-            var bs = norm(b.name).indexOf(q) === 0 ? 0 : 1;
-            if (as !== bs) return as - bs;
-            return (b.rows.length ? 1 : 0) - (a.rows.length ? 1 : 0);
-          })
-          .slice(0, 8);
-        if (!items.length) {
-          list.innerHTML = '<li class="search-empty" role="option" aria-disabled="true">ما لقينا «' + esc(input.value) + '». جرّب اسم ثاني.</li>';
-        } else {
-          list.innerHTML = items.map(function (p, i) {
-            return '<li id="' + list.id + '-' + i + '" class="search-option" role="option" aria-selected="false" data-i="' + i + '">' +
-              tile(p) +
-              '<span class="search-option-text"><span class="search-option-name">' + esc(p.name) + '</span>' +
-              '<span class="search-option-meta">' + esc(p.variant || '') + '</span></span>' +
-              (p.min ? '<span class="search-option-price"><span class="mono">' + money(p.min.usd) + '</span>' +
-                '<span class="search-option-meta">الأرخص في ' + esc(p.min.region.name) + '</span></span>' : '') +
-              '</li>';
-          }).join('');
-        }
+    root.querySelectorAll('[data-search]:not([data-filter])').forEach((wrap) => {
+      const input = wrap.querySelector('input');
+      const list = wrap.querySelector('.search-list');
+      let items = [];
+      let active = -1;
+      const close = () => { list.hidden = true; input.setAttribute('aria-expanded', 'false'); input.removeAttribute('aria-activedescendant'); active = -1; };
+      const paint = () => {
+        list.querySelectorAll('.search-opt').forEach((el, i) => el.setAttribute('aria-selected', i === active ? 'true' : 'false'));
+        if (active >= 0) input.setAttribute('aria-activedescendant', list.children[active].id);
+      };
+      const render = () => {
+        items = findServices(input.value, 8);
+        active = items.length ? 0 : -1;
+        if (!input.value.trim()) { close(); return; }
+        list.innerHTML = items.length
+          ? items.map((s, i) => {
+            const b = bestOf(s);
+            return `<li class="search-opt" role="option" id="${wrap.dataset.search}-o${i}" data-id="${esc(s.id)}">
+              <span class="tile t-${s.type}" style="width:36px;height:36px;font-size:12px">${esc(mono(s))}</span>
+              <span class="grow"><span class="name">${bdi(s.name)}</span><span class="sub">${esc(typeName(s.type))}${b ? ' · الأرخص: ' + esc(b.best.region.name) : ''}</span></span>
+              ${b ? money(b.best.usd) : ''}
+            </li>`;
+          }).join('')
+          : '<li class="search-empty" role="option" aria-disabled="true">ما لقينا شي بهالاسم. جرّب اسم ثاني أو تصفّح الأقسام.</li>';
         list.hidden = false;
         input.setAttribute('aria-expanded', 'true');
-        active = -1;
-      }
-
+        paint();
+      };
+      const go = (i) => { const s = items[i]; if (s) { close(); location.hash = svcHref(s); } };
       input.addEventListener('input', render);
-      input.addEventListener('focus', function () { if (input.value) render(); });
-      input.addEventListener('keydown', function (e) {
-        if (e.key === 'ArrowDown') {
-          e.preventDefault();
-          if (list.hidden) render();
-          if (items.length) setActive(Math.min(items.length - 1, active + 1));
-        } else if (e.key === 'ArrowUp') {
-          e.preventDefault();
-          if (items.length) setActive(Math.max(0, active - 1));
-        } else if (e.key === 'Enter') {
-          if (items.length && !list.hidden) { e.preventDefault(); go(items[Math.max(0, active)]); }
-        } else if (e.key === 'Escape') {
-          close();
-        }
+      input.addEventListener('focus', () => { if (input.value.trim()) render(); });
+      input.addEventListener('keydown', (e) => {
+        if (e.key === 'ArrowDown' && items.length) { e.preventDefault(); active = (active + 1) % items.length; paint(); }
+        else if (e.key === 'ArrowUp' && items.length) { e.preventDefault(); active = (active - 1 + items.length) % items.length; paint(); }
+        else if (e.key === 'Enter') { if (active >= 0) { e.preventDefault(); go(active); } }
+        else if (e.key === 'Escape') { close(); }
       });
-      list.addEventListener('mousedown', function (e) {
-        var li = e.target.closest('[data-i]');
-        if (li) { e.preventDefault(); go(items[+li.getAttribute('data-i')]); }
-      });
-      input.addEventListener('blur', function () { setTimeout(close, 150); });
+      list.addEventListener('mousedown', (e) => { const li = e.target.closest('.search-opt[data-id]'); if (li) { e.preventDefault(); go([...list.children].indexOf(li)); } });
+      input.addEventListener('blur', () => setTimeout(close, 120));
     });
   }
 
-  var VPN_NOTE = 'ما بننصح بتغيير المنطقة بالـ VPN، لأنه مخالف لشروط المنصات وممكن يسكّر حسابك.';
-
-  // regionName/platformName اختياريين: بدونهم بيطلع التنبيه العام
-  function lockNotice(regionName, platformName) {
-    var first = regionName
-      ? 'بطاقات ' + esc(regionName) + ' بتشتغل بس على حسابات ' + esc(platformName) + ' من ' + esc(regionName) + '. '
-      : 'بطاقة كل منطقة بتشتغل بس على حساب من نفس المنطقة. ';
-    return '<div class="notice" role="note">' + icon('lock', 20) +
-      '<p><strong>قبل ما تشتري: </strong>' + first + VPN_NOTE + '</p></div>';
+  /* ===== الصفحة الرئيسية ===== */
+  function heroCard(n, s, pl, pkgId, kicker, kickClass) {
+    if (!s) return '';
+    const sm = summary(s, pl, pkgId);
+    if (!sm) return '';
+    const rows = sm.rows.slice(0, 4);
+    return `<a class="card hero-card hero-card-${n}" href="${svcHref(s, pl, sm.pkg.id)}">
+      <div class="hc-head"><span class="eyebrow ${kickClass}">${esc(kicker)}</span>${platBadge(pl)}</div>
+      <div class="hc-title">${bdi(s.name)} <span class="muted" style="font-size:.85rem;font-weight:600">· ${bdi(sm.pkg.label)}</span></div>
+      <ul class="hc-rows">${rows.map((r) => `<li class="hc-row">${codeTag(r.code)}<span class="grow">${esc(r.region.name)}</span>${money(r.usd)}</li>`).join('')}</ul>
+      <span class="link" style="font-size:14px">شوف كل المناطق (${sm.rows.length}) ←</span>
+    </a>`;
   }
 
-  function updatedText() {
-    if (DB.auto && DB.auto.updated) return 'آخر تحديث تلقائي ' + relTime(DB.auto.updated);
-    return 'الأسعار التلقائية بتتحدّث كل يوم';
-  }
-
-  function soonBox() {
-    if (!DB.comingSoon.length) return '';
-    return '<div class="soon-box"><span class="soon-title">' + icon('sparkle', 18) + 'قريباً على الموقع</span>' +
-      '<ul class="soon-list">' + DB.comingSoon.map(function (s) { return '<li>' + esc(s) + '</li>'; }).join('') + '</ul></div>';
-  }
-
-  /* ===== الصفحات ===== */
-  // لوحة جانبية بالواجهة: أول منتج مشهور عنده أسعار، بأرخص 5 مناطق
-  function heroBoard(popular) {
-    var p = popular.filter(function (x) { return x.rows.length > 2; })[0];
-    if (!p) return '';
-    var rows = p.rows.slice(0, 5).map(function (r, i) {
-      return '<li class="board-row' + (i === 0 ? ' is-top' : '') + '">' +
-        '<span class="rpill' + (i === 0 ? ' is-accent' : '') + '">' + esc(r.region.code) + '</span>' +
-        '<span class="board-name">' + esc(r.region.name) + '</span>' +
-        '<span class="board-price mono">' + money(r.usd) + '</span></li>';
-    }).join('');
-    return '<aside class="hero-board" aria-label="مثال: أسعار ' + esc(shortName(p)) + ' بأرخص المناطق">' +
-      '<div class="board-head">' + tile(p) +
-        '<span class="board-titles"><span class="board-title">' + esc(p.name) + '</span>' +
-        '<span class="board-sub">' + esc(p.variant || '') + '</span></span></div>' +
-      '<ol class="board-list">' + rows + '</ol>' +
-      '<a class="board-more" href="#/p/' + encodeURIComponent(p.id) + '">شوف كل المناطق (' + p.rows.length + ') ←</a>' +
-    '</aside>';
-  }
+  function findByKey(q) { return findServices(q, 1)[0]; }
 
   function viewHome() {
-    var priced = DB.products.filter(function (p) { return p.rows.length > 1; });
-    var top = priced.slice().sort(function (a, b) { return b.saving - a.saving; }).slice(0, 8);
-    var popular = DB.popular.map(function (id) { return DB.productMap[id]; }).filter(Boolean);
+    const S = DB.byId;
+    const gta = DB.services.find((s) => s.type === 'game' && /^grand theft auto vi$/i.test(s.name)) || null;
+    const quick = [
+      gta && [gta, 'GTA VI'],
+      S['ps-plus'] && [S['ps-plus'], 'بلس بلايستيشن'],
+      S['game-pass'] && [S['game-pass'], 'Game Pass'],
+      S['pubg-uc'] && [S['pubg-uc'], 'شدات ببجي'],
+      S['fortnite-vbucks'] && [S['fortnite-vbucks'], 'V-Bucks'],
+      S['roblox-robux'] && [S['roblox-robux'], 'روبوكس'],
+      S['snapchat-plus'] && [S['snapchat-plus'], 'سناب بلس']
+    ].filter(Boolean);
+    const counts = {};
+    DB.services.forEach((s) => { counts[s.type] = (counts[s.type] || 0) + 1; });
+    const tab = state.homeTab;
+    const tabList = DB.services.filter((s) => s.type === tab && bestOf(s)).sort((a, b) => (a.rank || 9999) - (b.rank || 9999)).slice(0, 8);
+    const gaps = DB.services.map((s) => ({ s, b: bestOf(s) })).filter((x) => x.b && x.b.rows.length >= 6)
+      .sort((a, b) => b.b.saving - a.b.saving).slice(0, 10);
 
-    var steps = [
-      ['01', 'بنجمع السعر من كل منطقة', 'من المتجر نفسه، أو من مصدر منشور مع رابطه وتاريخ التحقق منه.'],
-      ['02', 'بنحوّله لعملتك', 'بسعر صرف بيتحدّث كل يوم، عشان تقارن الأسعار ببعض صح.'],
-      ['03', 'بنرتّب من الأرخص', 'وبنحسبلك قديش أرخص من أغلى منطقة.'],
-      ['04', 'بنقلك شو بيلزمك', 'أي بطاقة بتشحن فيها، ومع تنبيه إذا ما بتمشي على حسابك.']
-    ];
+    return `
+    <section class="hero bg-grid">
+      <div class="hero-glow" aria-hidden="true"></div>
+      <div class="container hero-row">
+        <div class="hero-copy">
+          <span class="live-pill"><span class="live-dot" aria-hidden="true"></span><span class="eyebrow">LIVE · PRICE RADAR</span><span>${esc(DB.priceCount.toLocaleString('en-US'))} سعر من ${DB.regionCount} منطقة</span></span>
+          <h1 class="hero-title"><span>نفس الشي،</span><span class="volt">بأرخص منطقة.</span></h1>
+          <p class="hero-lead">اختار اللعبة أو الاشتراك أو الشحن، وإحنا بنختارلك المنصة الأرخص وبنرتّبلك كل المناطق بعملتك، مع البطاقة اللي بتلزمك.</p>
+          ${searchBox({ kbd: true })}
+          ${quick.length ? `<div class="quick"><span class="quick-label">الأكثر بحثاً:</span>${quick.map(([s, l]) => `<a class="chip" href="${svcHref(s)}">${esc(l)}</a>`).join('')}</div>` : ''}
+          <dl class="hero-stats">
+            <div><dt class="num">${DB.services.length}</dt><dd>خدمة ولعبة</dd></div>
+            <div><dt class="num">${DB.regionCount}</dt><dd>منطقة حول العالم</dd></div>
+            <div><dt class="num">24h</dt><dd>تحديث تلقائي من المتاجر</dd></div>
+          </dl>
+        </div>
+        <div class="hero-cards">
+          ${heroCard(1, S['ps-plus'], 'psn', 'essential-1m', 'PS PLUS · ESSENTIAL', 'sky')}
+          ${heroCard(2, S['pubg-uc'], 'apple', null, 'UC · PUBG MOBILE', 'orange')}
+          ${heroCard(3, S['game-pass'], 'xbox', 'ultimate-1m', 'GAME PASS · ULTIMATE', '')}
+        </div>
+      </div>
+    </section>
 
-    return '' +
-      '<section class="hero"><div class="container hero-grid">' +
-        '<div class="hero-copy">' +
-          '<span class="eyebrow">' + icon('globe', 14) + 'قارن الأسعار بين ' + DB.regions.length + ' منطقة حول العالم</span>' +
-          '<h1 class="hero-title">نفس اللعبة،<br><span class="accent">بسعر أقل بكثير.</span></h1>' +
-          '<p class="hero-sub">اكتب اسم اللعبة أو الاشتراك، وبنوريك بأي منطقة أرخص، وكم بيطلع عليك بعملتك، وأي بطاقة بتلزمك.</p>' +
-          searchBox('hero-search', 'جرّب: GTA VI، بلايستيشن بلس، جيم باس، Elden Ring…') +
-          (popular.length ? '<div class="quick"><span class="quick-label">الأكثر بحثاً:</span>' +
-            popular.map(function (p) { return '<a class="chip" href="#/p/' + encodeURIComponent(p.id) + '">' + esc(shortName(p)) + '</a>'; }).join('') +
-          '</div>' : '') +
-        '</div>' +
-        heroBoard(popular) +
-      '</div></section>' +
+    <section class="container section" aria-labelledby="how-h">
+      <div class="section-head"><div class="head-copy"><span class="eyebrow">HOW IT WORKS</span><h2 id="how-h">3 خطوات وبتوفّر</h2></div></div>
+      <ol class="steps">
+        <li class="card step cut"><span class="step-n">01</span><h3>اختار الخدمة</h3><p>لعبة، اشتراك، شحن شدات أو جواهر، أو اشتراك تطبيق. ابحث بالعربي أو بالإنجليزي.</p></li>
+        <li class="card step cut"><span class="step-n">02</span><h3>بنختارلك المنصة</h3><p>بلايستيشن، إكس بوكس، ستيم أو آبل: بنفتحلك المنصة الأرخص تلقائياً، وبتقدر تغيّرها بكبسة.</p></li>
+        <li class="card step cut"><span class="step-n">03</span><h3>خذ أرخص منطقة</h3><p>كل المناطق مرتبة بعملتك، مع البطاقة اللي بتلزمك وتنبيه قفل المنطقة قبل ما تشتري.</p></li>
+      </ol>
+    </section>
 
-      '<div class="container"><div class="stats">' +
-        '<span class="stat">' + icon('globe') + DB.regions.length + ' منطقة</span>' +
-        '<span class="stat">' + icon('card') + DB.products.length + ' منتج</span>' +
-        '<span class="stat">' + icon('clock') + esc(updatedText()) + '</span>' +
-        '<span class="stat">' + icon('shield') + 'كل سعر معه مصدره وتاريخه</span>' +
-      '</div></div>' +
+    <section class="container section" aria-labelledby="browse-h">
+      <div class="section-head">
+        <div class="head-copy"><span class="eyebrow">BROWSE</span><h2 id="browse-h">تصفّح حسب النوع</h2></div>
+        <a class="link" href="#/c/${tab}">كل ${esc(typeName(tab))} ←</a>
+      </div>
+      <div class="tabs" role="tablist" aria-label="أنواع الخدمات">
+        ${TYPE_ORDER.filter((t) => counts[t]).map((t) => `<button class="tab" type="button" role="tab" data-tab="${t}" aria-selected="${t === tab}">${esc(typeName(t))} <span class="count">${counts[t]}</span></button>`).join('')}
+      </div>
+      <div class="grid-cards" role="tabpanel">${tabList.map(svcCard).join('')}</div>
+    </section>
 
-      '<section class="section"><div class="container">' +
-        '<div class="section-head"><div><h2 class="section-title">أكبر فروقات الأسعار</h2>' +
-        '<p class="section-sub">الفرق بين أرخص منطقة وأغلى منطقة، محسوب بعملتك</p></div>' +
-        '<a class="link-more" href="#/all">كل المنتجات ←</a></div>' +
-        (top.length ? '<div class="grid cards">' + top.map(productCard).join('') + '</div>'
-          : '<div class="empty"><span class="empty-title">الأسعار عم تتجهّز</span><span>رح تظهر هون أول ما يخلص التحديث التلقائي.</span></div>') +
-      '</div></section>' +
+    ${gaps.length ? `<section class="container section" aria-labelledby="gaps-h">
+      <div class="section-head"><div class="head-copy"><span class="eyebrow live">BIGGEST GAPS</span><h2 id="gaps-h">أكبر فروقات اليوم</h2><p>الفرق بين أرخص منطقة وأغلى منطقة لنفس الشي، محسوب بعملتك.</p></div></div>
+      <ol class="gaps">
+        ${gaps.map(({ s, b }, i) => `<li><a class="gap-row" href="${svcHref(s, b.pl, b.pkg.id)}">
+          <span class="gap-rank">${String(i + 1).padStart(2, '0')}</span>
+          <span class="gap-name"><b>${bdi(s.name)}</b><span>${platBadge(b.pl)} ${bdi(b.pkg.label)}</span></span>
+          <span class="gap-cell cheap"><span>${esc(b.best.region.name)}</span>${money(b.best.usd)}</span>
+          <span class="gap-cell"><span>${esc(b.worst.region.name)}</span>${money(b.worst.usd)}</span>
+          <span class="save">وفّر ${pct(b.saving)}</span>
+        </a></li>`).join('')}
+      </ol>
+    </section>` : ''}
 
-      '<section class="section"><div class="container">' +
-        '<div class="section-head"><h2 class="section-title">تصفّح حسب القسم</h2></div>' +
-        '<div class="grid cats">' + DB.categories.map(function (c) {
-          var n = DB.products.filter(function (p) { return p.category === c.id; }).length;
-          return '<a class="catcard" href="#/c/' + encodeURIComponent(c.id) + '"><span class="catcard-icon">' + icon(c.icon || 'card', 22) + '</span>' +
-            '<span class="catcard-body"><span class="catcard-name">' + esc(c.name) + '</span>' +
-            '<span class="catcard-desc">' + esc(c.desc) + '</span><span class="catcard-count">' + n + ' منتج</span></span></a>';
-        }).join('') + '</div>' +
-        soonBox() +
-      '</div></section>' +
-
-      '<section class="section"><div class="container">' +
-        '<div class="section-head"><div><h2 class="section-title">كيف بنحسب؟</h2>' +
-        '<p class="section-sub">نفس الطريقة لكل منتج، وكل رقم بتقدر تتأكد منه</p></div>' +
-        '<a class="link-more" href="#/about">التفاصيل ←</a></div>' +
-        '<div class="grid steps">' + steps.map(function (s, i) {
-          return '<div class="step' + (i === steps.length - 1 ? ' is-result' : '') + '"><span class="step-num">' + s[0] + '</span>' +
-            '<span class="step-title">' + s[1] + '</span><span class="step-text">' + s[2] + '</span></div>';
-        }).join('') + '</div>' +
-        '<div style="margin-top:16px">' + lockNotice() + '</div>' +
-      '</div></section>';
+    <section class="container section">
+      <div class="card note plasma cut">${icon('android', 'lg')}<div><h3>وين جوجل بلاي؟</h3><p>جوجل ما بتنشر أسعار المشتريات داخل التطبيقات لكل دولة على الويب، فما في مصدر رسمي نسحب منه أرقام مضمونة. أسعار الشحن والتطبيقات عندنا من App Store، وغالباً قريبة من أسعار جوجل بنفس الدولة بس مش دايماً. <a class="link" href="#/about">اعرف أكثر</a></p></div></div>
+    </section>`;
   }
 
-  function viewBrowse(catId) {
-    var cat = null;
-    if (catId) {
-      cat = DB.categories.filter(function (c) { return c.id === catId; })[0] || null;
-      if (!cat) return null;
+  function bindHome() {
+    main.querySelectorAll('[data-tab]').forEach((b) => b.addEventListener('click', () => {
+      state.homeTab = b.dataset.tab;
+      rerender(() => { const t = main.querySelector(`[data-tab="${state.homeTab}"]`); if (t) t.focus(); });
+    }));
+  }
+
+  /* ===== التصفّح ===== */
+  function viewBrowse(type) {
+    const all = type === 'all';
+    if (!all && !DB.types[type]) return null;
+    const st = state.browse[type] || (state.browse[type] = { q: '', pl: '', sort: 'rank', limit: PAGE });
+    const pls = PLATFORM_ORDER.filter((pl) => DB.services.some((s) => (all || s.type === type) && s.offers[pl]));
+    return `<div class="container page">
+      <div class="page-head">
+        <ol class="crumbs"><li><a href="#/">الرئيسية</a></li><li>${esc(all ? 'كل الخدمات' : typeName(type))}</li></ol>
+        <span class="eyebrow">${esc(all ? 'EVERYTHING' : typeEn(type))}</span>
+        <h1>${esc(all ? 'كل الخدمات' : typeName(type))}</h1>
+        <p>${esc(all ? 'كل الألعاب والاشتراكات والشحن والتطبيقات اللي بنقارن أسعارها.' : (DB.types[type] || {}).desc || '')}</p>
+      </div>
+      <div class="toolbar">
+        ${searchBox({ filter: true, value: st.q, placeholder: 'فلتر بالاسم…', label: 'فلتر بالاسم' })}
+        <div class="quick" role="group" aria-label="المنصة">
+          <button class="chip" type="button" data-pl="" aria-pressed="${!st.pl}">الكل</button>
+          ${pls.map((pl) => `<button class="chip" type="button" data-pl="${pl}" aria-pressed="${st.pl === pl}">${esc(DB.platforms[pl].name)}</button>`).join('')}
+        </div>
+        <span class="toolbar-spacer"></span>
+        <label class="pill-select"><span class="sr-only">الترتيب</span>
+          <select data-sort>
+            <option value="rank"${st.sort === 'rank' ? ' selected' : ''}>الأشهر</option>
+            <option value="saving"${st.sort === 'saving' ? ' selected' : ''}>أكبر فرق بالسعر</option>
+            <option value="cheap"${st.sort === 'cheap' ? ' selected' : ''}>الأرخص</option>
+            <option value="az"${st.sort === 'az' ? ' selected' : ''}>أبجدي</option>
+          </select>
+        </label>
+      </div>
+      <div data-results></div>
+    </div>`;
+  }
+
+  function fillBrowse(type) {
+    const st = state.browse[type];
+    const box = main.querySelector('[data-results]');
+    if (!box || !st) return;
+    let list = DB.services.filter((s) => (type === 'all' || s.type === type) && bestOf(s));
+    if (st.pl) list = list.filter((s) => s.offers[st.pl]);
+    if (st.q.trim()) { const ids = new Set(findServices(st.q).map((s) => s.id)); list = list.filter((s) => ids.has(s.id)); }
+    const by = {
+      rank: (a, b) => (a.rank || 9999) - (b.rank || 9999),
+      saving: (a, b) => bestOf(b).maxSaving - bestOf(a).maxSaving,
+      cheap: (a, b) => bestOf(a).best.usd - bestOf(b).best.usd,
+      az: (a, b) => a.name.localeCompare(b.name)
+    }[st.sort] || (() => 0);
+    list.sort(by);
+    const shown = list.slice(0, st.limit);
+    box.innerHTML = list.length
+      ? `<p class="result-count" aria-live="polite">${list.length} نتيجة</p>
+         <div class="grid-cards">${shown.map(svcCard).join('')}</div>
+         ${list.length > shown.length ? `<div class="more-row" style="margin-top:22px"><button class="btn btn-secondary" type="button" data-more>اعرض ${Math.min(PAGE, list.length - shown.length)} كمان</button></div>` : ''}`
+      : `<div class="empty" aria-live="polite">${icon('search', 'lg')}<p>ما في نتائج بهالفلتر.</p><button class="btn btn-secondary btn-sm" type="button" data-reset>امسح الفلتر</button></div>`;
+    const more = box.querySelector('[data-more]');
+    if (more) more.addEventListener('click', () => { st.limit += PAGE; fillBrowse(type); });
+    const reset = box.querySelector('[data-reset]');
+    if (reset) reset.addEventListener('click', () => { st.q = ''; st.pl = ''; rerender(); });
+  }
+
+  function bindBrowse(type) {
+    const st = state.browse[type];
+    const input = main.querySelector('[data-filter] input');
+    if (input) input.addEventListener('input', () => { st.q = input.value; st.limit = PAGE; fillBrowse(type); });
+    main.querySelectorAll('[data-pl]').forEach((b) => b.addEventListener('click', () => {
+      st.pl = b.dataset.pl; st.limit = PAGE;
+      main.querySelectorAll('[data-pl]').forEach((x) => x.setAttribute('aria-pressed', String(x === b)));
+      fillBrowse(type);
+    }));
+    const sort = main.querySelector('[data-sort]');
+    if (sort) sort.addEventListener('change', () => { st.sort = sort.value; fillBrowse(type); });
+    fillBrowse(type);
+  }
+
+  /* ===== صفحة الخدمة ===== */
+  const LOCK = {
+    psn: (r) => `بطاقات ${r} بتشتغل بس على حساب PlayStation من ${r}. لازم يكون عندك حساب بهالمنطقة (بتقدر تعمل حساب جديد بمنطقة ثانية، بس الألعاب والاشتراكات ما بتنتقل بين الحسابات).`,
+    xbox: (r) => `بطاقات Xbox من ${r} بتنشحن بس على حساب Microsoft منطقته ${r}، وتغيير منطقة الحساب إله شروط ومرة كل 3 شهور تقريباً.`,
+    steam: (r) => `محفظة ستيم بتاخذ عملة منطقة حسابك، وبطاقات ${r} بتشتغل بس على حساب من ${r}. ستيم بيطلب تكون فعلياً بالمنطقة عشان تغيّرها.`,
+    apple: (r) => `بطاقات آبل من ${r} بتشتغل بس على Apple ID من ${r}. تغيير دولة الـ Apple ID بيحتاج تلغي الاشتراكات وتصرف الرصيد الموجود أولاً.`
+  };
+
+  function viewService(id, plWanted, pkgWanted) {
+    const s = DB.byId[id];
+    if (!s) return null;
+    const auto = !plWanted || !s.offers[plWanted];
+    const pl = auto ? (bestOf(s) || {}).pl || s.platforms[0] : plWanted;
+    const sm = summary(s, pl, pkgWanted);
+    if (!sm) return null;
+    const off = s.offers[pl];
+    const pkg = sm.pkg;
+    const platSums = s.platforms.map((p) => [p, summary(s, p)]).filter((x) => x[1]);
+    const cheapestPl = platSums.slice().sort((a, b) => a[1].best.usd - b[1].best.usd)[0][0];
+    const mine = sm.rows.find((r) => r.code === state.region);
+    const best = sm.best;
+    const worst = sm.worst;
+    const platName = (DB.platforms[pl] || {}).name || pl;
+    const lastDate = sm.rows.map((r) => r.date).sort().pop();
+    const steps = [];
+    let n = 1;
+
+    steps.push(`<div class="flow-step">
+      <div class="flow-label"><span class="n">${++n}</span>المنصة <span class="hint">${s.platforms.length > 1 ? (auto ? 'اخترنالك الأرخص تلقائياً، وبتقدر تغيّرها' : 'بدّل بين المنصات') : 'متوفر على منصة وحدة'}</span></div>
+      <div class="plat-grid" role="list">
+        ${platSums.map(([p, ps]) => `<a role="listitem" class="plat-card" href="${svcHref(s, p)}" aria-current="${p === pl}">
+          <span class="row1">${platBadge(p)}<span class="pname">${esc(DB.platforms[p].name)}</span>${p === cheapestPl && platSums.length > 1 ? '<span class="tag best">الأرخص</span>' : ''}<span class="check">${icon('check', 'sm')}</span></span>
+          <span class="pprice"><span class="pwhere">${bdi(ps.pkg.label)}</span>${money(ps.best.usd)}</span>
+          <span class="pwhere">الأرخص في ${esc(ps.best.region.name)} · ${ps.rows.length} منطقة</span>
+        </a>`).join('')}
+      </div>
+    </div>`);
+
+    if (off.packages.length > 1) {
+      steps.push(`<div class="flow-step">
+        <div class="flow-label"><span class="n">${++n}</span>الباقة <span class="hint">${off.packages.length} خيارات</span></div>
+        <div class="pkg-row" role="group" aria-label="الباقة">
+          ${off.packages.map((p) => { const r = rowsOf(p)[0]; return `<a class="pkg" href="${svcHref(s, pl, p.id)}" aria-pressed="${p.id === pkg.id}"><span class="pl">${bdi(p.label)}</span>${r ? `<span class="pp">من ${money(r.usd)}</span>` : ''}</a>`; }).join('')}
+        </div>
+      </div>`);
     }
-    var title = cat ? cat.name : 'كل المنتجات';
-    return '<div class="container">' +
-      '<div class="page-head">' +
-        '<nav class="crumbs" aria-label="مسار التنقل"><a href="#/">الرئيسية</a><span aria-hidden="true">/</span><span>' + esc(title) + '</span></nav>' +
-        '<h1 class="page-title">' + esc(title) + '</h1>' +
-        '<p class="page-sub">' + (cat ? esc(cat.desc) : 'كل الألعاب والاشتراكات اللي بنقارن أسعارها بين المناطق') + '</p>' +
-      '</div>' +
-      '<div class="toolbar">' +
-        '<div class="chips" role="group" aria-label="الأقسام">' +
-          '<a class="chip" href="#/all"' + (!cat ? ' aria-current="true"' : '') + '>الكل</a>' +
-          DB.categories.map(function (c) {
-            return '<a class="chip" href="#/c/' + encodeURIComponent(c.id) + '"' + (cat && cat.id === c.id ? ' aria-current="true"' : '') + '>' + esc(c.name) + '</a>';
-          }).join('') +
-        '</div>' +
-        '<div class="tools">' +
-          '<label class="visually-hidden" for="filter">فلترة بالاسم</label>' +
-          '<input id="filter" class="filter-input" type="search" placeholder="فلترة بالاسم…" autocomplete="off" value="' + esc(state.filter) + '">' +
-          '<label class="visually-hidden" for="sort">الترتيب</label>' +
-          '<select id="sort" class="select">' +
-            '<option value="saving">أكبر فرق بالسعر</option>' +
-            '<option value="cheap">الأرخص أولاً</option>' +
-            '<option value="name">حسب الاسم</option>' +
-          '</select>' +
-        '</div>' +
-      '</div>' +
-      '<p class="result-count" id="result-count" aria-live="polite"></p>' +
-      '<div class="grid cards" id="browse-grid" style="padding-bottom:56px"></div>' +
-    '</div>';
+
+    const regionOptions = DB.regions.map((r) => `<option value="${r.code}"${r.code === state.region ? ' selected' : ''}>${esc(r.name)}</option>`).join('');
+    const mineText = mine
+      ? (mine.code === best.code ? '<span class="sub">منطقتك هي الأرخص 👌</span>' : `<span class="sub">أغلى من الأرخص بـ ${pct((mine.usd / best.usd - 1) * 100)}</span>`)
+      : '<span class="sub">مش متوفر بمنطقتك على هالمنصة</span>';
+
+    return `<div class="container page">
+      <ol class="crumbs"><li><a href="#/">الرئيسية</a></li><li><a href="#/c/${s.type}">${esc(typeName(s.type))}</a></li><li>${bdi(s.name)}</li></ol>
+      <div class="svc-head t-${s.type}">
+        <span class="tile lg">${esc(mono(s))}</span>
+        <div>
+          <span class="eyebrow" style="color:var(--tc)">${esc(typeEn(s.type))}</span>
+          <h1>${bdi(s.name)}</h1>
+          <div class="svc-meta">${s.ar ? `<span class="chip">${esc(s.ar)}</span>` : ''}${s.platforms.map(platBadge).join('')}</div>
+        </div>
+      </div>
+
+      <div class="flow">
+        <div class="flow-label"><span class="n">${icon('check', 'sm')}</span>الخدمة: <b style="color:var(--text)">${bdi(s.name)}</b></div>
+        ${steps.join('')}
+
+        <div class="flow-step">
+          <div class="flow-label"><span class="n">${++n}</span>أرخص منطقة <span class="hint">${esc(platName)} · ${bdi(pkg.label)}</span></div>
+          <div class="result">
+            <div class="result-main">
+              <section class="card winner cut" aria-labelledby="win-h">
+                <div class="stripes stripes-bg" aria-hidden="true"></div>
+                <div class="winner-top">
+                  <div class="winner-reg"><span class="tile">${esc(best.code)}</span><div><span class="eyebrow">CHEAPEST NOW</span><h2 id="win-h">${esc(best.region.name)}</h2></div></div>
+                  ${best.t[2] ? '<span class="tag sale">عليها خصم هلأ</span>' : ''}
+                </div>
+                <div class="winner-price"><span class="big">${money(best.usd)}</span><span class="local">بسعر المتجر: ${localPrice(best.t)}</span></div>
+                <div class="winner-facts">
+                  <div class="fact"><span class="lbl">أغلى منطقة</span><span class="val">${money(worst.usd)}</span><span class="sub">${esc(worst.region.name)}</span></div>
+                  <div class="fact"><span class="lbl">بتوفّر لحد</span><span class="val volt">${pct(sm.saving)}</span><span class="sub">بين ${sm.rows.length} منطقة</span></div>
+                  <div class="fact"><label class="lbl" for="my-region">منطقة حسابك</label><select id="my-region">${regionOptions}</select>${mine ? `<span class="val">${money(mine.usd)}</span>` : ''}${mineText}</div>
+                </div>
+                <div class="winner-actions">
+                  <a class="btn btn-primary" href="${esc(cardSearchUrl(pl, best.code))}" target="_blank" rel="noopener">${icon('card')} دوّر على ${esc((DB.platforms[pl] || {}).card || 'البطاقة')} من ${esc(best.region.name)}</a>
+                  <a class="btn btn-secondary" href="${esc(storeUrl(s, pl, pkg, best.code))}" target="_blank" rel="noopener">${icon('ext')} افتح بالمتجر</a>
+                </div>
+              </section>
+
+              <div class="card note warn">${icon('lock')}<p><strong>قبل ما تشتري:</strong> ${esc(LOCK[pl] ? LOCK[pl](best.region.name) : '')} ما بننصح بتغيير المنطقة بالـ VPN لأنه مخالف لشروط المنصات وممكن يسكّر حسابك.</p></div>
+
+              <section class="card table-card" aria-labelledby="tbl-h">
+                <div class="table-head"><div><h2 id="tbl-h">الأسعار بكل المناطق</h2><p>مرتّبة من الأرخص · محسوبة بـ${esc(curName(state.currency))}</p></div></div>
+                <table class="ptable">
+                  <thead><tr><th scope="col">المنطقة</th><th scope="col">بعملتك</th><th scope="col">سعر المتجر</th><th scope="col">مقارنة بالأرخص</th><th scope="col">المصدر</th></tr></thead>
+                  <tbody>
+                    ${sm.rows.map((r, i) => `<tr class="${i === 0 ? 'is-best' : ''}${r.code === state.region ? ' is-mine' : ''}">
+                      <td class="c-reg"><span class="reg-cell">${codeTag(r.code)}${esc(r.region.name)}${i === 0 ? '<span class="tag best">الأرخص</span>' : ''}${r.code === state.region ? '<span class="tag mine">منطقتك</span>' : ''}${r.t[2] ? '<span class="tag sale">خصم</span>' : ''}</span></td>
+                      <td class="c-yours">${money(r.usd)}</td>
+                      <td class="c-local">${localPrice(r.t)}</td>
+                      <td class="c-diff">${i === 0 ? 'الأرخص' : 'أغلى بـ ' + pct((r.usd / best.usd - 1) * 100)}</td>
+                      <td class="c-src"><a href="${esc(storeUrl(s, pl, pkg, r.code))}" target="_blank" rel="noopener">${icon('ext', 'sm')} ${esc(daysAgo(r.date))}</a></td>
+                    </tr>`).join('')}
+                  </tbody>
+                </table>
+                <div class="table-foot">
+                  <span>الأسعار من ${esc((DB.platforms[pl] || {}).store || platName)} مباشرة، وآخر تحقق ${esc(daysAgo(lastDate))}. التحويل لعملتك بسعر صرف ${esc(DB.ratesUpdated ? fmtDate(DB.ratesUpdated) : 'تقريبي')}.</span>
+                  ${pl === 'steam' ? '<span>ستيم بيسعّر بالدولار بمناطق زي تركيا والأرجنتين والشرق الأوسط.</span>' : ''}
+                  ${pl === 'psn' && pkg.ref !== 'psplus' ? '<span>بنقارن نفس النسخة بكل المناطق؛ المناطق اللي نسختها الافتراضية مختلفة ما بتظهر.</span>' : ''}
+                  <a href="${esc(reportUrl('سعر غلط: ' + s.name + ' (' + platName + ' · ' + pkg.label + ')'))}" target="_blank" rel="noopener">${icon('flag', 'sm')} شفت سعر غلط؟ بلّغنا</a>
+                </div>
+              </section>
+            </div>
+
+            <aside class="result-side">
+              <section class="card side-card">
+                <h3>البطاقة اللي بتلزمك</h3>
+                <div class="card-pick"><span class="tile">${icon('card')}</span><span class="grow"><b>${esc((DB.platforms[pl] || {}).card || '')} · ${esc(best.region.name)}</b><span>بقيمة ${localPrice(best.t)} أو أكثر</span></span></div>
+                <ul class="tips">
+                  <li>${icon('check', 'sm')}<span>اشتري من موزّع رسمي أو متجر معروف، وتأكد إن البطاقة لنفس منطقة حسابك.</span></li>
+                  <li>${icon('check', 'sm')}<span>بعض البطاقات بتيجي بفئات ثابتة، فممكن يلزمك أكثر من وحدة.</span></li>
+                  <li class="warn">${icon('alert', 'sm')}<span>البطاقات الأرخص بكثير عند بائعين مجهولين ممكن تطلع مسروقة وتنلغى.</span></li>
+                </ul>
+                <a class="btn btn-secondary btn-block" href="${esc(cardSearchUrl(pl, best.code))}" target="_blank" rel="noopener">${icon('search')} دوّر على البطاقة</a>
+              </section>
+              ${s.platforms.length > 1 ? `<section class="card side-card"><h3>نفس الخدمة على منصات ثانية</h3><ul class="tips">${platSums.filter(([p]) => p !== pl).map(([p, ps]) => `<li>${platBadge(p)}<a href="${svcHref(s, p)}" class="text-2">${bdi(ps.pkg.label)}: ${money(ps.best.usd)} في ${esc(ps.best.region.name)}</a></li>`).join('')}</ul></section>` : ''}
+            </aside>
+          </div>
+        </div>
+      </div>
+    </div>`;
   }
 
-  function fillBrowse(catId) {
-    var grid = document.getElementById('browse-grid');
-    var count = document.getElementById('result-count');
-    if (!grid) return;
-    var list = DB.products.filter(function (p) { return !catId || p.category === catId; });
-    var q = norm(state.filter);
-    if (q) list = list.filter(function (p) { return p.search.indexOf(q) !== -1; });
-    list.sort(function (a, b) {
-      if (state.sort === 'name') return a.name.localeCompare(b.name, 'en');
-      var ap = a.min ? 0 : 1, bp = b.min ? 0 : 1;
-      if (ap !== bp) return ap - bp;
-      if (state.sort === 'cheap') return (a.min ? a.min.usd : 0) - (b.min ? b.min.usd : 0);
-      return b.saving - a.saving;
+  function bindService(id) {
+    const sel = main.querySelector('#my-region');
+    if (sel) sel.addEventListener('change', () => {
+      state.region = sel.value;
+      store.set('region', sel.value);
+      rerender(() => { const el = main.querySelector('#my-region'); if (el) el.focus(); });
     });
-    grid.innerHTML = list.length ? list.map(productCard).join('') :
-      '<div class="empty" style="grid-column:1/-1"><span class="empty-title">ما في نتائج</span><span>جرّب كلمة ثانية أو امسح الفلترة.</span></div>';
-    count.textContent = list.length + ' منتج';
+    return id;
   }
 
-  function bindBrowse(catId) {
-    var f = document.getElementById('filter');
-    var s = document.getElementById('sort');
-    s.value = state.sort;
-    f.addEventListener('input', function () { state.filter = f.value; fillBrowse(catId); });
-    s.addEventListener('change', function () { state.sort = s.value; fillBrowse(catId); });
-    fillBrowse(catId);
-  }
-
-  function selectedRow(p) {
-    var code = state.selected[p.id];
-    var r = code && p.rows.filter(function (x) { return x.region.code === code; })[0];
-    return r || p.min;
-  }
-
-  function viewProduct(id) {
-    var p = DB.productMap[id];
-    if (!p) return null;
-    var cat = DB.categories.filter(function (c) { return c.id === p.category; })[0];
-    var pl = DB.platforms[p.platform] || { name: p.platform, card: 'بطاقة شحن', cardEn: 'gift card' };
-    var cur = curInfo();
-
-    var head = '<div class="page-head">' +
-      '<nav class="crumbs" aria-label="مسار التنقل"><a href="#/">الرئيسية</a><span aria-hidden="true">/</span>' +
-      (cat ? '<a href="#/c/' + encodeURIComponent(cat.id) + '">' + esc(cat.name) + '</a><span aria-hidden="true">/</span>' : '') +
-      '<span>' + esc(shortName(p)) + '</span></nav>' +
-      '<div class="product-head">' + tile(p, 'tile-lg') +
-        '<div class="product-titles"><h1 class="page-title">' + esc(p.name) + '</h1>' +
-        '<div class="product-meta">' + platformBadge(p) + '<span>' + esc(p.variant || '') + '</span></div></div>' +
-      '</div></div>';
-
-    if (!p.rows.length) {
-      return '<div class="container">' + head +
-        '<div class="empty" style="margin-bottom:56px"><span class="empty-title">' +
-        (isAutoSource(p) ? 'الأسعار بتنزل مع أول تحديث تلقائي' : 'أسعار هالمنتج قريباً') + '</span>' +
-        '<span>' + (isAutoSource(p) ? 'التحديث التلقائي بيشتغل كل يوم، وبتظهر الأسعار هون أول ما يخلص.' : 'لسا ما أضفنا أسعار موثّقة لهالمنتج.') + '</span>' +
-        '<a class="btn btn-ghost" href="#/all">تصفّح منتجات ثانية</a></div></div>';
-    }
-
-    var sel = selectedRow(p);
-    var mine = p.rows.filter(function (r) { return r.region.code === state.region; })[0] || null;
-
-    var regionOptions = DB.regions.map(function (r) {
-      return '<option value="' + r.code + '"' + (r.code === state.region ? ' selected' : '') + '>' + esc(r.name) + '</option>';
-    }).join('');
-
-    var mineValue, mineNote;
-    if (mine) {
-      mineValue = money(mine.usd);
-      if (mine === p.min) mineNote = '<span class="badge badge-soft">' + icon('check', 13) + 'منطقتك هي الأرخص</span>';
-      else mineNote = 'أغلى من الأرخص بـ ' + pct(Math.round((mine.usd / p.min.usd - 1) * 100));
-    } else {
-      mineValue = '<span style="font-size:18px;color:var(--text-3)">ما عندنا سعر</span>';
-      mineNote = 'لسا ما أضفنا سعر هالمنتج بمتجر ' + esc((DB.regionMap[state.region] || {}).name || '');
-    }
-
-    var summary = '<div class="summary area-summary">' +
-      '<div class="summary-cell"><span class="summary-label">أرخص منطقة</span>' +
-        '<span class="summary-value is-accent mono">' + money(p.min.usd) + '</span>' +
-        '<span class="summary-note"><span class="rpill is-accent">' + esc(p.min.region.code) + '</span>' + esc(p.min.region.name) +
-        ' · ' + esc(localMoney(p.min.entry.amount, p.min.entry.currency)) + '</span></div>' +
-      '<div class="summary-cell"><span class="summary-label"><label for="my-region">منطقة حسابك</label>' +
-        '<select id="my-region" class="select">' + regionOptions + '</select></span>' +
-        '<span class="summary-value mono">' + mineValue + '</span>' +
-        '<span class="summary-note">' + mineNote + '</span></div>' +
-      '<div class="summary-cell"><span class="summary-label">الفرق بين المناطق</span>' +
-        '<span class="summary-value mono">' + (p.rows.length > 1 ? pct(p.saving) : '—') + '</span>' +
-        '<span class="summary-note">' + (p.rows.length > 1 ? 'بين ' + esc(p.min.region.name) + ' (الأرخص) و' + esc(p.max.region.name) + ' (الأغلى)' : 'منطقة وحدة بس لحد الآن') + '</span></div>' +
-      '</div>';
-
-    var rowsHtml = p.rows.map(function (r) {
-      var isMin = r === p.min;
-      var isSel = r === sel;
-      var tags = '';
-      if (isMin) tags += '<span class="badge badge-accent">الأرخص</span>';
-      if (r.region.code === state.region) tags += '<span class="badge badge-muted">منطقتك</span>';
-      if (r.entry.discount > 0) tags += '<span class="badge badge-soft">خصم ' + pct(r.entry.discount) + '</span>';
-      var diff = isMin ? '<span class="muted">الأرخص</span>' : 'أغلى بـ ' + pct(Math.round((r.usd / p.min.usd - 1) * 100));
-      var checked = r.entry.checked ? (r.auto ? relTime(r.entry.checked) : fmtDate(r.entry.checked)) : '';
-      var src = r.entry.source ? '<a class="src-link" href="' + esc(r.entry.source) + '" target="_blank" rel="noopener noreferrer">المصدر' + icon('external', 12) + '</a>' : '';
-      return '<tr class="' + (isMin ? 'is-cheapest ' : '') + (isSel ? 'is-selected' : '') + '">' +
-        '<td class="c-region"><button type="button" class="row-btn" data-region="' + r.region.code + '" aria-pressed="' + (isSel ? 'true' : 'false') + '">' +
-          '<span class="rpill' + (isSel ? ' is-accent' : '') + '">' + esc(r.region.code) + '</span><span class="row-name">' + esc(r.region.name) + '</span></button> ' +
-          '<span class="row-tags">' + tags + '</span></td>' +
-        '<td class="c-local num">' + esc(localMoney(r.entry.amount, r.entry.currency)) + (r.entry.converted ? ' <span class="muted">(محوّل)</span>' : '') + '</td>' +
-        '<td class="c-yours num num-strong"' + (isMin ? ' style="color:var(--accent)"' : '') + '>' + money(r.usd) +
-          (r.origUsd ? '<span class="old">' + money(r.origUsd) + '</span>' : '') + '</td>' +
-        '<td class="c-diff">' + diff + '</td>' +
-        '<td class="c-date"><span class="muted">' + esc(checked) + '</span> ' + src + '</td>' +
-      '</tr>';
-    }).join('');
-
-    var anyAuto = p.rows.some(function (r) { return r.auto; });
-    var srcName = p.source && p.source.type === 'steam' ? 'Steam' : (p.source && p.source.type === 'xbox' ? 'متجر Xbox' : '');
-    var table = '<div class="table-card area-table">' +
-      '<div class="table-head"><h2 class="table-title">الأسعار بكل المناطق</h2>' +
-      '<span class="table-sub">مرتّبة من الأرخص · ' + esc(cur.inLabel) + ' · اضغط على منطقة لتشوف بطاقتها</span></div>' +
-      '<table class="ptable"><caption class="visually-hidden">أسعار ' + esc(p.name) + ' بكل المناطق</caption>' +
-      '<thead><tr><th scope="col">المنطقة</th><th scope="col">السعر المحلي</th><th scope="col">بعملتك</th><th scope="col">مقارنة بالأرخص</th><th scope="col">آخر تحقق</th></tr></thead>' +
-      '<tbody>' + rowsHtml + '</tbody></table>' +
-      '<div class="table-foot">' +
-        '<span>' + (anyAuto ? 'أسعار هالمنتج بتتحدّث تلقائياً كل يوم من ' + esc(srcName) + '.' : 'أسعار هالمنتج مأخوذة من مصادر منشورة، وكل سعر معه رابطه وتاريخ التحقق منه.') + '</span>' +
-        '<span>التحويل لعملتك بسعر صرف ' + esc(fmtDate(DB.ratesMeta.updated)) + (DB.ratesMeta.approximate ? ' (تقريبي لحد أول تحديث تلقائي)' : '') + '.</span>' +
-        (repoUrl() ? '<a class="src-link" style="font-size:13px;margin-top:4px" target="_blank" rel="noopener noreferrer" href="' +
-          esc(repoUrl() + '/issues/new?title=' + encodeURIComponent('سعر غلط: ' + p.name) +
-            '&body=' + encodeURIComponent('المنتج: ' + p.name + '\nالمنطقة: \nالسعر الصحيح: \nرابط المصدر: ')) +
-          '">' + icon('flag', 14) + 'شفت سعر غلط؟ بلّغنا وبنصلّحه</a>' : '') +
-      '</div></div>';
-
-    var searchUrl = 'https://www.google.com/search?q=' + encodeURIComponent(pl.cardEn + ' ' + sel.region.en);
-    var side = '<aside class="col-side area-side" aria-label="البطاقة اللي بتلزمك">' +
-      '<div class="side-card is-accent">' +
-        '<h2 class="side-title">البطاقة اللي بتلزمك</h2>' +
-        '<div class="card-line"><span class="catcard-icon" style="width:40px;height:40px">' + icon('card', 20) + '</span>' +
-          '<span style="display:flex;flex-direction:column;min-width:0"><span class="card-line-name">' + esc(pl.card) + ' من ' + esc(sel.region.name) + '</span>' +
-          '<span class="card-line-sub">لحساب ' + esc(pl.name) + ' من ' + esc(sel.region.name) + ' · ' + esc(shortName(p)) + ' بـ ' + moneyInline(sel.usd) + '</span></span></div>' +
-        '<a class="btn btn-primary btn-block" href="' + esc(searchUrl) + '" target="_blank" rel="noopener noreferrer">دوّر على البطاقة' + icon('external', 16) + '</a>' +
-        '<ul class="tips">' +
-          '<li><span style="color:var(--accent)">' + icon('check', 16) + '</span><span>اشتري من موزّع رسمي أو متجر معروف، وتأكد إن البطاقة لنفس منطقة حسابك.</span></li>' +
-          '<li><span style="color:var(--warn)">' + icon('alert', 16) + '</span><span>البطاقات الأرخص بكثير عند البائعين الوسطاء ممكن تطلع مسروقة وتنلغى.</span></li>' +
-        '</ul>' +
-      '</div>' +
-      lockNotice(sel.region.name, pl.name) +
-    '</aside>';
-
-    // على الموبايل: الملخص، بعدين البطاقة، بعدين الجدول
-    return '<div class="container">' + head +
-      '<div class="product-layout">' + summary + side + table + '</div></div>';
-  }
-
-  function bindProduct(id) {
-    var my = document.getElementById('my-region');
-    if (my) my.addEventListener('change', function () {
-      state.region = my.value;
-      store.set('wa-region', my.value);
-      rerender(function () { var el = document.getElementById('my-region'); if (el) el.focus(); });
-    });
-    main.querySelectorAll('.row-btn').forEach(function (b) {
-      b.addEventListener('click', function () {
-        var code = b.getAttribute('data-region');
-        state.selected[id] = code;
-        rerender(function () {
-          var el = main.querySelector('.row-btn[data-region="' + code + '"]');
-          if (el) el.focus();
-        });
-      });
-    });
-  }
-
+  /* ===== عن الموقع ===== */
   function viewAbout() {
-    var st = DB.status && DB.status.sources ? DB.status.sources : {};
-    var autoLine = DB.auto && DB.auto.updated ? 'آخر تحديث تلقائي: ' + fmtDate(DB.auto.updated) + ' (' + relTime(DB.auto.updated) + ').' : 'التحديث التلقائي بيشتغل يومياً على GitHub.';
-    var repo = repoUrl();
-    return '<div class="container">' +
-      '<div class="page-head"><nav class="crumbs" aria-label="مسار التنقل"><a href="#/">الرئيسية</a><span aria-hidden="true">/</span><span>كيف بنشتغل</span></nav>' +
-      '<h1 class="page-title">كيف بنشتغل؟</h1>' +
-      '<p class="page-sub">«وين أرخص؟» بيقارن سعر نفس اللعبة أو الاشتراك بين مناطق العالم، وبيحوّل كل الأسعار لعملتك.</p></div>' +
-      '<div class="prose">' +
-        '<section><h2>من وين بتيجي الأسعار؟</h2><ul>' +
-          '<li><strong>ألعاب ستيم و Game Pass:</strong> بتتحدّث تلقائياً كل يوم من متجر Steam ومتجر Xbox مباشرة.</li>' +
-          '<li><strong>أسعار الصرف:</strong> بتتحدّث تلقائياً كل يوم.</li>' +
-          '<li><strong>بلايستيشن:</strong> متجر بلايستيشن ما بيعرض أسعار الاشتراكات بدون تسجيل دخول، فبناخذ الأسعار من مصادر منشورة، وكل سعر معه رابطه وتاريخ التحقق منه.</li>' +
-        '</ul><p style="margin-top:8px">' + esc(autoLine) + '</p></section>' +
-        '<section><h2>كيف بنحسب؟</h2>' +
-          '<div class="formula"><span class="term">السعر بعملة المنطقة</span><span class="op">÷</span><span class="term">سعر صرف عملتها</span><span class="op">×</span><span class="term">سعر صرف عملتك</span><span class="op">=</span><span class="term is-result">السعر بعملتك</span></div>' +
-          '<p style="margin-top:12px">بعدها بنرتّب المناطق من الأرخص، وبنحسب الفرق بين أرخص منطقة وأغلى منطقة. الأسعار قبل أي ضرائب أو رسوم ممكن تنضاف عند الدفع.</p></section>' +
-        '<section><h2>قبل ما تشتري</h2>' + lockNotice() + '</section>' +
-        '<section><h2>شو الجاي؟</h2><p>عم نشتغل على إضافة:</p>' + '<ul class="soon-list" style="margin-top:10px;padding:0">' + DB.comingSoon.map(function (s) { return '<li>' + esc(s) + '</li>'; }).join('') + '</ul></section>' +
-        (repo ? '<section><h2>لاحظت سعر غلط أو بدك تضيف منتج؟</h2><p>الموقع مفتوح المصدر. <a href="' + esc(repo + '/issues/new') + '" target="_blank" rel="noopener noreferrer">افتح طلب على GitHub</a> وبنراجعه.</p></section>' : '') +
-        '<section><h2>تنبيه</h2><p>الأسعار للمعلومية وممكن تتغير بأي وقت، فتأكد من السعر بالمتجر قبل ما تشتري. «وين أرخص؟» مش تابع لسوني أو مايكروسوفت أو Valve، وكل الأسماء التجارية لأصحابها.</p></section>' +
-      '</div></div>';
+    const st = DB.updated ? `${fmtDate(DB.updated)} (${timeAgo(DB.updated)})` : 'لسا ما صار';
+    return `<div class="container page">
+      <div class="page-head">
+        <ol class="crumbs"><li><a href="#/">الرئيسية</a></li><li>كيف بنشتغل</li></ol>
+        <span class="eyebrow">ABOUT</span>
+        <h1>كيف بنشتغل؟</h1>
+        <p>كل يوم بنسحب الأسعار من المتاجر الرسمية نفسها، بنحوّلها لعملتك، وبنرتّب المناطق من الأرخص. آخر تحديث: ${esc(st)}.</p>
+      </div>
+      <div class="prose">
+        <h2>من وين الأسعار؟</h2>
+        <div class="table-scroll"><table class="src-table">
+          <thead><tr><th>المصدر</th><th>شو بنجيب منه</th></tr></thead>
+          <tbody>
+            <tr><td>${platBadge('psn')} PlayStation Store</td><td>الألعاب الأكثر مبيعاً آخر 30 يوم، وأسعار PlayStation Plus بكل مستوياته ومدده من صفحتها الرسمية.</td></tr>
+            <tr><td>${platBadge('xbox')} Microsoft Store</td><td>الألعاب الأكثر مبيعاً، Game Pass وEA Play، وV-Bucks وRobux.</td></tr>
+            <tr><td>${platBadge('steam')} Steam</td><td>الألعاب الأكثر مبيعاً وقائمة ألعاب ثابتة، مع الخصومات.</td></tr>
+            <tr><td>${platBadge('apple')} App Store</td><td>المشتريات داخل التطبيقات: شدات ببجي، جواهر فري فاير، روبوكس، وسناب بلس ويوتيوب بريميوم وغيرها.</td></tr>
+            <tr><td>open.er-api.com</td><td>أسعار صرف كل عملات العالم مقابل الدولار.</td></tr>
+          </tbody>
+        </table></div>
+        <p>أي سعر ما قدرنا نتحقق منه آخر 10 أيام بينشال تلقائياً، وكل صف بالجدول فيه رابط للمتجر وتاريخ آخر تحقق.</p>
+        <h2>وين جوجل بلاي؟</h2>
+        <p>جوجل ما بتعرض أسعار المشتريات داخل التطبيقات لكل دولة على الويب (بس «من كذا لكذا»)، فما في مصدر رسمي نقدر نسحب منه أرقام مضمونة. ما بنحط أرقام تقديرية؛ لما يتوفر مصدر رسمي بنضيفه. بالعادة أسعار جوجل بلاي قريبة من أسعار App Store بنفس الدولة.</p>
+        <h2>قبل ما تشتري</h2>
+        <p><strong>بطاقات الشحن مقفولة على منطقتها:</strong> بطاقة تركية بتشتغل بس على حساب تركي. وتغيير منطقة الحساب إله شروط بكل منصة، وما بننصح بالـ VPN لأنه مخالف لشروط المنصات وممكن يسكّر حسابك.</p>
+        <p><strong>الأسعار ممكن تتغيّر:</strong> المتاجر بتغيّر أسعارها وخصوماتها بأي وقت، فتأكد من السعر بالمتجر قبل ما تشتري البطاقة.</p>
+        <p><strong>نفس النسخة:</strong> بألعاب بلايستيشن بنقارن نفس النسخة (مثلاً Ultimate مع Ultimate)، والمنطقة اللي نسختها الافتراضية مختلفة ما بنعرضها.</p>
+        <h2>الموقع مجاني ومفتوح</h2>
+        <p>الكود كامل على GitHub والتحديث بيصير لحاله كل يوم. شفت سعر غلط أو بدك تضيف خدمة؟ ${CFG.repoUrl ? `<a class="link" href="${esc(CFG.repoUrl)}/issues" target="_blank" rel="noopener">اكتبلنا هون</a>` : 'بلّغنا'}.</p>
+      </div>
+    </div>`;
   }
 
   function viewNotFound() {
-    return '<div class="container"><div class="page-head"><h1 class="page-title">الصفحة مش موجودة</h1>' +
-      '<p class="page-sub">ممكن الرابط غلط أو المنتج انشال.</p></div>' +
-      '<div style="display:flex;gap:12px;flex-wrap:wrap;padding-bottom:56px"><a class="btn btn-primary" href="#/">ارجع للرئيسية</a><a class="btn btn-ghost" href="#/all">كل المنتجات</a></div></div>';
+    return `<div class="container page"><div class="empty">${icon('radar', 'lg')}<h1>ما لقينا هالصفحة</h1><p>ممكن الخدمة انشالت أو الرابط غلط.</p><a class="btn btn-primary" href="#/">ارجع للرئيسية</a></div></div>`;
   }
 
-  function viewError() {
-    return '<div class="container"><div class="page-head"><h1 class="page-title">ما قدرنا نحمّل الأسعار</h1>' +
-      '<p class="page-sub">تأكد من الاتصال بالإنترنت وجرّب كمان مرة.</p></div>' +
-      '<div style="padding-bottom:56px"><button type="button" class="btn btn-primary" id="retry">جرّب مرة ثانية</button></div></div>';
-  }
+  /* ===== التوجيه ===== */
+  let lastPath = null;
+  function route(opts = {}) {
+    const raw = location.hash || '#/';
+    if (!raw.startsWith('#/')) return; // روابط داخل الصفحة
+    const parts = raw.slice(2).split('/').filter(Boolean).map((p) => { try { return decodeURIComponent(p); } catch (e) { return p; } });
+    let html = null;
+    let after = null;
+    let nav = '';
+    let title = 'وين أرخص؟ · قارن أسعار الألعاب والاشتراكات والشحن بين دول العالم';
+    if (!parts.length) {
+      html = viewHome(); after = bindHome; nav = 'home';
+    } else if (parts[0] === 'c' && parts[1]) {
+      html = viewBrowse(parts[1]);
+      if (html) { nav = parts[1]; after = () => bindBrowse(parts[1]); title = `${typeName(parts[1])} · وين أرخص؟`; }
+    } else if (parts[0] === 'all') {
+      html = viewBrowse('all'); after = () => bindBrowse('all'); title = 'كل الخدمات · وين أرخص؟';
+    } else if (parts[0] === 's' && parts[1]) {
+      html = viewService(parts[1], parts[2], parts[3]);
+      const s = DB.byId[parts[1]];
+      if (html && s) { nav = s.type; after = () => bindService(s.id); title = `وين أرخص ${s.name}؟ · قارن السعر بين الدول`; }
+    } else if (parts[0] === 'about') {
+      html = viewAbout(); title = 'كيف بنشتغل · وين أرخص؟';
+    }
+    if (html == null) { html = viewNotFound(); after = null; title = 'الصفحة مش موجودة · وين أرخص؟'; }
 
-  /* ===== التنقل ===== */
-  function setNav(key) {
-    document.querySelectorAll('[data-nav]').forEach(function (a) {
-      if (a.getAttribute('data-nav') === key) a.setAttribute('aria-current', 'page');
+    const pathKey = parts.slice(0, 2).join('/');
+    const y = window.scrollY;
+    main.innerHTML = html;
+    document.title = title;
+    setNav(nav);
+    bindSearch(main);
+    if (after) after();
+    if (opts.keepScroll || (lastPath === pathKey && parts[0] === 's')) {
+      window.scrollTo(0, y);
+      if (opts.focus) opts.focus();
+    } else if (lastPath !== null) {
+      window.scrollTo(0, 0);
+      const h = main.querySelector('h1');
+      if (h) { h.setAttribute('tabindex', '-1'); h.focus({ preventScroll: true }); }
+    }
+    lastPath = pathKey;
+  }
+  function rerender(focus) { route({ keepScroll: true, focus }); }
+
+  function setNav(nav) {
+    document.querySelectorAll('[data-nav]').forEach((a) => {
+      if (a.dataset.nav === nav) a.setAttribute('aria-current', 'page');
       else a.removeAttribute('aria-current');
     });
   }
 
-  function route(opts) {
-    opts = opts || {};
-    var raw = location.hash || '';
-    if (raw && raw.indexOf('#/') !== 0) {
-      if (!firstRender) return;
-      raw = '#/';
-    }
-    var parts = raw.replace(/^#\/?/, '').split('/').filter(Boolean);
-    var html = null, after = null, title = 'وين أرخص؟', nav = '';
-
-    // الفلترة بتخص الصفحة الحالية بس، فبتنمسح لما ننتقل لصفحة ثانية
-    var routeKey = parts.join('/');
-    if (routeKey !== lastRouteKey) state.filter = '';
-    lastRouteKey = routeKey;
-
-    if (!parts.length) {
-      html = viewHome(); nav = 'home';
-      title = 'وين أرخص؟ | قارن أسعار الألعاب والاشتراكات بين المناطق';
-      after = function () { bindSearch(main); };
-    } else if (parts[0] === 'all') {
-      html = viewBrowse(null); nav = 'all'; title = 'كل المنتجات | وين أرخص؟';
-      after = function () { bindBrowse(null); };
-    } else if (parts[0] === 'c' && parts[1]) {
-      var catId = decodeURIComponent(parts[1]);
-      html = viewBrowse(catId); nav = 'all';
-      var c = DB.categories.filter(function (x) { return x.id === catId; })[0];
-      title = (c ? c.name : 'قسم') + ' | وين أرخص؟';
-      after = function () { bindBrowse(catId); };
-    } else if (parts[0] === 'p' && parts[1]) {
-      var id = decodeURIComponent(parts[1]);
-      html = viewProduct(id);
-      var p = DB.productMap[id];
-      if (p) title = 'وين أرخص ' + shortName(p) + '؟ | قارن السعر بين المناطق';
-      after = function () { bindProduct(id); };
-    } else if (parts[0] === 'about') {
-      html = viewAbout(); nav = 'about'; title = 'كيف بنشتغل | وين أرخص؟';
-    }
-
-    if (html == null) { html = viewNotFound(); after = null; title = 'الصفحة مش موجودة | وين أرخص؟'; }
-
-    var y = window.scrollY;
-    main.innerHTML = html;
-    document.title = title;
-    setNav(nav);
-    if (after) after();
-
-    if (opts.keepScroll) {
-      window.scrollTo(0, y);
-      if (opts.focus) opts.focus();
-    } else if (!firstRender) {
-      window.scrollTo(0, 0);
-      var h = main.querySelector('h1');
-      if (h) { h.setAttribute('tabindex', '-1'); h.focus({ preventScroll: true }); }
-    }
-    firstRender = false;
+  /* ===== الإعدادات العامة ===== */
+  function setupPrefs() {
+    let cc = null;
+    try { for (const l of navigator.languages || [navigator.language]) { const m = String(l).match(/-([A-Za-z]{2})$/); if (m) { cc = m[1].toUpperCase(); break; } } } catch (e) { /* تجاهل */ }
+    const defCur = CFG.defaultCurrency || (cc && CC_CURRENCY[cc]) || 'USD';
+    const cur = store.get('currency', defCur);
+    state.currency = cur === 'USD' || DB.rates[cur] ? cur : 'USD';
+    const defReg = CFG.defaultRegion || (cc && DB.regionByCode[cc] ? cc : 'SA');
+    const reg = store.get('region', defReg);
+    state.region = DB.regionByCode[reg] ? reg : 'SA';
   }
 
-  function rerender(focusFn) { route({ keepScroll: true, focus: focusFn }); }
-
   function setupCurrency() {
-    curSelect.innerHTML = CURRENCIES.filter(function (c) { return c.code === 'USD' || DB.rates[c.code]; }).map(function (c) {
-      return '<option value="' + c.code + '"' + (c.code === state.currency ? ' selected' : '') + '>' + esc(c.label) + ' (' + esc(c.sym) + ')</option>';
-    }).join('');
-    if (!curSelect.value) { state.currency = 'USD'; curSelect.value = 'USD'; }
-    curSelect.addEventListener('change', function () {
+    const codes = Object.keys(DB.rates).filter((c) => /^[A-Z]{3}$/.test(c));
+    const opt = (c) => `<option value="${c}"${c === state.currency ? ' selected' : ''}>${esc(curName(c))} (${c})</option>`;
+    const arab = ARAB.filter((c) => DB.rates[c]);
+    const pop = POPULAR.filter((c) => DB.rates[c] || c === 'USD');
+    const rest = codes.filter((c) => !arab.includes(c) && !pop.includes(c)).sort((a, b) => curName(a).localeCompare(curName(b), 'ar'));
+    curSelect.innerHTML = `<optgroup label="الأكثر استخداماً">${pop.map(opt).join('')}</optgroup><optgroup label="عملات عربية">${arab.map(opt).join('')}</optgroup><optgroup label="كل العملات">${rest.map(opt).join('')}</optgroup>`;
+    curSelect.addEventListener('change', () => {
       state.currency = curSelect.value;
-      store.set('wa-currency', curSelect.value);
+      store.set('currency', curSelect.value);
       rerender();
     });
   }
 
-  function setupFooter() {
-    var a = document.getElementById('footer-repo');
-    if (!a) return;
-    if (repoUrl()) { a.href = repoUrl(); a.target = '_blank'; a.rel = 'noopener noreferrer'; }
-    else a.remove();
-  }
-
-  function init() {
-    Promise.all([
-      loadJSON('data/regions.json'),
-      loadJSON('data/catalog.json'),
-      loadJSON('data/manual-prices.json'),
-      loadJSON('data/auto-prices.json').catch(function () { return { products: {}, names: {} }; }),
-      loadJSON('data/rates.json'),
-      loadJSON('data/status.json').catch(function () { return {}; })
-    ]).then(function (res) {
-      DB = build(res[0], res[1], res[2], res[3], res[4], res[5]);
-      setupCurrency();
-      setupFooter();
-      window.addEventListener('hashchange', function () { route(); });
-      route();
-    }).catch(function (err) {
-      if (window.console) console.error(err);
-      main.innerHTML = viewError();
-      var b = document.getElementById('retry');
-      if (b) b.addEventListener('click', function () { location.reload(); });
+  function setupChrome() {
+    const repo = document.getElementById('footer-repo');
+    if (repo && CFG.repoUrl) { repo.href = CFG.repoUrl; repo.target = '_blank'; repo.rel = 'noopener'; }
+    const bar = document.getElementById('announce');
+    const txt = document.getElementById('announce-text');
+    const closed = store.get('announce', '') === (DB.updated || '').slice(0, 10);
+    if (bar && txt && !closed) {
+      txt.textContent = DB.updated
+        ? `آخر تحديث للأسعار ${timeAgo(DB.updated)} · ${DB.priceCount.toLocaleString('en-US')} سعر رسمي من ${DB.regionCount} منطقة`
+        : 'الأسعار بتنسحب كل يوم من المتاجر الرسمية مباشرة.';
+      bar.hidden = false;
+      document.getElementById('announce-close').addEventListener('click', () => { bar.hidden = true; store.set('announce', (DB.updated || '').slice(0, 10)); });
+    }
+    document.addEventListener('keydown', (e) => {
+      if (e.key !== '/' || e.ctrlKey || e.metaKey || e.altKey) return;
+      const t = e.target;
+      if (t && (t.tagName === 'INPUT' || t.tagName === 'SELECT' || t.tagName === 'TEXTAREA' || t.isContentEditable)) return;
+      const input = main.querySelector('.search-input');
+      if (input) { e.preventDefault(); input.focus(); }
     });
   }
 
-  init();
+  boot();
 })();
