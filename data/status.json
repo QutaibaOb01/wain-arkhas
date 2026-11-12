@@ -1,30 +1,13 @@
 {
-  "updated": "2026-11-12T19:21:09.572Z",
+  "updated": "2026-11-12T19:28:56.274Z",
   "sources": {
     "rates": {
       "ok": true,
       "count": 166
     },
-    "psplus": {
-      "ok": false,
-      "regions": {
-        "US": "خطأ: HTTP 403",
-        "TR": "خطأ: HTTP 403",
-        "AR": "خطأ: HTTP 403",
-        "BR": "خطأ: HTTP 403",
-        "IN": "خطأ: HTTP 403",
-        "PL": "خطأ: HTTP 403",
-        "UA": "خطأ: HTTP 403",
-        "SA": "خطأ: HTTP 403",
-        "AE": "خطأ: HTTP 403",
-        "KW": "خطأ: HTTP 403",
-        "ID": "خطأ: HTTP 403",
-        "HK": "خطأ: HTTP 403",
-        "JP": "خطأ: HTTP 403",
-        "ZA": "خطأ: HTTP 403",
-        "MX": "خطأ: HTTP 403",
-        "GB": "خطأ: HTTP 403"
-      }
+    "icloud": {
+      "ok": true,
+      "prices": 105
     },
     "xbox-services": {
       "ok": true,
@@ -50,30 +33,26 @@
         "GB": 14
       }
     },
-    "xbox-games": {
+    "psplus": {
       "ok": true,
-      "markets": {
-        "US": 103,
-        "TR": 103,
-        "AR": 102,
-        "BR": 101,
-        "IN": 103,
-        "PL": 103,
-        "UA": 73,
-        "SA": 100,
-        "AE": 103,
-        "KW": 73,
-        "EG": 73,
-        "VN": 72,
-        "NG": 62,
-        "ID": 72,
-        "HK": 100,
-        "JP": 97,
-        "ZA": 103,
-        "MX": 103,
-        "GB": 103
-      },
-      "products": 103
+      "regions": {
+        "US": 9,
+        "TR": 9,
+        "AR": 9,
+        "BR": 9,
+        "IN": 9,
+        "PL": 9,
+        "UA": 9,
+        "SA": 9,
+        "AE": 9,
+        "KW": 9,
+        "ID": 9,
+        "HK": 9,
+        "JP": 9,
+        "ZA": 9,
+        "MX": 9,
+        "GB": 9
+      }
     },
     "steam": {
       "ok": true,
@@ -102,6 +81,31 @@
         "GB": 57
       },
       "games": 57
+    },
+    "xbox-games": {
+      "ok": true,
+      "markets": {
+        "US": 103,
+        "TR": 103,
+        "AR": 102,
+        "BR": 101,
+        "IN": 103,
+        "PL": 103,
+        "UA": 73,
+        "SA": 100,
+        "AE": 103,
+        "KW": 73,
+        "EG": 73,
+        "VN": 72,
+        "NG": 62,
+        "ID": 72,
+        "HK": 100,
+        "JP": 97,
+        "ZA": 103,
+        "MX": 103,
+        "GB": 103
+      },
+      "products": 103
     },
     "ps-games": {
       "ok": true,
@@ -138,7 +142,7 @@
         "genshin-crystals": 114,
         "clash-of-clans": 107,
         "brawl-stars": 81,
-        "tiktok-coins": 159,
+        "tiktok-coins": 154,
         "snapchat-plus": 36,
         "youtube-premium": 65,
         "netflix": 61,
@@ -151,12 +155,12 @@
     }
   },
   "summary": {
-    "services": 264,
-    "prices": 6726,
+    "services": 266,
+    "prices": 6980,
     "byType": {
-      "sub": 2,
+      "sub": 3,
       "currency": 10,
-      "app": 7,
+      "app": 8,
       "game": 245
     }
   }
