@@ -4,7 +4,8 @@ import { request, pool, parseAmount, detectCurrency, matchBrace, sleep } from '.
 // معرّفات الاستعلامات اللي بيستخدمها موقع المتجر نفسه (لو سوني غيّرتها بيبين بالـ status.json)
 export const PS_HASHES = {
   categoryGridRetrieve: '88c0b9a1273c6d320c51cd73e390924e21ae28bf09f01cde8b84b1034b16cd03',
-  conceptRetrieveForCtasWithPrice: 'd7991383f7921f4bb3c570941efd33a2b2f93038627d7ece013158ea3441f456'
+  conceptRetrieveForCtasWithPrice: 'd7991383f7921f4bb3c570941efd33a2b2f93038627d7ece013158ea3441f456',
+  tierSelectorFullRetrieve: '0c939ac95c125db8541e92f2f9dfa2b8a130dda22ccae812e303c3a2f5b5064f'
 };
 const ALL_GAMES = '28c9c2b2-cecc-415c-9a08-482a605cb104';
 
@@ -160,11 +161,48 @@ export function parsePsPlusPage(raw) {
   return out;
 }
 
+const TIER_LABELS = { TIER_10: 'essential', TIER_20: 'extra', TIER_30: 'premium' };
+
+/** مستويات PS Plus ومددها وأسعارها من استعلام tierSelectorFullRetrieve */
+export function parseTierSelector(j) {
+  const out = {};
+  const comps = (j && j.data && j.data.tierSelectorRetrieve && j.data.tierSelectorRetrieve.components) || [];
+  for (const c of comps) {
+    const tier = TIER_LABELS[c && c.tierLabel];
+    if (!tier) continue;
+    for (const p of c.plans || []) {
+      const d = p && p.duration;
+      const months = d && (d.unit === 'MONTH' ? d.value : d.unit === 'YEAR' ? d.value * 12 : null);
+      const pr = p && p.product && p.product.price;
+      if (!months || !pr || !pr.currencyCode || pr.isFree) continue;
+      const base = scaledValue(pr.basePriceValue, pr.basePrice);
+      const disc = typeof pr.discountedValue === 'number' ? scaledValue(pr.discountedValue, pr.discountedPrice) : parseAmount(pr.discountedPrice) || base;
+      if (!(disc > 0)) continue;
+      out[`${tier}-${months}m`] = { amount: disc, currency: pr.currencyCode, original: base > disc ? base : 0 };
+    }
+  }
+  return out;
+}
+
 export async function fetchPsPlus(regions, { fetchImpl, wait = sleep, gap = 600 } = {}) {
   const prices = {};
   const log = { ok: true, regions: {} };
   for (const r of regions) {
     if (!r.ps) continue;
+    // 1) نفس الاستعلام اللي بتستخدمه صفحة PS Plus الرسمية
+    try {
+      const items = parseTierSelector(await psOp(r.ps, 'tierSelectorFullRetrieve', {}, { fetchImpl, wait }));
+      const keys = Object.keys(items);
+      if (keys.length) {
+        for (const k of keys) (prices[k] = prices[k] || {})[r.code] = items[k];
+        log.regions[r.code] = keys.length;
+        await wait(gap);
+        continue;
+      }
+    } catch (e) {
+      log.regions[r.code] = 'API: ' + (e.message || e);
+    }
+    // 2) احتياطي: الصفحة نفسها
     try {
       const raw = await request(`https://www.playstation.com/${r.ps}/ps-plus/`, { fetchImpl, wait, as: 'text' });
       const items = parsePsPlusPage(raw);

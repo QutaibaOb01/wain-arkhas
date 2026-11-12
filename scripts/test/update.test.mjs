@@ -179,6 +179,15 @@ test('تشغيل كامل: كل المصادر بتنجمع بملف واحد', 
       if (!v) return { data: { conceptRetrieve: null } };
       return { data: { conceptRetrieve: { defaultProduct: { id: v[3], name: conceptName, webctas: [{ type: 'ADD_TO_CART', price: { basePriceValue: v[0], discountedValue: v[0], currencyCode: v[1], basePrice: v[2], discountedPrice: v[2] } }] } } } };
     }],
+    [/tierSelectorFullRetrieve/, (u, init) => {
+      const loc = init.headers['x-psn-store-locale-override'];
+      if (loc !== 'en-TR') return { errors: [{ message: 'nope' }] };
+      const plan = (v, val, txt, dval, dtxt) => ({ duration: { unit: 'MONTH', value: v }, product: { id: 'x', price: { basePrice: txt, discountedPrice: dtxt || txt, basePriceValue: val, discountedValue: dval || val, currencyCode: 'TRY' } } });
+      return { data: { tierSelectorRetrieve: { components: [
+        { tierLabel: 'TIER_10', plans: [plan(12, 289000, '2.890,00 TL'), plan(1, 40000, '400,00 TL')] },
+        { tierLabel: 'TIER_30', plans: [plan(12, 556000, '5.560,00 TL', 444800, '4.448,00 TL')] }
+      ] } } };
+    }],
     [/playstation\.com\/en-us\/ps-plus/, () => '"Product:IP9101-PPSA06916_00-PLUS1T01M0000000":{"name":"PlayStation Plus Essential: 1 Month Subscription","price":{"basePrice":"$10.99","discountedPrice":"$10.99"}}'],
     [/playstation\.com\/uk-ua\/ps-plus/, () => '"Product:IP9102-PPSA06902_00-PLUS1T01M0000000":{"name":"x","price":{"basePrice":"UAH 209,00","discountedPrice":"UAH 209,00"}}'],
     [/playstation\.com\/.*ps-plus/, () => ({ status: 403, body: 'blocked' })],
@@ -219,6 +228,10 @@ test('تشغيل كامل: كل المصادر بتنجمع بملف واحد', 
   assert.deepEqual(ess.prices.US, [10.99, 'USD', 0, '2026-11-12']);
   assert.equal(plus.def, 'essential-1m');
   assert.equal(status.sources.psplus.ok, false);
+  // تركيا جت من الـ API (مع خصم الـ 12 شهر)
+  assert.deepEqual(ess.prices.TR, [400, 'TRY', 0, '2026-11-12']);
+  assert.deepEqual(plus.packages.find((p) => p.id === 'premium-12m').prices.TR, [4448, 'TRY', 5560, '2026-11-12']);
+  assert.deepEqual(plus.packages.find((p) => p.id === 'essential-12m').prices.TR, [2890, 'TRY', 0, '2026-11-12']);
 
   // GTA VI: بلايستيشن (Ultimate، والهند انشالت لأن نسختها مختلفة) + إكس بوكس (أرخص نسخة)
   const gta = byId['grand-theft-auto-vi'];
