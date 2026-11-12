@@ -711,6 +711,23 @@
     const raw = location.hash || '#/';
     if (!raw.startsWith('#/')) return; // روابط داخل الصفحة
     const parts = raw.slice(2).split('/').filter(Boolean).map((p) => { try { return decodeURIComponent(p); } catch (e) { return p; } });
+    // روابط النسخة الأولى من الموقع (#/p/...) بتتحوّل للصفحات الجديدة
+    if (parts[0] === 'p' && parts[1]) {
+      const old = parts[1];
+      const MAP = {
+        'ps-plus-essential-1m': '/s/ps-plus/psn/essential-1m', 'ps-plus-extra-12m': '/s/ps-plus/psn/extra-12m',
+        'ps-plus-deluxe-12m': '/s/ps-plus/psn/premium-12m', 'gta-6-ps5': '/s/grand-theft-auto-vi/psn',
+        'xbox-game-pass-ultimate': '/s/game-pass/xbox/ultimate-1m'
+      };
+      let target = MAP[old];
+      const m = old.match(/^steam-(\d+)$/);
+      if (!target && m) {
+        const s = DB.services.find((x) => x.offers.steam && x.offers.steam.packages.some((p) => String(p.ref) === m[1]));
+        if (s) target = '/s/' + encodeURIComponent(s.id) + '/steam';
+      }
+      location.replace('#' + (target || '/'));
+      return;
+    }
     let html = null;
     let after = null;
     let nav = '';
