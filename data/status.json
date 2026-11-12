@@ -1,9 +1,30 @@
 {
-  "updated": "2026-11-12T19:07:25.806Z",
+  "updated": "2026-11-12T19:21:09.572Z",
   "sources": {
     "rates": {
       "ok": true,
       "count": 166
+    },
+    "psplus": {
+      "ok": false,
+      "regions": {
+        "US": "خطأ: HTTP 403",
+        "TR": "خطأ: HTTP 403",
+        "AR": "خطأ: HTTP 403",
+        "BR": "خطأ: HTTP 403",
+        "IN": "خطأ: HTTP 403",
+        "PL": "خطأ: HTTP 403",
+        "UA": "خطأ: HTTP 403",
+        "SA": "خطأ: HTTP 403",
+        "AE": "خطأ: HTTP 403",
+        "KW": "خطأ: HTTP 403",
+        "ID": "خطأ: HTTP 403",
+        "HK": "خطأ: HTTP 403",
+        "JP": "خطأ: HTTP 403",
+        "ZA": "خطأ: HTTP 403",
+        "MX": "خطأ: HTTP 403",
+        "GB": "خطأ: HTTP 403"
+      }
     },
     "xbox-services": {
       "ok": true,
@@ -32,48 +53,27 @@
     "xbox-games": {
       "ok": true,
       "markets": {
-        "US": 13,
-        "TR": 13,
-        "AR": 13,
-        "BR": 13,
-        "IN": 13,
-        "PL": 13,
-        "UA": 5,
-        "SA": 12,
-        "AE": 13,
-        "KW": 5,
-        "EG": 5,
-        "VN": 5,
-        "NG": 5,
-        "ID": 5,
-        "HK": 12,
-        "JP": 12,
-        "ZA": 13,
-        "MX": 13,
-        "GB": 13
+        "US": 103,
+        "TR": 103,
+        "AR": 102,
+        "BR": 101,
+        "IN": 103,
+        "PL": 103,
+        "UA": 73,
+        "SA": 100,
+        "AE": 103,
+        "KW": 73,
+        "EG": 73,
+        "VN": 72,
+        "NG": 62,
+        "ID": 72,
+        "HK": 100,
+        "JP": 97,
+        "ZA": 103,
+        "MX": 103,
+        "GB": 103
       },
-      "products": 13
-    },
-    "psplus": {
-      "ok": true,
-      "regions": {
-        "US": 9,
-        "TR": 9,
-        "AR": 9,
-        "BR": 9,
-        "IN": 9,
-        "PL": 9,
-        "UA": 9,
-        "SA": 9,
-        "AE": 9,
-        "KW": 9,
-        "ID": 9,
-        "HK": 9,
-        "JP": 9,
-        "ZA": 9,
-        "MX": 9,
-        "GB": 9
-      }
+      "products": 103
     },
     "steam": {
       "ok": true,
@@ -81,50 +81,27 @@
         "US": 57,
         "TR": 56,
         "AR": 56,
-        "BR": 53,
-        "IN": 53,
+        "BR": 54,
+        "IN": 54,
         "PL": 57,
-        "UA": 53,
-        "SA": 53,
-        "AE": 53,
-        "KW": 53,
+        "UA": 54,
+        "SA": 54,
+        "AE": 54,
+        "KW": 54,
         "EG": 56,
         "JO": 56,
-        "VN": 36,
+        "VN": 37,
         "PK": 56,
         "NG": 56,
-        "ID": 53,
-        "KZ": 53,
-        "HK": 53,
-        "JP": 52,
-        "ZA": 53,
-        "MX": 53,
+        "ID": 54,
+        "KZ": 54,
+        "HK": 54,
+        "JP": 53,
+        "ZA": 54,
+        "MX": 54,
         "GB": 57
       },
       "games": 57
-    },
-    "apple": {
-      "ok": true,
-      "apps": {
-        "pubg-uc": 145,
-        "roblox-robux": 60,
-        "free-fire": 79,
-        "codm-cp": 100,
-        "mlbb-diamonds": 120,
-        "genshin-crystals": 126,
-        "clash-of-clans": 98,
-        "brawl-stars": 81,
-        "tiktok-coins": 159,
-        "snapchat-plus": 22,
-        "youtube-premium": 9,
-        "netflix": 58,
-        "disney-plus": 11,
-        "discord-nitro": 30,
-        "telegram-premium": 162,
-        "chatgpt": 42
-      },
-      "errors": 18,
-      "firstError": "529479190/AR: HTTP 429"
     },
     "ps-games": {
       "ok": true,
@@ -149,16 +126,38 @@
       "mismatched": 156,
       "errors": 0,
       "concepts": 150
+    },
+    "apple": {
+      "ok": true,
+      "apps": {
+        "pubg-uc": 145,
+        "roblox-robux": 60,
+        "free-fire": 79,
+        "codm-cp": 100,
+        "mlbb-diamonds": 120,
+        "genshin-crystals": 114,
+        "clash-of-clans": 107,
+        "brawl-stars": 81,
+        "tiktok-coins": 159,
+        "snapchat-plus": 36,
+        "youtube-premium": 65,
+        "netflix": 61,
+        "disney-plus": 18,
+        "discord-nitro": 42,
+        "telegram-premium": 180,
+        "chatgpt": 42
+      },
+      "errors": 0
     }
   },
   "summary": {
-    "services": 205,
-    "prices": 5197,
+    "services": 264,
+    "prices": 6726,
     "byType": {
-      "sub": 3,
+      "sub": 2,
       "currency": 10,
       "app": 7,
-      "game": 185
+      "game": 245
     }
   }
 }
