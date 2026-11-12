@@ -1,46 +1,164 @@
 {
-  "updated": "2026-11-12T18:36:56.118Z",
+  "updated": "2026-11-12T19:07:25.806Z",
   "sources": {
     "rates": {
       "ok": true,
-      "count": 18,
-      "missing": []
+      "count": 166
+    },
+    "xbox-services": {
+      "ok": true,
+      "markets": {
+        "US": 14,
+        "TR": 10,
+        "AR": 10,
+        "BR": 10,
+        "IN": 14,
+        "PL": 14,
+        "UA": 1,
+        "SA": 14,
+        "AE": 14,
+        "KW": 1,
+        "EG": 1,
+        "VN": 1,
+        "NG": 0,
+        "ID": 1,
+        "HK": 10,
+        "JP": 14,
+        "ZA": 10,
+        "MX": 14,
+        "GB": 14
+      }
+    },
+    "xbox-games": {
+      "ok": true,
+      "markets": {
+        "US": 13,
+        "TR": 13,
+        "AR": 13,
+        "BR": 13,
+        "IN": 13,
+        "PL": 13,
+        "UA": 5,
+        "SA": 12,
+        "AE": 13,
+        "KW": 5,
+        "EG": 5,
+        "VN": 5,
+        "NG": 5,
+        "ID": 5,
+        "HK": 12,
+        "JP": 12,
+        "ZA": 13,
+        "MX": 13,
+        "GB": 13
+      },
+      "products": 13
+    },
+    "psplus": {
+      "ok": true,
+      "regions": {
+        "US": 9,
+        "TR": 9,
+        "AR": 9,
+        "BR": 9,
+        "IN": 9,
+        "PL": 9,
+        "UA": 9,
+        "SA": 9,
+        "AE": 9,
+        "KW": 9,
+        "ID": 9,
+        "HK": 9,
+        "JP": 9,
+        "ZA": 9,
+        "MX": 9,
+        "GB": 9
+      }
     },
     "steam": {
       "ok": true,
-      "names": 0,
       "regions": {
-        "US": 40,
-        "TR": 40,
-        "AR": 40,
-        "IN": 40,
-        "BR": 40,
-        "PL": 40,
-        "UA": 40,
-        "SA": 40,
-        "AE": 40,
-        "EG": 40,
-        "VN": 27
+        "US": 57,
+        "TR": 56,
+        "AR": 56,
+        "BR": 53,
+        "IN": 53,
+        "PL": 57,
+        "UA": 53,
+        "SA": 53,
+        "AE": 53,
+        "KW": 53,
+        "EG": 56,
+        "JO": 56,
+        "VN": 36,
+        "PK": 56,
+        "NG": 56,
+        "ID": 53,
+        "KZ": 53,
+        "HK": 53,
+        "JP": 52,
+        "ZA": 53,
+        "MX": 53,
+        "GB": 57
       },
-      "problems": []
+      "games": 57
     },
-    "xbox": {
-      "xbox-game-pass-ultimate": {
-        "ok": true,
-        "regions": {
-          "US": "Xbox Game Pass Ultimate 1 Month — 22.99 USD",
-          "TR": "Xbox Game Pass Ultimate 1 Month — 529 TRY",
-          "AR": "Xbox Game Pass Ultimate 1 Month — 18999 ARS",
-          "IN": "Xbox Game Pass Ultimate 1 Month — 1089 INR",
-          "BR": "Xbox Game Pass Ultimate 1 Month — 76.9 BRL",
-          "PL": "Xbox Game Pass Ultimate 1 Month — 84.99 PLN",
-          "UA": "المنتج مش متوفر بهالمنطقة",
-          "SA": "Xbox Game Pass Ultimate 1 Month — 60.99 SAR",
-          "AE": "Xbox Game Pass Ultimate 1 Month — 15.99 USD",
-          "EG": "المنتج مش متوفر بهالمنطقة",
-          "VN": "المنتج مش متوفر بهالمنطقة"
-        }
-      }
+    "apple": {
+      "ok": true,
+      "apps": {
+        "pubg-uc": 145,
+        "roblox-robux": 60,
+        "free-fire": 79,
+        "codm-cp": 100,
+        "mlbb-diamonds": 120,
+        "genshin-crystals": 126,
+        "clash-of-clans": 98,
+        "brawl-stars": 81,
+        "tiktok-coins": 159,
+        "snapchat-plus": 22,
+        "youtube-premium": 9,
+        "netflix": 58,
+        "disney-plus": 11,
+        "discord-nitro": 30,
+        "telegram-premium": 162,
+        "chatgpt": 42
+      },
+      "errors": 18,
+      "firstError": "529479190/AR: HTTP 429"
+    },
+    "ps-games": {
+      "ok": true,
+      "regions": {
+        "US": 150,
+        "TR": 137,
+        "AR": 150,
+        "BR": 148,
+        "IN": 137,
+        "PL": 137,
+        "UA": 136,
+        "SA": 131,
+        "AE": 134,
+        "KW": 132,
+        "ID": 133,
+        "HK": 133,
+        "JP": 128,
+        "ZA": 137,
+        "MX": 150,
+        "GB": 137
+      },
+      "mismatched": 156,
+      "errors": 0,
+      "concepts": 150
+    }
+  },
+  "summary": {
+    "services": 205,
+    "prices": 5197,
+    "byType": {
+      "sub": 3,
+      "currency": 10,
+      "app": 7,
+      "game": 185
     }
   }
 }
