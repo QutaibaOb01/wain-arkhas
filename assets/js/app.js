@@ -91,10 +91,13 @@
     const ms = Date.now() - new Date(iso).getTime();
     if (!isFinite(ms)) return '';
     const h = Math.floor(ms / 3600000);
-    if (h < 1) { const m = Math.max(1, Math.floor(ms / 60000)); return m <= 2 ? 'قبل دقيقة' : `قبل ${m} دقيقة`; }
-    if (h < 24) return h === 1 ? 'قبل ساعة' : h === 2 ? 'قبل ساعتين' : `قبل ${h} ساعات`;
+    if (h < 1) {
+      const m = Math.max(1, Math.floor(ms / 60000));
+      return m === 1 ? 'قبل دقيقة' : m === 2 ? 'قبل دقيقتين' : m <= 10 ? `قبل ${m} دقائق` : `قبل ${m} دقيقة`;
+    }
+    if (h < 24) return h === 1 ? 'قبل ساعة' : h === 2 ? 'قبل ساعتين' : h <= 10 ? `قبل ${h} ساعات` : `قبل ${h} ساعة`;
     const d = Math.floor(h / 24);
-    return d === 1 ? 'أمس' : `قبل ${d} أيام`;
+    return d === 1 ? 'أمس' : d === 2 ? 'قبل يومين' : d <= 10 ? `قبل ${d} أيام` : `قبل ${d} يوم`;
   }
   const fmtDate = (iso) => { try { return new Date(iso).toLocaleDateString('ar-u-nu-latn', { day: 'numeric', month: 'long', year: 'numeric' }); } catch (e) { return iso; } };
 

@@ -223,7 +223,16 @@ button.chip[aria-pressed='true'] { background: var(--volt); border-color: var(--
 }
 @media (max-width: 420px) {
   .wordmark { display: none; }
-  .pill-select select { max-width: 132px; }
+  .header-row { gap: 12px; }
+  .pill-select { padding: 0 10px; }
+  .pill-select .ico { display: none; }
+  .pill-select select { max-width: 150px; }
+}
+@media (max-width: 370px) {
+  .brand { gap: 8px; }
+  .brand-mark { width: 36px; height: 36px; }
+  .brand-name { font-size: 18px; }
+  .pill-select select { max-width: 122px; }
 }
 
 /* ---------- main ---------- */
@@ -457,6 +466,7 @@ button.chip[aria-pressed='true'] { background: var(--volt); border-color: var(--
 .fact .sub { font-size: 12px; color: var(--text-2); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 .fact select { width: 100%; height: 30px; background: var(--panel-2); border: 1px solid var(--steel-2); color: var(--text); font-size: 13px; font-weight: 700; padding: 0 6px; }
 .winner-actions { display: flex; flex-wrap: wrap; gap: 10px; }
+.winner-actions .btn { white-space: normal; text-align: center; line-height: 1.35; padding-top: 10px; padding-bottom: 10px; max-width: 100%; }
 @media (max-width: 640px) {
   .winner { padding: 18px; }
   .winner-facts { grid-template-columns: 1fr 1fr; }
