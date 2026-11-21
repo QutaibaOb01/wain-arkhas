@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-20T11:41:58.134Z",
+  "updated": "2026-11-21T11:03:40.408Z",
   "sources": {
     "rates": {
       "ok": true,
@@ -54,6 +54,34 @@
         "GB": 9
       }
     },
+    "steam": {
+      "ok": true,
+      "regions": {
+        "US": 54,
+        "TR": 54,
+        "AR": 54,
+        "BR": 51,
+        "IN": 51,
+        "PL": 54,
+        "UA": 51,
+        "SA": 51,
+        "AE": 51,
+        "KW": 51,
+        "EG": 54,
+        "JO": 54,
+        "VN": 40,
+        "PK": 54,
+        "NG": 54,
+        "ID": 51,
+        "KZ": 51,
+        "HK": 51,
+        "JP": 50,
+        "ZA": 51,
+        "MX": 51,
+        "GB": 54
+      },
+      "games": 54
+    },
     "xbox-games": {
       "ok": true,
       "markets": {
@@ -63,14 +91,14 @@
         "BR": 101,
         "IN": 102,
         "PL": 102,
-        "UA": 70,
+        "UA": 69,
         "SA": 101,
         "AE": 102,
-        "KW": 71,
-        "EG": 71,
-        "VN": 70,
-        "NG": 65,
-        "ID": 71,
+        "KW": 70,
+        "EG": 70,
+        "VN": 69,
+        "NG": 64,
+        "ID": 70,
         "HK": 100,
         "JP": 96,
         "ZA": 102,
@@ -78,34 +106,6 @@
         "GB": 102
       },
       "products": 102
-    },
-    "steam": {
-      "ok": true,
-      "regions": {
-        "US": 55,
-        "TR": 54,
-        "AR": 54,
-        "BR": 51,
-        "IN": 51,
-        "PL": 55,
-        "UA": 51,
-        "SA": 51,
-        "AE": 51,
-        "KW": 51,
-        "EG": 54,
-        "JO": 54,
-        "VN": 39,
-        "PK": 54,
-        "NG": 54,
-        "ID": 51,
-        "KZ": 51,
-        "HK": 51,
-        "JP": 50,
-        "ZA": 51,
-        "MX": 51,
-        "GB": 55
-      },
-      "games": 55
     },
     "ps-games": {
       "ok": true,
@@ -117,30 +117,30 @@
         "IN": 138,
         "PL": 138,
         "UA": 137,
-        "SA": 129,
-        "AE": 135,
-        "KW": 131,
-        "ID": 131,
-        "HK": 130,
-        "JP": 123,
+        "SA": 130,
+        "AE": 134,
+        "KW": 130,
+        "ID": 133,
+        "HK": 132,
+        "JP": 125,
         "ZA": 138,
         "MX": 150,
         "GB": 138
       },
-      "mismatched": 157,
+      "mismatched": 154,
       "errors": 0,
       "concepts": 150
     },
     "apple": {
       "ok": true,
       "apps": {
-        "pubg-uc": 142,
+        "pubg-uc": 143,
         "roblox-robux": 60,
         "free-fire": 79,
-        "codm-cp": 99,
+        "codm-cp": 98,
         "mlbb-diamonds": 120,
         "genshin-crystals": 126,
-        "clash-of-clans": 108,
+        "clash-of-clans": 107,
         "brawl-stars": 82,
         "tiktok-coins": 159,
         "snapchat-plus": 35,
@@ -155,13 +155,13 @@
     }
   },
   "summary": {
-    "services": 517,
-    "prices": 10572,
+    "services": 521,
+    "prices": 10670,
     "byType": {
       "sub": 3,
       "currency": 10,
       "app": 8,
-      "game": 496
+      "game": 500
     }
   }
 }
