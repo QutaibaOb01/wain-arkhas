@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-22T11:27:25.493Z",
+  "updated": "2026-11-23T12:44:57.126Z",
   "sources": {
     "rates": {
       "ok": true,
@@ -54,6 +54,31 @@
         "GB": 9
       }
     },
+    "xbox-games": {
+      "ok": true,
+      "markets": {
+        "US": 100,
+        "TR": 100,
+        "AR": 99,
+        "BR": 99,
+        "IN": 100,
+        "PL": 100,
+        "UA": 67,
+        "SA": 99,
+        "AE": 100,
+        "KW": 68,
+        "EG": 68,
+        "VN": 67,
+        "NG": 63,
+        "ID": 68,
+        "HK": 98,
+        "JP": 94,
+        "ZA": 100,
+        "MX": 100,
+        "GB": 100
+      },
+      "products": 100
+    },
     "steam": {
       "ok": true,
       "regions": {
@@ -82,52 +107,27 @@
       },
       "games": 55
     },
-    "xbox-games": {
-      "ok": true,
-      "markets": {
-        "US": 101,
-        "TR": 100,
-        "AR": 100,
-        "BR": 100,
-        "IN": 101,
-        "PL": 101,
-        "UA": 67,
-        "SA": 100,
-        "AE": 101,
-        "KW": 68,
-        "EG": 68,
-        "VN": 67,
-        "NG": 63,
-        "ID": 68,
-        "HK": 99,
-        "JP": 95,
-        "ZA": 101,
-        "MX": 101,
-        "GB": 101
-      },
-      "products": 101
-    },
     "ps-games": {
       "ok": true,
       "regions": {
         "US": 150,
-        "TR": 138,
+        "TR": 139,
         "AR": 150,
-        "BR": 148,
-        "IN": 138,
-        "PL": 138,
+        "BR": 149,
+        "IN": 139,
+        "PL": 139,
         "UA": 137,
-        "SA": 130,
+        "SA": 131,
         "AE": 133,
-        "KW": 129,
-        "ID": 134,
-        "HK": 133,
-        "JP": 125,
-        "ZA": 138,
+        "KW": 130,
+        "ID": 132,
+        "HK": 132,
+        "JP": 124,
+        "ZA": 139,
         "MX": 150,
-        "GB": 138
+        "GB": 139
       },
-      "mismatched": 152,
+      "mismatched": 142,
       "errors": 0,
       "concepts": 150
     },
@@ -138,30 +138,30 @@
         "roblox-robux": 60,
         "free-fire": 79,
         "codm-cp": 98,
-        "mlbb-diamonds": 121,
+        "mlbb-diamonds": 119,
         "genshin-crystals": 126,
-        "clash-of-clans": 107,
-        "brawl-stars": 79,
+        "clash-of-clans": 108,
+        "brawl-stars": 82,
         "tiktok-coins": 159,
         "snapchat-plus": 35,
-        "youtube-premium": 62,
-        "netflix": 58,
+        "youtube-premium": 65,
+        "netflix": 61,
         "disney-plus": 18,
         "discord-nitro": 42,
-        "telegram-premium": 174,
+        "telegram-premium": 181,
         "chatgpt": 42
       },
       "errors": 0
     }
   },
   "summary": {
-    "services": 523,
-    "prices": 10735,
+    "services": 505,
+    "prices": 10390,
     "byType": {
       "sub": 3,
       "currency": 10,
       "app": 8,
-      "game": 502
+      "game": 484
     }
   }
 }
